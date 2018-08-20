@@ -1,70 +1,7 @@
 module TimeZone.Data exposing (..)
 
 import Time exposing (Month(..), Weekday(..))
-
-
-
--- Types
-
-
-type alias Year =
-    Int
-
-
-type alias Hour =
-    Float
-
-
-type OnOrAfterDay
-    = OnOrAfterDay
-
-
-type DayOfMonth
-    = Day Int
-    | First Weekday OnOrAfterDay Int
-    | Last Weekday
-
-
-type Clock
-    = Universal
-    | Standard
-    | WallClock
-
-
-type alias Rule =
-    { from : Year
-    , to : Year
-
-    -- transition time
-    , month : Month
-    , day : DayOfMonth
-    , time : Hour
-    , clock : Clock
-
-    -- to state
-    , save : Hour -- add to Standard time
-    }
-
-
-type ZoneRules
-    = Save Hour
-    | Rules (List Rule)
-
-
-type alias ZoneState =
-    { offset : Hour
-    , rules : ZoneRules
-    }
-
-
-type DateTime
-    = DateTime Year Month Int Hour
-
-
-type alias Zone =
-    { history : List ( ZoneState, DateTime )
-    , current : ZoneState
-    }
+import TimeZone.Types exposing (..)
 
 
 
