@@ -6,19 +6,39 @@ import TimeZone.Data
 import TimeZone.Types exposing (..)
 
 
-unpack : Pack -> List { start : Int, offset : Int }
+unpack : Pack -> ( List { start : Int, offset : Int }, Int )
 unpack (Packed zone) =
     let
-        ranges =
+        initialState =
+            case zone.history of
+                ( earliest, _ ) :: _ ->
+                    earliest
+
+                [] ->
+                    zone.current
+
+        initialOffset =
+            (case initialState.zoneRules of
+                Save save ->
+                    save
+
+                _ ->
+                    0
+            )
+                + initialState.standardOffset
+                |> minutesFromHours
+
+        offsetChanges =
             zone
                 |> zoneToRanges
                     (DateTime TimeZone.Data.min Jan 1 0)
-                    (DateTime (TimeZone.Data.max + 1) Jan 1 0)
+                    (DateTime TimeZone.Data.max Dec 31 0)
+                |> List.concatMap
+                    (\( start, state, until ) -> stateToOffsetChanges start until state)
+                |> stripDuplicatesBy .offset
+                |> List.reverse
     in
-    ranges
-        |> List.concatMap
-            (\( start, state, until ) -> stateToOffsetChanges start until state)
-        |> stripDuplicatesBy .offset
+    ( offsetChanges, initialOffset )
 
 
 zoneToRanges : DateTime -> DateTime -> Zone -> List ( DateTime, ZoneState, DateTime )
