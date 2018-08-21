@@ -65,3 +65,7 @@ type alias Zone =
     { history : List ( ZoneState, DateTime )
     , current : ZoneState
     }
+
+
+type Pack
+    = Packed Zone

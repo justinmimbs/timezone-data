@@ -4,6 +4,10 @@ import Time exposing (Month(..), Weekday(..))
 import TimeZone.Types exposing (..)
 
 
+type alias Pack =
+    TimeZone.Types.Pack
+
+
 
 -- Bounds
 
@@ -39,27 +43,29 @@ us =
 -- Zones
 
 
-america__new_york : Zone
+america__new_york : Pack
 america__new_york =
-    Zone
-        []
-        (ZoneState -5 (Rules us))
+    Packed <|
+        Zone
+            []
+            (ZoneState -5 (Rules us))
 
 
-america__indiana__indianapolis : Zone
+america__indiana__indianapolis : Pack
 america__indiana__indianapolis =
-    Zone
-        [ ( ZoneState -5 (Rules us), DateTime 1971 Jan 1 0 )
-        , ( ZoneState -5 (Save 0), DateTime 2006 Jan 1 0 )
-        ]
-        (ZoneState -5 (Rules us))
+    Packed <|
+        Zone
+            [ ( ZoneState -5 (Rules us), DateTime 1971 Jan 1 0 )
+            , ( ZoneState -5 (Save 0), DateTime 2006 Jan 1 0 )
+            ]
+            (ZoneState -5 (Rules us))
 
 
 
--- Zone Names
+-- Zones by name
 
 
-zones =
+packs =
     [ ( "America/New_York", america__new_york )
     , ( "America/Indiana/Indianapolis", america__indiana__indianapolis )
     ]

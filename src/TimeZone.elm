@@ -1,4 +1,4 @@
-module TimeZone exposing (zoneToOffsetChanges)
+module TimeZone exposing (unpack)
 
 import RataDie exposing (RataDie)
 import Time exposing (Month(..), Weekday(..))
@@ -6,8 +6,8 @@ import TimeZone.Data
 import TimeZone.Types exposing (..)
 
 
-zoneToOffsetChanges : Zone -> List { start : Int, offset : Int }
-zoneToOffsetChanges zone =
+unpack : Pack -> List { start : Int, offset : Int }
+unpack (Packed zone) =
     let
         ranges =
             zone
