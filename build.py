@@ -15,7 +15,7 @@ tab_or_spaces = re.compile(r"\t| +")
 def parse_source(sourcefile):
     lines = open(sourcefile).readlines()
 
-    rules = {}
+    rulesets = {}
     zones = {}
     parsing_zonename = None
 
@@ -28,9 +28,9 @@ def parse_source(sourcefile):
 
         if parsing_zonename is not None:
             if line[0:3] == "\t\t\t":
-                state, until = make_zonestate(fields[3:])
+                state, until = make_zonestateuntil(fields[3:])
                 if until is None or MIN_YEAR < until["year"]:
-                    insert_zonestate(parsing_zonename, state, until, zones)
+                    insert_zonestateuntil(parsing_zonename, state, until, zones)
                 continue
 
             else:
@@ -39,25 +39,25 @@ def parse_source(sourcefile):
         if fields[0] == "Rule":
             rule = make_rule(fields[2:])
             if MIN_YEAR <= rule["to"]:
-                insert_rule(fields[1], rule, rules)
+                insert_rule(fields[1], rule, rulesets)
 
         elif fields[0] == "Zone":
             parsing_zonename = fields[1]
-            state, until = make_zonestate(fields[2:])
+            state, until = make_zonestateuntil(fields[2:])
             if until is None or MIN_YEAR < until["year"]:
-                insert_zonestate(parsing_zonename, state, until, zones)
+                insert_zonestateuntil(parsing_zonename, state, until, zones)
 
-    return ( rules, zones )
+    return ( rulesets, zones )
 
 
-# rules
+# rulesets
 
-def insert_rule(name, rule, rules):
-    if name in rules:
-        rules[name].append(rule)
+def insert_rule(name, rule, rulesets):
+    if name in rulesets:
+        rulesets[name].append(rule)
 
     else:
-        rules[name] = [ rule ]
+        rulesets[name] = [ rule ]
 
 
 def make_rule(fields):
@@ -67,14 +67,14 @@ def make_rule(fields):
         "from" : year1,
         "to" : year2,
         "month" : fields[3],
-        "day" : to_dayofmonth(fields[4]),
-        "time" : time_to_minutes(fields[5]),
-        "clock" : char_to_clock(fields[5][-1:]),
-        "save" : time_to_minutes(fields[6])
+        "day" : parse_dayofmonth(fields[4]),
+        "time" : minutes_from_time(fields[5]),
+        "clock" : clock_from_char(fields[5][-1:]),
+        "save" : minutes_from_time(fields[6])
     }
 
 
-def to_dayofmonth(string):
+def parse_dayofmonth(string):
     if string[0:4] == "last":
         weekday = string[4:7]
         return [ "Last", weekday ]
@@ -82,13 +82,13 @@ def to_dayofmonth(string):
     elif string[3:5] == ">=":
         weekday = string[0:3]
         after = int(string[5:])
-        return [ "First", weekday, after ]
+        return [ "First", weekday, "OnOrAfterDay", after ]
 
     else:
         return [ "Day", int(string) ]
 
 
-def char_to_clock(char):
+def clock_from_char(char):
     if char in [ "u", "z", "g" ]:
         return "Universal"
 
@@ -101,7 +101,7 @@ def char_to_clock(char):
 
 # zones
 
-def insert_zonestate(name, state, until, zones):
+def insert_zonestateuntil(name, state, until, zones):
     if name not in zones:
         zones[name] = { "history": [], "current": None }
 
@@ -112,16 +112,16 @@ def insert_zonestate(name, state, until, zones):
         zones[name]["current"] = state
 
 
-def make_zonestate(fields):
+def make_zonestateuntil(fields):
     state = {
-        "offset": time_to_minutes(fields[0]),
-        "rules": to_zonerules(fields[1])
+        "offset": minutes_from_time(fields[0]),
+        "zonerules": parse_zonerules(fields[1])
     }
     until = make_datetime(fields[3:7]) if len(fields) > 3 else None
     return ( state, until )
 
 
-def to_zonerules(string):
+def parse_zonerules(string):
     if string[0:1].isalpha():
         return [ "Rules", string ]
 
@@ -129,7 +129,7 @@ def to_zonerules(string):
         return [ "Save", 0 ]
 
     else:
-        return [ "Save", time_to_minutes(string) ]
+        return [ "Save", minutes_from_time(string) ]
 
 
 def make_datetime(fields):
@@ -137,7 +137,7 @@ def make_datetime(fields):
         "year": int(fields[0]),
         "month": fields[1] if len(fields) > 1 else "Jan",
         "day": fields[2] if len(fields) > 2 else 1,
-        "time": time_to_minutes(fields[3]) if len(fields) > 3 else 0
+        "time": minutes_from_time(fields[3]) if len(fields) > 3 else 0
     }
 
 
@@ -149,11 +149,100 @@ def make_datetime(fields):
 # Zone RULES  =    h:mm
 # Zone UNTIL  =    h:mm[:ss]
 
-def time_to_minutes(hhmm):
+def minutes_from_time(hhmm):
     hm = hhmm.split(":")
     h = int(hm[0])
     m = int(hm[1][0:2]) if len(hm) > 1 else 0
     return h * 60 + m
+
+
+# OUTPUT
+
+def print_output(rulesets, zones):
+    output = []
+
+    # rulesets
+    output.append("-- Rules")
+    for name in sorted(rulesets.keys()):
+        output.append(print_ruleset(name, rulesets[name]))
+
+    # zones
+    output.append("-- Zones")
+    for name in sorted(zones.keys()):
+        output.append(print_zone(name, zones[name]))
+
+    return "\n\n".join(output)
+
+
+def print_ruleset(name, rules):
+    name_ = identifier_from_name(name)
+    rules_ = line_separator1.join(map(print_rule, rules))
+    return template_ruleset.format(name=name_, rules=rules_)
+
+
+def print_rule(rule):
+    dayofmonth = " ".join(map(str, rule["day"]))
+    return template_rule.format(dayofmonth=dayofmonth, **rule)
+
+
+def print_zone(name, zone):
+    name_ = identifier_from_name(name)
+    history = line_separator3.join(map(print_zonestateuntil, zone["history"]))
+    current = print_zonestate(**zone["current"])
+    return template_zone.format(name=name_, history=history, current=current)
+
+
+def print_zonestateuntil(( state, until )):
+    state_ = print_zonestate(**state)
+    until_ = template_datetime.format(**until)
+    return template_zonestateuntil.format(state=state_, until=until_)
+
+
+def print_zonestate(offset, zonerules):
+    zonerules_ = print_zonerules(zonerules)
+    return template_zonestate.format(offset=offset, zonerules=zonerules_)
+
+
+def print_zonerules(zonerules):
+    if zonerules[0] == "Rules":
+        return "Rules {}".format(identifier_from_name(zonerules[1]))
+
+    else:
+        return " ".join(map(str, zonerules))
+
+
+def identifier_from_name(name):
+    return name.replace("/", "__").replace("-", "_").lower()
+
+
+# templates
+
+template_ruleset = """{name} : List Rule
+{name} =
+    [ {rules}
+    ]
+"""
+
+template_rule = "Rule {from} {to} {month} ({dayofmonth}) {time} {clock} {save}"
+
+template_zone = """{name} : Pack
+{name} =
+    Packed <|
+        Zone
+            [ {history}
+            ]
+            ({current})
+"""
+
+template_zonestateuntil = "( {state}, {until} )"
+
+template_zonestate = "ZoneState {offset} ({zonerules})"
+
+template_datetime = "DateTime {year} {month} {day} {time}"
+
+line_separator1 = "\n    , "
+
+line_separator3 = "\n            , "
 
 
 # main
@@ -170,8 +259,10 @@ def main():
         sys.exit(1)
 
     #
-    x = parse_source(sourcefile)
-    print x
+    rulesets, zones = parse_source(sourcefile)
+    # TODO remove unused rulesets
+    # TODO remove zones without a current state
+    print print_output(rulesets, zones)
 
 
 if __name__ == "__main__":
