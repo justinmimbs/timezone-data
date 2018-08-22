@@ -25,6 +25,7 @@ def parse_source(sourcefile):
                 zone_fields = re.split(whitespace, line[3:])
                 current_zone["rows"].append(zone_fields)
                 continue
+
             else:
                 zones.append(current_zone)
                 current_zone = None
@@ -51,6 +52,7 @@ def parse_source(sourcefile):
 def insert_rule(name, rule, rules):
     if name in rules:
         rules[name].append(rule)
+
     else:
         rules[name] = [ rule ]
 
@@ -62,18 +64,34 @@ def make_rule(fields):
         "from" : year1,
         "to" : year2,
         "month" : fields[4],
-        "day" : fields[5],
+        "day" : to_dayofmonth(fields[5]),
         "time" : time_to_minutes(fields[6]),
         "clock" : char_to_clock(fields[6][-1:]),
         "save" : time_to_minutes(fields[7])
     }
 
 
+def to_dayofmonth(string):
+    if string[0:4] == "last":
+        weekday = string[4:7]
+        return [ "Last", weekday ]
+
+    elif string[3:5] == ">=":
+        weekday = string[0:3]
+        after = int(string[5:])
+        return [ "First", weekday, after ]
+
+    else:
+        return [ "Day", int(string) ]
+
+
 def char_to_clock(char):
     if char in [ "u", "z", "g" ]:
         return "Universal"
+
     elif char == "s":
         return "Standard"
+
     else:
         return "WallClock"
 
