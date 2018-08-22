@@ -7,8 +7,8 @@ type alias Year =
     Int
 
 
-type alias Hour =
-    Float
+type alias Minutes =
+    Int
 
 
 type OnOrAfterDay
@@ -34,21 +34,21 @@ type alias Rule =
     -- transition time
     , month : Month
     , day : DayOfMonth
-    , hour : Hour
+    , time : Minutes
     , clock : Clock
 
     -- to state
-    , save : Hour -- add to Standard time
+    , save : Minutes -- add to Standard time
     }
 
 
 type ZoneRules
-    = Save Hour
+    = Save Minutes
     | Rules (List Rule)
 
 
 type alias ZoneState =
-    { standardOffset : Hour
+    { standardOffset : Minutes
     , zoneRules : ZoneRules
     }
 
@@ -57,7 +57,7 @@ type alias DateTime =
     { year : Year
     , month : Month
     , day : Int
-    , hour : Hour
+    , time : Minutes
     }
 
 

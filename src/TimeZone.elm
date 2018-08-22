@@ -18,15 +18,14 @@ unpack (Packed zone) =
                     zone.current
 
         initialOffset =
-            (case initialState.zoneRules of
-                Save save ->
-                    save
+            initialState.standardOffset
+                + (case initialState.zoneRules of
+                    Save save ->
+                        save
 
-                _ ->
-                    0
-            )
-                + initialState.standardOffset
-                |> minutesFromHours
+                    _ ->
+                        0
+                  )
 
         offsetChanges =
             zone
@@ -61,8 +60,8 @@ stateToOffsetChanges : DateTime -> DateTime -> ZoneState -> List { start : Int, 
 stateToOffsetChanges start until { standardOffset, zoneRules } =
     case zoneRules of
         Save save ->
-            [ { start = minutesFromDateTime start - minutesFromHours standardOffset
-              , offset = minutesFromHours (standardOffset + save)
+            [ { start = minutesFromDateTime start - standardOffset
+              , offset = standardOffset + save
               }
             ]
 
@@ -70,19 +69,13 @@ stateToOffsetChanges start until { standardOffset, zoneRules } =
             rulesToOffsetChanges start until standardOffset rules
 
 
-rulesToOffsetChanges : DateTime -> DateTime -> Hour -> List Rule -> List { start : Int, offset : Int }
+rulesToOffsetChanges : DateTime -> DateTime -> Minutes -> List Rule -> List { start : Int, offset : Int }
 rulesToOffsetChanges start until standardOffset rules =
     let
-        startMinutes =
-            minutesFromDateTime start
-
-        untilMinutes =
-            minutesFromDateTime until
-
         years =
             List.range start.year until.year
 
-        transitions : List { time : Int, clock : Clock, save : Hour }
+        transitions : List { start : Int, clock : Clock, save : Minutes }
         transitions =
             years
                 |> List.concatMap
@@ -92,7 +85,7 @@ rulesToOffsetChanges start until standardOffset rules =
                                 (\rule -> rule.from <= year && year <= rule.to)
                             |> List.map
                                 (\rule ->
-                                    { time =
+                                    { start =
                                         -- date
                                         minutesFromRataDie
                                             (case rule.day of
@@ -100,21 +93,22 @@ rulesToOffsetChanges start until standardOffset rules =
                                                     RataDie.dayOfMonth year rule.month day
 
                                                 First weekday OnOrAfterDay day ->
-                                                    RataDie.dayOfMonth year rule.month day |> RataDie.ceilingWeekday weekday
+                                                    RataDie.dayOfMonth year rule.month day
+                                                        |> RataDie.ceilingWeekday weekday
 
                                                 Last weekday ->
-                                                    RataDie.lastOfMonth year rule.month |> RataDie.floorWeekday weekday
+                                                    RataDie.lastOfMonth year rule.month
+                                                        |> RataDie.floorWeekday weekday
                                             )
-                                            -- hour
-                                            + minutesFromHours
-                                                rule.hour
+                                            -- time
+                                            + rule.time
                                     , clock =
                                         rule.clock
                                     , save =
                                         rule.save
                                     }
                                 )
-                            |> List.sortBy .time
+                            |> List.sortBy .start
                     )
     in
     transitions
@@ -122,25 +116,23 @@ rulesToOffsetChanges start until standardOffset rules =
             (\transition ( currentOffset, changes ) ->
                 let
                     utcAdjustment =
-                        minutesFromHours
-                            (case transition.clock of
-                                Universal ->
-                                    0.0
+                        case transition.clock of
+                            Universal ->
+                                0
 
-                                Standard ->
-                                    0.0 - standardOffset
+                            Standard ->
+                                0 - standardOffset
 
-                                WallClock ->
-                                    0.0 - currentOffset
-                            )
+                            WallClock ->
+                                0 - currentOffset
 
                     change =
-                        { start = transition.time + utcAdjustment
-                        , offset = minutesFromHours (standardOffset + transition.save)
+                        { start = transition.start + utcAdjustment
+                        , offset = standardOffset + transition.save
                         }
                 in
                 ( standardOffset + transition.save
-                , if startMinutes <= transition.time && transition.time < untilMinutes then
+                , if minutesFromDateTime start <= transition.start && transition.start < minutesFromDateTime until then
                     change :: changes
 
                   else
@@ -157,19 +149,14 @@ rulesToOffsetChanges start until standardOffset rules =
 
 
 minutesFromDateTime : DateTime -> Int
-minutesFromDateTime { year, month, day, hour } =
+minutesFromDateTime { year, month, day, time } =
     minutesFromRataDie (RataDie.dayOfMonth year month day)
-        + minutesFromHours hour
+        + time
 
 
 minutesFromRataDie : RataDie -> Int
 minutesFromRataDie rd =
     (rd - 719163) * 1440
-
-
-minutesFromHours : Hour -> Int
-minutesFromHours hours =
-    hours * 60 |> floor
 
 
 
