@@ -7,19 +7,18 @@ import sys
 
 MIN_YEAR = 1970
 
-tab_or_spaces = re.compile(r"\t| +")
+tab_or_spaces = re.compile(r"\t+ *| +")
 
 
 # source file
 
 def parse_source(sourcefile):
-    lines = open(sourcefile).readlines()
 
     rulesets = {}
     zones = {}
     parsing_zonename = None
 
-    for line in lines:
+    for line in open(sourcefile).readlines():
         if line[0] == "#":
             continue
 
@@ -28,7 +27,7 @@ def parse_source(sourcefile):
 
         if parsing_zonename is not None:
             if line[0:3] == "\t\t\t":
-                state, until = make_zonestateuntil(fields[3:])
+                state, until = make_zonestateuntil(fields[1:])
                 if until is None or MIN_YEAR < until["year"]:
                     insert_zonestateuntil(parsing_zonename, state, until, zones)
                 continue
@@ -38,7 +37,7 @@ def parse_source(sourcefile):
 
         if fields[0] == "Rule":
             rule = make_rule(fields[2:])
-            if MIN_YEAR <= rule["to"]:
+            if rule["to"] == "max" or MIN_YEAR <= int(rule["to"]):
                 insert_rule(fields[1], rule, rulesets)
 
         elif fields[0] == "Zone":
@@ -47,7 +46,24 @@ def parse_source(sourcefile):
             if until is None or MIN_YEAR < until["year"]:
                 insert_zonestateuntil(parsing_zonename, state, until, zones)
 
+    # update zones: remove zones without a current state
+    zones = { name: zone for name, zone in zones.iteritems() if zone["current"] is not None }
+
+    # update rulesets: add missing and remove unused
+    rulenames = set([])
+    for zone in zones.itervalues():
+        rulenames.update(map(lambda ( state, _ ): rulename_from_zonerules(state["zonerules"]), zone["history"]))
+        rulenames.add(rulename_from_zonerules(zone["current"]["zonerules"]))
+
+    rulesets = { name: rulesets.get(name, []) for name in rulenames if name is not None }
+
+    # TODO optimization: remove empty rulesets and replace their references in zonerules with (Save 0)
+
     return ( rulesets, zones )
+
+
+def rulename_from_zonerules(zonerules):
+    return zonerules[1] if zonerules[0] == "Rules" else None
 
 
 # rulesets
@@ -260,8 +276,6 @@ def main():
 
     #
     rulesets, zones = parse_source(sourcefile)
-    # TODO remove unused rulesets
-    # TODO remove zones without a current state
     print print_output(rulesets, zones)
 
 
