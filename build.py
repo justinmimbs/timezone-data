@@ -197,17 +197,29 @@ def transform(zonenames, ( rulesets, zones )):
     # update rulesets: add missing rulesets, remove unused rulesets
     rulesetnames = set()
     for zone in zones.itervalues():
-        rulesetnames.update(map(lambda ( state, _ ): rulename_from_zonerules(state["zonerules"]), zone["history"]))
-        rulesetnames.add(rulename_from_zonerules(zone["current"]["zonerules"]))
+        rulesetnames.update([ rulesetname_from_zonerules(state["zonerules"]) for state, _ in zone["history"] ])
+        rulesetnames.add(rulesetname_from_zonerules(zone["current"]["zonerules"]))
 
     rulesets = { name: rulesets.get(name, []) for name in rulesetnames if name is not None }
 
-    # TODO optimization: remove empty rulesets and replace their references in zonerules with (Save 0)
+    # optimization: remove empty rulesets, remove their references in zones
+    emptyrulesets = set([ name for name, rules in rulesets.iteritems() if not rules ])
+    for zone in zones.itervalues():
+        for state, _ in zone["history"]:
+            remove_referenced_rulsetnames(emptyrulesets, state)
+        remove_referenced_rulsetnames(emptyrulesets, zone["current"])
+
+    rulesets = { name: rules for name, rules in rulesets.iteritems() if rules }
 
     return ( rulesets, zones )
 
 
-def rulename_from_zonerules(zonerules):
+def remove_referenced_rulsetnames(rulsetnames, state):
+    if rulesetname_from_zonerules(state["zonerules"]) in rulsetnames:
+        state["zonerules"] = [ "Save", 0 ]
+
+
+def rulesetname_from_zonerules(zonerules):
     return zonerules[1] if zonerules[0] == "Rules" else None
 
 
