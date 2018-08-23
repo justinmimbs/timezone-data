@@ -1,5 +1,6 @@
 module TimeZone.Data exposing (..)
 
+import Dict exposing (Dict)
 import Time exposing (Month(..), Weekday(..))
 import TimeZone.Types exposing (..)
 
@@ -74,7 +75,9 @@ america__indiana__indianapolis =
 -- Zones by name
 
 
+packs : Dict String Pack
 packs =
     [ ( "America/New_York", america__new_york )
     , ( "America/Indiana/Indianapolis", america__indiana__indianapolis )
     ]
+        |> Dict.fromList

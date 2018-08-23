@@ -226,8 +226,11 @@ def rulesetname_from_zonerules(zonerules):
 # PRINT
 
 def print_output(version, rulesets, zones):
+    zonenameid_pairs = [ ( name, zoneid_from_name(name) ) for name in sorted(zones.iterkeys()) ]
+    zoneids = ", ".join([ zoneid for _, zoneid in zonenameid_pairs ])
+
     output = [
-        file_header,
+        template_header.format(zoneids=zoneids),
         "-- Version",
         template_version.format(version=version),
         "-- Bounds",
@@ -244,11 +247,15 @@ def print_output(version, rulesets, zones):
     for name in sorted(zones.keys()):
         output.append(print_zone(name, zones[name]))
 
-    return "\n\n".join(output)
+    # zonenameid_pairs
+    output.append("-- Zones by name")
+    output.append(print_zonenameid_pairs(zonenameid_pairs))
+
+    return "\n".join(output)
 
 
 def print_ruleset(name, rules):
-    name_ = identifier_from_name(name)
+    name_ = rulesetid_from_name(name)
     rules_ = line_separator1.join(map(print_rule, rules))
     return template_ruleset.format(name=name_, rules=rules_)
 
@@ -259,7 +266,7 @@ def print_rule(rule):
 
 
 def print_zone(name, zone):
-    name_ = identifier_from_name(name)
+    name_ = zoneid_from_name(name)
     history = line_separator3.join(map(print_zonestateuntil, zone["history"]))
     current = print_zonestate(**zone["current"])
     return template_zone.format(name=name_, history=history, current=current)
@@ -278,20 +285,29 @@ def print_zonestate(offset, zonerules):
 
 def print_zonerules(zonerules):
     if zonerules[0] == "Rules":
-        return "Rules {}".format(identifier_from_name(zonerules[1]))
+        return "Rules {}".format(rulesetid_from_name(zonerules[1]))
 
     else:
         return " ".join(map(str, zonerules))
 
+def print_zonenameid_pairs(zonenameid_pairs):
+    pairs = [ template_zonenameid_pair.format(k, v) for k, v in zonenameid_pairs ]
+    return template_zonenameid_pairs.format(pairs=line_separator1.join(pairs))
 
-def identifier_from_name(name):
+
+def rulesetid_from_name(name):
+    return "rules_" + name.replace("-", "_")
+
+
+def zoneid_from_name(name):
     return name.replace("/", "__").replace("-", "_").lower()
 
 
 # templates
 
-file_header = """module TimeZone.Data exposing (..)
+template_header = """module TimeZone.Data exposing (Pack, version, min, max, packs, {zoneids})
 
+import Dict exposing (Dict)
 import Time exposing (Month(..), Weekday(..))
 import TimeZone.Types exposing (..)
 
@@ -339,6 +355,16 @@ template_zonestateuntil = "( {state}, {until} )"
 template_zonestate = "ZoneState {offset} ({zonerules})"
 
 template_datetime = "DateTime {year} {month} {day} {time}"
+
+template_zonenameid_pairs = """
+packs : Dict String Pack
+packs =
+    [ {pairs}
+    ]
+        |> Dict.fromList
+"""
+
+template_zonenameid_pair = "( \"{0}\", {1} )"
 
 line_separator1 = "\n    , "
 
