@@ -7,13 +7,15 @@ import sys
 
 MIN_YEAR = 1970
 
-tab_or_spaces = re.compile(r"\t+ *| +")
+
+# PARSE
+
+tabs_or_spaces = re.compile(r"\t+ *| +")
 
 
 # source file
 
 def parse_source(sourcefile):
-
     rulesets = {}
     zones = {}
     parsing_zonename = None
@@ -23,7 +25,7 @@ def parse_source(sourcefile):
             continue
 
         line = line[0:line.find("#")].rstrip()
-        fields = re.split(tab_or_spaces, line)
+        fields = re.split(tabs_or_spaces, line)
 
         if parsing_zonename is not None:
             if line[0:3] == "\t\t\t":
@@ -36,9 +38,10 @@ def parse_source(sourcefile):
                 parsing_zonename = None
 
         if fields[0] == "Rule":
+            rulesetname = fields[1]
             rule = make_rule(fields[2:])
             if rule["to"] == "max" or MIN_YEAR <= int(rule["to"]):
-                insert_rule(fields[1], rule, rulesets)
+                insert_rule(rulesetname, rule, rulesets)
 
         elif fields[0] == "Zone":
             parsing_zonename = fields[1]
@@ -49,13 +52,13 @@ def parse_source(sourcefile):
     # update zones: remove zones without a current state
     zones = { name: zone for name, zone in zones.iteritems() if zone["current"] is not None }
 
-    # update rulesets: add missing and remove unused
-    rulenames = set([])
+    # update rulesets: add missing rulesets and remove unused rulesets
+    rulesetnames = set([])
     for zone in zones.itervalues():
-        rulenames.update(map(lambda ( state, _ ): rulename_from_zonerules(state["zonerules"]), zone["history"]))
-        rulenames.add(rulename_from_zonerules(zone["current"]["zonerules"]))
+        rulesetnames.update(map(lambda ( state, _ ): rulename_from_zonerules(state["zonerules"]), zone["history"]))
+        rulesetnames.add(rulename_from_zonerules(zone["current"]["zonerules"]))
 
-    rulesets = { name: rulesets.get(name, []) for name in rulenames if name is not None }
+    rulesets = { name: rulesets.get(name, []) for name in rulesetnames if name is not None }
 
     # TODO optimization: remove empty rulesets and replace their references in zonerules with (Save 0)
 
@@ -265,17 +268,33 @@ line_separator3 = "\n            , "
 
 def main():
     argparser = argparse.ArgumentParser()
-    argparser.add_argument("sourcefile", help="path to tzdb source file")
+    argparser.add_argument("sourcedir", help="path to tzdb source directory")
     args = argparser.parse_args()
 
-    sourcefile = os.path.abspath(args.sourcefile)
+    sourcedir = os.path.abspath(args.sourcedir)
 
-    if not os.path.exists(sourcefile):
-        print "error: sourcefile not found: " + sourcefile
+    if not os.path.exists(sourcedir):
+        print "error: sourcedir not found: " + sourcedir
         sys.exit(1)
 
     #
-    rulesets, zones = parse_source(sourcefile)
+    primary_data = [
+        "africa",
+        "antarctica",
+        "asia",
+        "australasia",
+        "europe",
+        "northamerica",
+        "southamerica"
+    ]
+    rulesets = {}
+    zones = {}
+
+    for filename in primary_data:
+        rulesets_, zones_ = parse_source(os.path.join(sourcedir, filename))
+        rulesets.update(rulesets_)
+        zones.update(zones_)
+
     print print_output(rulesets, zones)
 
 
