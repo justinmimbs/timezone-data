@@ -5,7 +5,20 @@ import os
 import re
 import sys
 
+
 MIN_YEAR = 1970
+
+MAX_YEAR = 2037
+
+PRIMARY_DATA = [
+    "africa",
+    "antarctica",
+    "asia",
+    "australasia",
+    "europe",
+    "northamerica",
+    "southamerica"
+]
 
 
 # PARSE
@@ -177,8 +190,14 @@ def minutes_from_time(hhmm):
 
 # OUTPUT
 
-def print_output(rulesets, zones):
-    output = []
+def print_output(version, rulesets, zones):
+    output = [
+        file_header,
+        "-- Version",
+        template_version.format(version=version),
+        "-- Bounds",
+        template_bounds.format(min=MIN_YEAR, max=MAX_YEAR),
+    ]
 
     # rulesets
     output.append("-- Rules")
@@ -236,7 +255,33 @@ def identifier_from_name(name):
 
 # templates
 
-template_ruleset = """{name} : List Rule
+file_header = """module TimeZone.Data exposing (..)
+
+import Time exposing (Month(..), Weekday(..))
+import TimeZone.Types exposing (..)
+
+type alias Pack =
+    TimeZone.Types.Pack
+"""
+
+template_version = """
+version : String
+version =
+    "{version}"
+"""
+
+template_bounds = """
+min : Year
+min =
+    {min}
+
+max : Year
+max =
+    {max}
+"""
+
+template_ruleset = """
+{name} : List Rule
 {name} =
     [ {rules}
     ]
@@ -244,7 +289,8 @@ template_ruleset = """{name} : List Rule
 
 template_rule = "Rule {from} {to} {month} ({dayofmonth}) {time} {clock} {save}"
 
-template_zone = """{name} : Pack
+template_zone = """
+{name} : Pack
 {name} =
     Packed <|
         Zone
@@ -269,6 +315,7 @@ line_separator3 = "\n            , "
 def main():
     argparser = argparse.ArgumentParser()
     argparser.add_argument("sourcedir", help="path to tzdb source directory")
+    argparser.add_argument("version", help="what version of tzdb is this?")
     args = argparser.parse_args()
 
     sourcedir = os.path.abspath(args.sourcedir)
@@ -277,25 +324,15 @@ def main():
         print "error: sourcedir not found: " + sourcedir
         sys.exit(1)
 
-    #
-    primary_data = [
-        "africa",
-        "antarctica",
-        "asia",
-        "australasia",
-        "europe",
-        "northamerica",
-        "southamerica"
-    ]
     rulesets = {}
     zones = {}
 
-    for filename in primary_data:
+    for filename in PRIMARY_DATA:
         rulesets_, zones_ = parse_source(os.path.join(sourcedir, filename))
         rulesets.update(rulesets_)
         zones.update(zones_)
 
-    print print_output(rulesets, zones)
+    print print_output(args.version, rulesets, zones)
 
 
 if __name__ == "__main__":

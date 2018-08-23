@@ -9,6 +9,15 @@ type alias Pack =
 
 
 
+-- Version
+
+
+version : String
+version =
+    ""
+
+
+
 -- Bounds
 
 
