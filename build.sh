@@ -15,9 +15,12 @@ fi
 version=$(git -C tz describe --tags --abbrev=0)
 git -C tz -c advice.detachedHead=false checkout $version
 
-# build src/TimeZone/Data.elm
+# build file
 
-# TODO ./build.py tz $version
+output="src/TimeZone/Data.elm"
+
+./build.py tz $version $output
+elm-format --yes $output
 
 # tz: checkout master
 

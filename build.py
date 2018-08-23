@@ -1,6 +1,7 @@
 #! /usr/bin/python
 
 import argparse
+import io
 import os
 import re
 import sys
@@ -225,7 +226,7 @@ def rulesetname_from_zonerules(zonerules):
 
 # PRINT
 
-def print_output(version, rulesets, zones):
+def print_filecontent(version, rulesets, zones):
     zonenameid_pairs = [ ( name, zoneid_from_name(name) ) for name in sorted(zones.iterkeys()) ]
     zoneids = ", ".join([ zoneid for _, zoneid in zonenameid_pairs ])
 
@@ -377,6 +378,7 @@ def main():
     argparser = argparse.ArgumentParser()
     argparser.add_argument("sourcedir", help="path to tzdb source directory")
     argparser.add_argument("version", help="what version of tzdb is this?")
+    argparser.add_argument("output", help="path to destination file")
     args = argparser.parse_args()
 
     sourcedir = os.path.abspath(args.sourcedir)
@@ -388,7 +390,7 @@ def main():
     # we only want zones listed in the zone table
     zonenames = parse_zonetable(os.path.join(sourcedir, "zone1970.tab"))
 
-    #
+    # parse, transform, print
     rulesets = {}
     zones = {}
 
@@ -402,7 +404,17 @@ def main():
         print "error: zones not found: " + ", ".join(missingzones)
         sys.exit(1)
 
-    print print_output(args.version, rulesets, zones)
+    filecontent = print_filecontent(args.version, rulesets, zones)
+
+    # write file
+    filepath = os.path.abspath(args.output)
+
+    if not os.path.exists(os.path.dirname(filepath)):
+       os.makedirs(os.path.dirname(filepath))
+
+    output = io.open(filepath, "w", encoding="utf-8")
+    output.write(unicode(filecontent, encoding="utf-8-sig"))
+    output.close()
 
 
 if __name__ == "__main__":
