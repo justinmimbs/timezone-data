@@ -25,16 +25,33 @@ PRIMARY_DATA = [
 
 tabs_or_spaces = re.compile(r"\t+ *| +")
 
+indented_comment = re.compile(r"[\t ]+#")
+
+
+# zone table
+
+def parse_zonetable(filepath):
+    zonenames = set()
+
+    for line in open(filepath).readlines():
+        if line[0] == "#":
+            continue
+
+        fields = re.split(tabs_or_spaces, line.rstrip())
+        zonenames.add(fields[2])
+
+    return zonenames
+
 
 # source file
 
-def parse_source(sourcefile):
+def parse_sourcefile(filepath):
     rulesets = {}
     zones = {}
     parsing_zonename = None
 
-    for line in open(sourcefile).readlines():
-        if line[0] == "#":
+    for line in open(filepath).readlines():
+        if line[0] == "#" or indented_comment.match(line) is not None:
             continue
 
         line = line[0:line.find("#")].rstrip()
@@ -62,24 +79,7 @@ def parse_source(sourcefile):
             if until is None or MIN_YEAR < until["year"]:
                 insert_zonestateuntil(parsing_zonename, state, until, zones)
 
-    # update zones: remove zones without a current state
-    zones = { name: zone for name, zone in zones.iteritems() if zone["current"] is not None }
-
-    # update rulesets: add missing rulesets and remove unused rulesets
-    rulesetnames = set([])
-    for zone in zones.itervalues():
-        rulesetnames.update(map(lambda ( state, _ ): rulename_from_zonerules(state["zonerules"]), zone["history"]))
-        rulesetnames.add(rulename_from_zonerules(zone["current"]["zonerules"]))
-
-    rulesets = { name: rulesets.get(name, []) for name in rulesetnames if name is not None }
-
-    # TODO optimization: remove empty rulesets and replace their references in zonerules with (Save 0)
-
     return ( rulesets, zones )
-
-
-def rulename_from_zonerules(zonerules):
-    return zonerules[1] if zonerules[0] == "Rules" else None
 
 
 # rulesets
@@ -188,7 +188,30 @@ def minutes_from_time(hhmm):
     return h * 60 + m
 
 
-# OUTPUT
+# TRANSFORM
+
+def transform(zonenames, ( rulesets, zones )):
+    # update zones: remove zones without a current state, remove zones not in zonenames
+    zones = { name: zone for name, zone in zones.iteritems() if zone["current"] is not None and name in zonenames }
+
+    # update rulesets: add missing rulesets, remove unused rulesets
+    rulesetnames = set()
+    for zone in zones.itervalues():
+        rulesetnames.update(map(lambda ( state, _ ): rulename_from_zonerules(state["zonerules"]), zone["history"]))
+        rulesetnames.add(rulename_from_zonerules(zone["current"]["zonerules"]))
+
+    rulesets = { name: rulesets.get(name, []) for name in rulesetnames if name is not None }
+
+    # TODO optimization: remove empty rulesets and replace their references in zonerules with (Save 0)
+
+    return ( rulesets, zones )
+
+
+def rulename_from_zonerules(zonerules):
+    return zonerules[1] if zonerules[0] == "Rules" else None
+
+
+# PRINT
 
 def print_output(version, rulesets, zones):
     output = [
@@ -324,13 +347,22 @@ def main():
         print "error: sourcedir not found: " + sourcedir
         sys.exit(1)
 
+    # we only want zones listed in the zone table
+    zonenames = parse_zonetable(os.path.join(sourcedir, "zone1970.tab"))
+
+    #
     rulesets = {}
     zones = {}
 
     for filename in PRIMARY_DATA:
-        rulesets_, zones_ = parse_source(os.path.join(sourcedir, filename))
+        rulesets_, zones_ = transform(zonenames, parse_sourcefile(os.path.join(sourcedir, filename)))
         rulesets.update(rulesets_)
         zones.update(zones_)
+
+    missingzones = zonenames - set(zones.keys())
+    if missingzones:
+        print "error: zones not found: " + ", ".join(missingzones)
+        sys.exit(1)
 
     print print_output(args.version, rulesets, zones)
 
