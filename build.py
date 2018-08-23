@@ -114,7 +114,7 @@ def parse_dayofmonth(string):
     elif string[3:5] == ">=":
         weekday = string[0:3]
         after = int(string[5:])
-        return [ "First", weekday, "OnOrAfterDay", after ]
+        return [ "First", weekday, after ]
 
     else:
         return [ "Day", int(string) ]

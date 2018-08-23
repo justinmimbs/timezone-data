@@ -43,9 +43,9 @@ us =
     , Rule 1974 1974 Jan (Day 6) (2 * 60) WallClock (1 * 60)
     , Rule 1975 1975 Feb (Day 23) (2 * 60) WallClock (1 * 60)
     , Rule 1976 1986 Apr (Last Sun) (2 * 60) WallClock (1 * 60)
-    , Rule 1987 2006 Apr (First Sun OnOrAfterDay 1) (2 * 60) WallClock (1 * 60)
-    , Rule 2007 max Mar (First Sun OnOrAfterDay 8) (2 * 60) WallClock (1 * 60)
-    , Rule 2007 max Nov (First Sun OnOrAfterDay 1) (2 * 60) WallClock 0
+    , Rule 1987 2006 Apr (First Sun 1) (2 * 60) WallClock (1 * 60)
+    , Rule 2007 max Mar (First Sun 8) (2 * 60) WallClock (1 * 60)
+    , Rule 2007 max Nov (First Sun 1) (2 * 60) WallClock 0
     ]
 
 

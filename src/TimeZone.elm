@@ -92,8 +92,8 @@ rulesToOffsetChanges start until standardOffset rules =
                                                 Day day ->
                                                     RataDie.dayOfMonth year rule.month day
 
-                                                First weekday OnOrAfterDay day ->
-                                                    RataDie.dayOfMonth year rule.month day
+                                                First weekday onOrAfterDay ->
+                                                    RataDie.dayOfMonth year rule.month onOrAfterDay
                                                         |> RataDie.ceilingWeekday weekday
 
                                                 Last weekday ->

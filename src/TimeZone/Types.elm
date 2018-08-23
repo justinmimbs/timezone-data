@@ -11,13 +11,9 @@ type alias Minutes =
     Int
 
 
-type OnOrAfterDay
-    = OnOrAfterDay
-
-
 type DayOfMonth
     = Day Int
-    | First Weekday OnOrAfterDay Int
+    | First Weekday Int
     | Last Weekday
 
 
