@@ -1,13 +1,52 @@
-module TimeZone exposing (unpack)
+module TimeZone exposing (Error(..), getZone, unpack)
 
+import Dict
 import RataDie exposing (RataDie)
+import Task exposing (Task)
 import Time exposing (Month(..), Weekday(..))
 import TimeZone.Data
 import TimeZone.Types exposing (..)
 
 
-unpack : Pack -> ( List { start : Int, offset : Int }, Int )
-unpack (Packed zone) =
+type Error
+    = NoDataForZoneName String
+    | NoZoneName
+
+
+getZone : Task Error ( String, Time.Zone )
+getZone =
+    Time.getZoneName
+        |> Task.andThen
+            (\nameOrOffset ->
+                case nameOrOffset of
+                    Time.Name zoneName ->
+                        case Dict.get zoneName TimeZone.Data.packs of
+                            Just pack ->
+                                Task.succeed ( zoneName, unpack pack )
+
+                            Nothing ->
+                                Task.fail (NoDataForZoneName zoneName)
+
+                    Time.Offset _ ->
+                        Task.fail NoZoneName
+            )
+
+
+
+-- unpack TimeZone.Data
+
+
+unpack : TimeZone.Data.Pack -> Time.Zone
+unpack pack =
+    let
+        { changes, initial } =
+            unpackOffsets pack
+    in
+    Time.customZone initial changes
+
+
+unpackOffsets : Pack -> { changes : List { start : Int, offset : Int }, initial : Int }
+unpackOffsets (Packed zone) =
     let
         initialState =
             case zone.history of
@@ -37,7 +76,9 @@ unpack (Packed zone) =
                 |> stripDuplicatesBy .offset
                 |> List.reverse
     in
-    ( offsetChanges, initialOffset )
+    { changes = offsetChanges
+    , initial = initialOffset
+    }
 
 
 zoneToRanges : DateTime -> DateTime -> Zone -> List ( DateTime, ZoneState, DateTime )
@@ -150,8 +191,7 @@ rulesToOffsetChanges start until standardOffset rules =
 
 minutesFromDateTime : DateTime -> Int
 minutesFromDateTime { year, month, day, time } =
-    minutesFromRataDie (RataDie.dayOfMonth year month day)
-        + time
+    minutesFromRataDie (RataDie.dayOfMonth year month day) + time
 
 
 minutesFromRataDie : RataDie -> Int
