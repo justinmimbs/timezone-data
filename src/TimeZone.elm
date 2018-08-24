@@ -9,8 +9,8 @@ import TimeZone.Types exposing (..)
 
 
 type Error
-    = NoDataForZoneName String
-    | NoZoneName
+    = NoZoneName
+    | NoDataForZoneName String
 
 
 getZone : Task Error ( String, Time.Zone )

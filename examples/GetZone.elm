@@ -1,11 +1,11 @@
-module Examples exposing (main)
+module GetZone exposing (main)
 
 import Browser
 import Dict
 import Html exposing (Html)
 import Html.Attributes
 import Task exposing (Task)
-import Time exposing (Posix)
+import Time exposing (Month(..), Posix, Weekday(..))
 import TimeZone
 import TimeZone.Data
 
@@ -66,7 +66,7 @@ view model =
                 [ Html.pre [] [ Html.text "Loading..." ] ]
 
             Failure error ->
-                [ Html.pre [ Html.Attributes.style "color" "red" ] [ Html.text (Debug.toString error) ] ]
+                [ Html.pre [ Html.Attributes.style "color" "red" ] [ Html.text (error |> timezoneErrorToString) ] ]
 
             Success ( zoneName, zone ) ->
                 [ Html.pre
@@ -97,11 +97,21 @@ view model =
         )
 
 
+timezoneErrorToString : TimeZone.Error -> String
+timezoneErrorToString error =
+    case error of
+        TimeZone.NoZoneName ->
+            "Couldn't get zone name"
+
+        TimeZone.NoDataForZoneName zoneName ->
+            "Couldn't get zone data for '" ++ zoneName ++ "'"
+
+
 formatPosix : Time.Zone -> Posix -> String
 formatPosix zone posix =
     String.join " "
-        [ Time.toWeekday zone posix |> Debug.toString
-        , Time.toMonth zone posix |> Debug.toString
+        [ Time.toWeekday zone posix |> weekdayToName
+        , Time.toMonth zone posix |> monthToName
         , Time.toDay zone posix |> String.fromInt |> String.padLeft 2 '0'
         , Time.toYear zone posix |> String.fromInt
         , String.join ":"
@@ -110,3 +120,68 @@ formatPosix zone posix =
             , Time.toSecond zone posix |> String.fromInt |> String.padLeft 2 '0'
             ]
         ]
+
+
+monthToName : Month -> String
+monthToName m =
+    case m of
+        Jan ->
+            "Jan"
+
+        Feb ->
+            "Feb"
+
+        Mar ->
+            "Mar"
+
+        Apr ->
+            "Apr"
+
+        May ->
+            "May"
+
+        Jun ->
+            "Jun"
+
+        Jul ->
+            "Jul"
+
+        Aug ->
+            "Aug"
+
+        Sep ->
+            "Sep"
+
+        Oct ->
+            "Oct"
+
+        Nov ->
+            "Nov"
+
+        Dec ->
+            "Dec"
+
+
+weekdayToName : Weekday -> String
+weekdayToName wd =
+    case wd of
+        Mon ->
+            "Mon"
+
+        Tue ->
+            "Tue"
+
+        Wed ->
+            "Wed"
+
+        Thu ->
+            "Thu"
+
+        Fri ->
+            "Fri"
+
+        Sat ->
+            "Sat"
+
+        Sun ->
+            "Sun"
