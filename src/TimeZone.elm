@@ -30,8 +30,8 @@ unpack (Packed zone) =
         offsetChanges =
             zone
                 |> zoneToRanges
-                    (DateTime TimeZone.Data.min Jan 1 0)
-                    (DateTime TimeZone.Data.max Dec 31 0)
+                    (DateTime TimeZone.Data.minYear Jan 1 0)
+                    (DateTime TimeZone.Data.maxYear Dec 31 0)
                 |> List.concatMap
                     (\( start, state, until ) -> stateToOffsetChanges start until state)
                 |> stripDuplicatesBy .offset

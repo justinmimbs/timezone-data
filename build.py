@@ -72,7 +72,7 @@ def parse_sourcefile(filepath):
         if fields[0] == "Rule":
             rulesetname = fields[1]
             rule = make_rule(fields[2:])
-            if rule["to"] == "max" or MIN_YEAR <= int(rule["to"]):
+            if rule["from"] <= MAX_YEAR and (rule["to"] == "maxYear" or MIN_YEAR <= int(rule["to"])):
                 insert_rule(rulesetname, rule, rulesets)
 
         elif fields[0] == "Zone":
@@ -96,7 +96,7 @@ def insert_rule(name, rule, rulesets):
 
 def make_rule(fields):
     year1 = int(fields[0])
-    year2 = year1 if fields[1] == "only" else ("max" if fields[1] == "max" else int(fields[1]))
+    year2 = year1 if fields[1] == "only" else ("maxYear" if fields[1] == "max" else int(fields[1]))
     return {
         "from" : year1,
         "to" : year2,
@@ -347,7 +347,7 @@ def zoneid_from_name(name):
 
 # templates
 
-template_header = """module TimeZone.Data exposing (Pack, version, min, max, packs, {zoneids})
+template_header = """module TimeZone.Data exposing (Pack, version, minYear, maxYear, packs, {zoneids})
 
 import Dict exposing (Dict)
 import Time exposing (Month(..), Weekday(..))
@@ -364,12 +364,12 @@ version =
 """
 
 template_bounds = """
-min : Year
-min =
+minYear : Year
+minYear =
     {min}
 
-max : Year
-max =
+maxYear : Year
+maxYear =
     {max}
 """
 
