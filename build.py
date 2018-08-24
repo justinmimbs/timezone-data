@@ -5,6 +5,7 @@ import io
 import os
 import re
 import sys
+from datetime import date
 
 
 MIN_YEAR = 1970
@@ -169,9 +170,49 @@ def make_datetime(fields):
     return {
         "year": int(fields[0]),
         "month": fields[1] if len(fields) > 1 else "Jan",
-        "day": fields[2] if len(fields) > 2 else 1,
+        "day": to_concreteday(*fields[0:3]) if len(fields) > 2 else 1,
         "time": minutes_from_time(fields[3]) if len(fields) > 3 else 0
     }
+
+
+def to_concreteday(yyyy, mmm, day):
+    if day[0:4] == "last":
+        year = int(yyyy)
+        month = months.index(mmm) + 1
+        weekday = weekdays.index(day[4:7]) + 1
+        return floorweekday(lastofmonth(year, month), weekday).day
+
+    elif day[3:5] == ">=":
+        year = int(yyyy)
+        month = months.index(mmm) + 1
+        weekday = weekdays.index(day[0:3]) + 1
+        after = int(day[5:])
+        return ceilingweekday(date(year, month, after), weekday).day
+
+    else:
+        return int(day)
+
+
+# date helpers
+
+months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
+
+weekdays = [ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" ]
+
+
+def lastofmonth(year, month):
+    firstofnextmonth = date(year, month + 1, 1) if month < 12 else date(year + 1, 1, 1)
+    return date.fromordinal(firstofnextmonth.toordinal() - 1)
+
+
+def floorweekday(date_, weekday):
+    dayssincepreviousweekday = (date_.isoweekday() + 7 - weekday) % 7
+    return date.fromordinal(date_.toordinal() - dayssincepreviousweekday)
+
+
+def ceilingweekday(date_, weekday):
+    floored = floorweekday(date_, weekday)
+    return floored if date_ == floored else date.fromordinal(floored.toordinal() + 7)
 
 
 # time
