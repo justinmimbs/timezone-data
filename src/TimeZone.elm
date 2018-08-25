@@ -73,7 +73,7 @@ unpackOffsets (Packed zone) =
                     (DateTime TimeZone.Data.maxYear Dec 31 0)
                 |> List.concatMap
                     (\( start, state, until ) -> stateToOffsetChanges start until state)
-                |> stripDuplicatesBy .offset
+                |> stripDuplicatesByHelp .offset initialOffset []
                 |> List.reverse
     in
     { changes = offsetChanges
