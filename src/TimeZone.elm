@@ -78,8 +78,16 @@ unpackOffsets (Packed zone) =
                 |> zoneToRanges
                     (DateTime TimeZone.Data.minYear Jan 1 0)
                     (DateTime TimeZone.Data.maxYear Dec 31 0)
-                |> List.concatMap
-                    (\( start, state, until ) -> stateToOffsetChanges start until state)
+                |> List.foldl
+                    (\( start, state, until ) ( prevOffset, prevChanges ) ->
+                        let
+                            ( nextChanges, nextOffset ) =
+                                stateToOffsetChanges prevOffset start until state
+                        in
+                        ( nextOffset, prevChanges ++ nextChanges )
+                    )
+                    ( initialOffset, [] )
+                |> Tuple.second
                 |> stripDuplicatesByHelp .offset initialOffset []
                 |> List.reverse
     in
@@ -104,22 +112,30 @@ zoneToRanges zoneStart zoneUntil zone =
     ( currentStart, zone.current, zoneUntil ) :: historyRanges |> List.reverse
 
 
-stateToOffsetChanges : DateTime -> DateTime -> ZoneState -> List { start : Int, offset : Int }
-stateToOffsetChanges start until { standardOffset, zoneRules } =
+stateToOffsetChanges : Int -> DateTime -> DateTime -> ZoneState -> ( List { start : Int, offset : Int }, Int )
+stateToOffsetChanges previousOffset start until { standardOffset, zoneRules } =
     case zoneRules of
         Save save ->
-            [ { start = minutesFromDateTime start - standardOffset
-              , offset = standardOffset + save
-              }
-            ]
+            ( [ { start = minutesFromDateTime start - previousOffset
+                , offset = standardOffset + save
+                }
+              ]
+            , standardOffset + save
+            )
 
         Rules rules ->
-            rulesToOffsetChanges start until standardOffset rules
+            rulesToOffsetChanges previousOffset start until standardOffset rules
 
 
-rulesToOffsetChanges : DateTime -> DateTime -> Minutes -> List Rule -> List { start : Int, offset : Int }
-rulesToOffsetChanges start until standardOffset rules =
+rulesToOffsetChanges : Int -> DateTime -> DateTime -> Minutes -> List Rule -> ( List { start : Int, offset : Int }, Int )
+rulesToOffsetChanges previousOffset start until standardOffset rules =
     let
+        rulesStart =
+            minutesFromDateTime start
+
+        rulesUntil =
+            minutesFromDateTime until
+
         years =
             List.range start.year until.year
 
@@ -158,38 +174,45 @@ rulesToOffsetChanges start until standardOffset rules =
                                 )
                             |> List.sortBy .start
                     )
+
+        ( nextOffset, initialChange, descendingChanges ) =
+            transitions
+                |> List.foldl
+                    (\transition ( currentOffset, change0, changes ) ->
+                        let
+                            utcAdjustment =
+                                case transition.clock of
+                                    Universal ->
+                                        0
+
+                                    Standard ->
+                                        0 - standardOffset
+
+                                    WallClock ->
+                                        0 - currentOffset
+
+                            change =
+                                { start = transition.start + utcAdjustment
+                                , offset = standardOffset + transition.save
+                                }
+                        in
+                        if transition.start <= rulesStart then
+                            ( change.offset, { change0 | offset = change.offset }, changes )
+
+                        else if transition.start < rulesUntil then
+                            ( change.offset, change0, change :: changes )
+
+                        else
+                            ( currentOffset, change0, changes )
+                    )
+                    ( previousOffset
+                    , { start = rulesStart - previousOffset
+                      , offset = standardOffset
+                      }
+                    , []
+                    )
     in
-    transitions
-        |> List.foldl
-            (\transition ( currentOffset, changes ) ->
-                let
-                    utcAdjustment =
-                        case transition.clock of
-                            Universal ->
-                                0
-
-                            Standard ->
-                                0 - standardOffset
-
-                            WallClock ->
-                                0 - currentOffset
-
-                    change =
-                        { start = transition.start + utcAdjustment
-                        , offset = standardOffset + transition.save
-                        }
-                in
-                ( standardOffset + transition.save
-                , if minutesFromDateTime start <= transition.start && transition.start < minutesFromDateTime until then
-                    change :: changes
-
-                  else
-                    changes
-                )
-            )
-            ( standardOffset, [] )
-        |> Tuple.second
-        |> List.reverse
+    ( initialChange :: List.reverse descendingChanges, nextOffset )
 
 
 

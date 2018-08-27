@@ -19,6 +19,7 @@ git -C tz -c advice.detachedHead=false checkout $version
 
 output="src/TimeZone/Data.elm"
 
+echo "Creating file $output for version $version"
 ./build.py tz $version $output
 elm-format --yes $output
 
