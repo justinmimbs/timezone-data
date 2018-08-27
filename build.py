@@ -227,7 +227,7 @@ def minutes_from_time(hhmm):
     hm = hhmm.split(":")
     h = int(hm[0])
     m = int(hm[1][0:2]) if len(hm) > 1 else 0
-    return h * 60 + m
+    return h * 60 + (m if h >= 0 else -m)
 
 
 # TRANSFORM
