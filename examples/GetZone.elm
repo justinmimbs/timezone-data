@@ -60,7 +60,7 @@ update (ReceiveTimeZone result) _ =
 view : Model -> Browser.Document Msg
 view model =
     Browser.Document
-        "Examples"
+        "TimeZone.getZone"
         (case model of
             Loading ->
                 [ Html.pre [] [ Html.text "Loading..." ] ]

@@ -1,4 +1,11 @@
-module TimeZone exposing (Error(..), getZone, unpack)
+module TimeZone
+    exposing
+        ( Error(..)
+        , getZone
+        , unpack
+          -- expose for testing
+        , unpackOffsets
+        )
 
 import Dict
 import RataDie exposing (RataDie)
