@@ -54,6 +54,7 @@ type alias DateTime =
     , month : Month
     , day : Int
     , time : Minutes
+    , clock : Clock
     }
 
 

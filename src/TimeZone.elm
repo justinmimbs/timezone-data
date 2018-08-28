@@ -52,6 +52,12 @@ unpack pack =
     Time.customZone initial changes
 
 
+type alias Offset =
+    { standard : Int
+    , save : Int
+    }
+
+
 unpackOffsets : Pack -> { changes : List { start : Int, offset : Int }, initial : Int }
 unpackOffsets (Packed zone) =
     let
@@ -64,20 +70,22 @@ unpackOffsets (Packed zone) =
                     zone.current
 
         initialOffset =
-            initialState.standardOffset
-                + (case initialState.zoneRules of
+            { standard =
+                initialState.standardOffset
+            , save =
+                case initialState.zoneRules of
                     Save save ->
                         save
 
                     _ ->
                         0
-                  )
+            }
 
         offsetChanges =
             zone
                 |> zoneToRanges
-                    (DateTime TimeZone.Data.minYear Jan 1 0)
-                    (DateTime TimeZone.Data.maxYear Dec 31 0)
+                    (DateTime TimeZone.Data.minYear Jan 1 0 Universal)
+                    (DateTime TimeZone.Data.maxYear Dec 31 0 Universal)
                 |> List.foldl
                     (\( start, state, until ) ( prevOffset, prevChanges ) ->
                         let
@@ -88,11 +96,11 @@ unpackOffsets (Packed zone) =
                     )
                     ( initialOffset, [] )
                 |> Tuple.second
-                |> stripDuplicatesByHelp .offset initialOffset []
+                |> stripDuplicatesByHelp .offset (initialOffset.standard + initialOffset.save) []
                 |> List.reverse
     in
     { changes = offsetChanges
-    , initial = initialOffset
+    , initial = initialOffset.standard + initialOffset.save
     }
 
 
@@ -112,22 +120,22 @@ zoneToRanges zoneStart zoneUntil zone =
     ( currentStart, zone.current, zoneUntil ) :: historyRanges |> List.reverse
 
 
-stateToOffsetChanges : Int -> DateTime -> DateTime -> ZoneState -> ( List { start : Int, offset : Int }, Int )
+stateToOffsetChanges : Offset -> DateTime -> DateTime -> ZoneState -> ( List { start : Int, offset : Int }, Offset )
 stateToOffsetChanges previousOffset start until { standardOffset, zoneRules } =
     case zoneRules of
         Save save ->
-            ( [ { start = minutesFromDateTime start - previousOffset
+            ( [ { start = utcMinutesFromDateTime previousOffset start
                 , offset = standardOffset + save
                 }
               ]
-            , standardOffset + save
+            , { standard = standardOffset, save = save }
             )
 
         Rules rules ->
             rulesToOffsetChanges previousOffset start until standardOffset rules
 
 
-rulesToOffsetChanges : Int -> DateTime -> DateTime -> Minutes -> List Rule -> ( List { start : Int, offset : Int }, Int )
+rulesToOffsetChanges : Offset -> DateTime -> DateTime -> Minutes -> List Rule -> ( List { start : Int, offset : Int }, Offset )
 rulesToOffsetChanges previousOffset start until standardOffset rules =
     let
         rulesStart =
@@ -137,7 +145,7 @@ rulesToOffsetChanges previousOffset start until standardOffset rules =
             minutesFromDateTime until
 
         years =
-            List.range start.year until.year
+            List.range (start.year - 1) until.year
 
         transitions : List { start : Int, clock : Clock, save : Minutes }
         transitions =
@@ -175,48 +183,72 @@ rulesToOffsetChanges previousOffset start until standardOffset rules =
                             |> List.sortBy .start
                     )
 
-        ( nextOffset, initialChange, descendingChanges ) =
+        ( nextOffset, descendingChanges ) =
             transitions
                 |> List.foldl
-                    (\transition ( currentOffset, change0, changes ) ->
+                    (\transition ( currentOffset, changes ) ->
                         let
-                            utcAdjustment =
-                                case transition.clock of
-                                    Universal ->
-                                        0
-
-                                    Standard ->
-                                        0 - standardOffset
-
-                                    WallClock ->
-                                        0 - currentOffset
-
-                            change =
-                                { start = transition.start + utcAdjustment
-                                , offset = standardOffset + transition.save
-                                }
+                            newOffset =
+                                { standard = standardOffset, save = transition.save }
                         in
                         if transition.start <= rulesStart then
-                            ( change.offset, { change0 | offset = change.offset }, changes )
+                            let
+                                initialChange =
+                                    { start = utcMinutesFromDateTime previousOffset start
+                                    , offset = standardOffset + transition.save
+                                    }
+                            in
+                            ( newOffset, [ initialChange ] )
 
                         else if transition.start < rulesUntil then
-                            ( change.offset, change0, change :: changes )
+                            let
+                                change =
+                                    { start = transition.start + utcAdjustment transition.clock currentOffset
+                                    , offset = standardOffset + transition.save
+                                    }
+                            in
+                            if List.isEmpty changes then
+                                let
+                                    initialChange =
+                                        { start = utcMinutesFromDateTime previousOffset start
+                                        , offset = standardOffset
+                                        }
+                                in
+                                ( newOffset, [ change, initialChange ] )
+
+                            else
+                                ( newOffset, change :: changes )
 
                         else
-                            ( currentOffset, change0, changes )
+                            ( currentOffset, changes )
                     )
-                    ( previousOffset
-                    , { start = rulesStart - previousOffset
-                      , offset = standardOffset
-                      }
+                    ( { standard = standardOffset, save = 0 }
                     , []
                     )
     in
-    ( initialChange :: List.reverse descendingChanges, nextOffset )
+    ( List.reverse descendingChanges, nextOffset )
 
 
 
 -- time helpers
+
+
+utcAdjustment : Clock -> Offset -> Int
+utcAdjustment clock { standard, save } =
+    case clock of
+        Universal ->
+            0
+
+        Standard ->
+            0 - standard
+
+        WallClock ->
+            0 - (standard + save)
+
+
+utcMinutesFromDateTime : Offset -> DateTime -> Int
+utcMinutesFromDateTime offset datetime =
+    minutesFromDateTime datetime + utcAdjustment datetime.clock offset
 
 
 minutesFromDateTime : DateTime -> Int

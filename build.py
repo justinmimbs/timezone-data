@@ -171,7 +171,8 @@ def make_datetime(fields):
         "year": int(fields[0]),
         "month": fields[1] if len(fields) > 1 else "Jan",
         "day": to_concreteday(*fields[0:3]) if len(fields) > 2 else 1,
-        "time": minutes_from_time(fields[3]) if len(fields) > 3 else 0
+        "time": minutes_from_time(fields[3]) if len(fields) > 3 else 0,
+        "clock": clock_from_char(fields[3][-1:] if len(fields) > 3 else "")
     }
 
 
@@ -221,13 +222,13 @@ def ceilingweekday(date_, weekday):
 # Rule SAVE   =    h[:mm]
 # Zone GMTOFF = [-]h:mm[:ss]
 # Zone RULES  =    h:mm
-# Zone UNTIL  =    h:mm[:ss]
+# Zone UNTIL  =    h:mm[:ss][c]
 
 def minutes_from_time(hhmmss):
     hms = hhmmss.split(":")
     sign, h = ( 1, int(hms[0]) ) if hms[0][0:1] != "-" else ( -1, int(hms[0][1:]) )
     m = int(hms[1][0:2]) if len(hms) > 1 else 0
-    s = float(hms[2]) if len(hms) > 2 else 0
+    s = float(hms[2][0:2]) if len(hms) > 2 else 0
     return sign * (h * 60 + m + int(round(s / 60.0)))
 
 
@@ -397,7 +398,7 @@ template_zonestateuntil = "( {state}, {until} )"
 
 template_zonestate = "ZoneState {offset} ({zonerules})"
 
-template_datetime = "DateTime {year} {month} {day} {time}"
+template_datetime = "DateTime {year} {month} {day} {time} {clock}"
 
 template_zonenameid_pairs = """
 packs : Dict String Pack
