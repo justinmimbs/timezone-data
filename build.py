@@ -223,11 +223,12 @@ def ceilingweekday(date_, weekday):
 # Zone RULES  =    h:mm
 # Zone UNTIL  =    h:mm[:ss]
 
-def minutes_from_time(hhmm):
-    hm = hhmm.split(":")
-    h = int(hm[0])
-    m = int(hm[1][0:2]) if len(hm) > 1 else 0
-    return h * 60 + (m if h >= 0 else -m)
+def minutes_from_time(hhmmss):
+    hms = hhmmss.split(":")
+    sign, h = ( 1, int(hms[0]) ) if hms[0][0:1] != "-" else ( -1, int(hms[0][1:]) )
+    m = int(hms[1][0:2]) if len(hms) > 1 else 0
+    s = float(hms[2]) if len(hms) > 2 else 0
+    return sign * (h * 60 + m + int(round(s / 60.0)))
 
 
 # TRANSFORM
