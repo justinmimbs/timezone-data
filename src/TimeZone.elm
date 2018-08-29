@@ -160,18 +160,9 @@ stateToOffsetChanges previousOffset start until { standardOffset, zoneRules } =
 rulesToOffsetChanges : Offset -> DateTime -> DateTime -> Minutes -> List Rule -> ( List Change, Offset )
 rulesToOffsetChanges previousOffset start until standardOffset rules =
     let
-        rulesStart =
-            minutesFromDateTime start
-
-        rulesUntil =
-            minutesFromDateTime until
-
-        years =
-            List.range (start.year - 1) until.year
-
         transitions : List { start : Int, clock : Clock, save : Minutes }
         transitions =
-            years
+            List.range (start.year - 1) until.year
                 |> List.concatMap
                     (\year ->
                         rules
@@ -221,16 +212,16 @@ rulesToOffsetChanges previousOffset start until standardOffset rules =
                             newOffset =
                                 { standard = standardOffset, save = transition.save }
                         in
-                        if transition.start <= rulesStart then
+                        if transition.start + utcAdjustment transition.clock previousOffset <= initialChange.start then
                             let
                                 updatedInitialChange =
-                                    { start = utcMinutesFromDateTime previousOffset start
+                                    { start = initialChange.start
                                     , offset = standardOffset + transition.save
                                     }
                             in
                             ( newOffset, [ updatedInitialChange ] )
 
-                        else if transition.start < rulesUntil then
+                        else if transition.start + utcAdjustment transition.clock currentOffset < utcMinutesFromDateTime currentOffset until then
                             let
                                 change =
                                     { start = transition.start + utcAdjustment transition.clock currentOffset
