@@ -62,7 +62,7 @@ def parse_sourcefile(filepath):
         if parsing_zonename is not None:
             if line[0:3] == "\t\t\t":
                 state, until = make_zonestateuntil(fields[1:])
-                if until is None or MIN_YEAR < until["year"]:
+                if zonestate_in_range(until):
                     insert_zonestateuntil(parsing_zonename, state, until, zones)
                 continue
 
@@ -72,16 +72,20 @@ def parse_sourcefile(filepath):
         if fields[0] == "Rule":
             rulesetname = fields[1]
             rule = make_rule(fields[2:])
-            if rule["from"] <= MAX_YEAR and (rule["to"] == "maxYear" or MIN_YEAR <= int(rule["to"])):
+            if rule["from"] <= MAX_YEAR and (rule["to"] == "maxYear" or (MIN_YEAR - 1) <= int(rule["to"])):
                 insert_rule(rulesetname, rule, rulesets)
 
         elif fields[0] == "Zone":
             parsing_zonename = fields[1]
             state, until = make_zonestateuntil(fields[2:])
-            if until is None or MIN_YEAR < until["year"]:
+            if zonestate_in_range(until):
                 insert_zonestateuntil(parsing_zonename, state, until, zones)
 
     return ( rulesets, zones )
+
+
+def zonestate_in_range(until):
+    return until is None or MIN_YEAR < until["year"] or ( MIN_YEAR, "Jan", 1 ) == ( until["year"], until["month"], until["day"] )
 
 
 # rulesets
