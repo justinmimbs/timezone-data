@@ -52,13 +52,19 @@ unpack pack =
     Time.customZone initial changes
 
 
-type alias Offset =
-    { standard : Int
-    , save : Int
+type alias Change =
+    { start : Int
+    , offset : Minutes
     }
 
 
-unpackOffsets : Pack -> { changes : List { start : Int, offset : Int }, initial : Int }
+type alias Offset =
+    { standard : Minutes
+    , save : Minutes
+    }
+
+
+unpackOffsets : Pack -> { changes : List Change, initial : Int }
 unpackOffsets (Packed zone) =
     let
         initialState =
@@ -81,11 +87,11 @@ unpackOffsets (Packed zone) =
                         0
             }
 
-        offsetChanges =
+        ascendingChanges =
             zone
                 |> zoneToRanges
                     (DateTime TimeZone.Data.minYear Jan 1 0 Universal)
-                    (DateTime TimeZone.Data.maxYear Dec 31 0 Universal)
+                    (DateTime (TimeZone.Data.maxYear + 1) Jan 1 0 Universal)
                 |> List.foldl
                     (\( start, state, until ) ( prevOffset, prevChanges ) ->
                         let
@@ -97,11 +103,27 @@ unpackOffsets (Packed zone) =
                     ( initialOffset, [] )
                 |> Tuple.second
                 |> stripDuplicatesByHelp .offset (initialOffset.standard + initialOffset.save) []
-                |> List.reverse
+
+        ( initial, changes ) =
+            dropChangesBeforeEpoch ( initialOffset.standard + initialOffset.save, ascendingChanges )
     in
-    { changes = offsetChanges
-    , initial = initialOffset.standard + initialOffset.save
+    { changes = List.reverse changes
+    , initial = initial
     }
+
+
+dropChangesBeforeEpoch : ( Minutes, List Change ) -> ( Minutes, List Change )
+dropChangesBeforeEpoch ( initial, changes ) =
+    case changes of
+        change :: rest ->
+            if change.start <= 0 then
+                dropChangesBeforeEpoch ( change.offset, rest )
+
+            else
+                ( initial, changes )
+
+        [] ->
+            ( initial, [] )
 
 
 zoneToRanges : DateTime -> DateTime -> Zone -> List ( DateTime, ZoneState, DateTime )
@@ -120,7 +142,7 @@ zoneToRanges zoneStart zoneUntil zone =
     ( currentStart, zone.current, zoneUntil ) :: historyRanges |> List.reverse
 
 
-stateToOffsetChanges : Offset -> DateTime -> DateTime -> ZoneState -> ( List { start : Int, offset : Int }, Offset )
+stateToOffsetChanges : Offset -> DateTime -> DateTime -> ZoneState -> ( List Change, Offset )
 stateToOffsetChanges previousOffset start until { standardOffset, zoneRules } =
     case zoneRules of
         Save save ->
@@ -135,7 +157,7 @@ stateToOffsetChanges previousOffset start until { standardOffset, zoneRules } =
             rulesToOffsetChanges previousOffset start until standardOffset rules
 
 
-rulesToOffsetChanges : Offset -> DateTime -> DateTime -> Minutes -> List Rule -> ( List { start : Int, offset : Int }, Offset )
+rulesToOffsetChanges : Offset -> DateTime -> DateTime -> Minutes -> List Rule -> ( List Change, Offset )
 rulesToOffsetChanges previousOffset start until standardOffset rules =
     let
         rulesStart =
@@ -183,6 +205,14 @@ rulesToOffsetChanges previousOffset start until standardOffset rules =
                             |> List.sortBy .start
                     )
 
+        initialOffset =
+            { standard = standardOffset, save = 0 }
+
+        initialChange =
+            { start = utcMinutesFromDateTime previousOffset start
+            , offset = standardOffset
+            }
+
         ( nextOffset, descendingChanges ) =
             transitions
                 |> List.foldl
@@ -193,12 +223,12 @@ rulesToOffsetChanges previousOffset start until standardOffset rules =
                         in
                         if transition.start <= rulesStart then
                             let
-                                initialChange =
+                                updatedInitialChange =
                                     { start = utcMinutesFromDateTime previousOffset start
                                     , offset = standardOffset + transition.save
                                     }
                             in
-                            ( newOffset, [ initialChange ] )
+                            ( newOffset, [ updatedInitialChange ] )
 
                         else if transition.start < rulesUntil then
                             let
@@ -207,24 +237,12 @@ rulesToOffsetChanges previousOffset start until standardOffset rules =
                                     , offset = standardOffset + transition.save
                                     }
                             in
-                            if List.isEmpty changes then
-                                let
-                                    initialChange =
-                                        { start = utcMinutesFromDateTime previousOffset start
-                                        , offset = standardOffset
-                                        }
-                                in
-                                ( newOffset, [ change, initialChange ] )
-
-                            else
-                                ( newOffset, change :: changes )
+                            ( newOffset, change :: changes )
 
                         else
                             ( currentOffset, changes )
                     )
-                    ( { standard = standardOffset, save = 0 }
-                    , []
-                    )
+                    ( initialOffset, [ initialChange ] )
     in
     ( List.reverse descendingChanges, nextOffset )
 
