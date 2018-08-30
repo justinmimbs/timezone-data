@@ -2,7 +2,7 @@
 
 This Elm package contains time zone data from the [IANA Time Zone Database][tzdb] for using with `elm/time`.
 
-The `elm/time` library provides a `Posix` type for representing a date and time. To extract human-readable parts from a `Posix` time requires a `Time.Zone`. This library provides such `Time.Zone` data.
+The `elm/time` library provides a `Posix` type for representing an instant in time. To extract human-readable parts from a `Posix` time requires a `Time.Zone`. This library provides such `Time.Zone` data.
 
 
 ## Examples
