@@ -50,6 +50,7 @@ def parse_zonetable(filepath):
 def parse_sourcefile(filepath):
     rulesets = {}
     zones = {}
+    links = {}
     parsing_zonename = None
 
     for line in open(filepath).readlines():
@@ -81,7 +82,10 @@ def parse_sourcefile(filepath):
             if zonestate_in_range(until):
                 insert_zonestateuntil(parsing_zonename, state, until, zones)
 
-    return ( rulesets, zones )
+        elif fields[0] == "Link":
+            links[fields[2]] = fields[1]
+
+    return ( rulesets, zones, links )
 
 
 def zonestate_in_range(until):
@@ -238,9 +242,12 @@ def minutes_from_time(hhmmss):
 
 # TRANSFORM
 
-def transform(zonenames, ( rulesets, zones )):
+def transform(zonenames, ( rulesets, zones, links )):
     # update zones: remove zones without a current state, remove zones not in zonenames
     zones = { name: zone for name, zone in zones.iteritems() if zone["current"] is not None and name in zonenames }
+
+    # update links: remove links to zones not in zonenames
+    links = { source: target for source, target in links.iteritems() if target in zonenames }
 
     # update rulesets: add missing rulesets, remove unused rulesets
     rulesetnames = set()
@@ -259,7 +266,7 @@ def transform(zonenames, ( rulesets, zones )):
 
     rulesets = { name: rules for name, rules in rulesets.iteritems() if rules }
 
-    return ( rulesets, zones )
+    return ( rulesets, zones, links )
 
 
 def remove_referenced_rulsetnames(rulsetnames, state):
@@ -273,8 +280,8 @@ def rulesetname_from_zonerules(zonerules):
 
 # PRINT
 
-def print_filecontent(version, rulesets, zones):
-    zonenameid_pairs = [ ( name, zoneid_from_name(name) ) for name in sorted(zones.iterkeys()) ]
+def print_filecontent(version, rulesets, zones, links):
+    zonenameid_pairs = [ ( name, zoneid_from_name(name) ) for name in sorted(zones.keys() + links.keys()) ]
     zoneids = ", ".join([ zoneid for _, zoneid in zonenameid_pairs ])
 
     output = [
@@ -294,6 +301,11 @@ def print_filecontent(version, rulesets, zones):
     output.append("-- Zones")
     for name in sorted(zones.keys()):
         output.append(print_zone(name, zones[name]))
+
+    # links
+    output.append("-- Links")
+    for source, target in sorted(links.iteritems()):
+        output.append(template_link.format(source=zoneid_from_name(source), target=zoneid_from_name(target)))
 
     # zonenameid_pairs
     output.append("-- Zones by name")
@@ -404,6 +416,12 @@ template_zonestate = "ZoneState {offset} ({zonerules})"
 
 template_datetime = "DateTime {year} {month} {day} {time} {clock}"
 
+template_link = """
+{source} : Pack
+{source} =
+    {target}
+"""
+
 template_zonenameid_pairs = """
 packs : Dict String Pack
 packs =
@@ -440,18 +458,20 @@ def main():
     # parse, transform, print
     rulesets = {}
     zones = {}
+    links = {}
 
     for filename in PRIMARY_DATA:
-        rulesets_, zones_ = transform(zonenames, parse_sourcefile(os.path.join(sourcedir, filename)))
+        rulesets_, zones_, links_ = transform(zonenames, parse_sourcefile(os.path.join(sourcedir, filename)))
         rulesets.update(rulesets_)
         zones.update(zones_)
+        links.update(links_)
 
     missingzones = zonenames - set(zones.keys())
     if missingzones:
         print "error: zones not found: " + ", ".join(missingzones)
         sys.exit(1)
 
-    filecontent = print_filecontent(args.version, rulesets, zones)
+    filecontent = print_filecontent(args.version, rulesets, zones, links)
 
     # write file
     filepath = os.path.abspath(args.output)
