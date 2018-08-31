@@ -1,8 +1,15 @@
 # timezone-data
 
-This Elm package contains time zone data from the [IANA Time Zone Database][tzdb] for using with `elm/time`.
+This Elm package contains time zone data from the [IANA Time Zone Database][tzdb] for using with [`elm/time`][elmtime].
 
-The [`elm/time`][elmtime] library provides a `Posix` type for representing an instant in time. Extracting human-readable parts from a `Posix` time requires a `Time.Zone`. This library provides such `Time.Zone` data.
+The `elm/time` library provides a `Posix` type for representing an instant in time. Extracting human-readable parts from a `Posix` time requires a `Time.Zone`. This library provides such `Time.Zone` data.
+
+
+## Installation
+
+```sh
+elm install justinmimbs/timezone-data
+```
 
 
 ## Examples
@@ -78,6 +85,6 @@ Using this library to include all time zones in your compiled asset should incre
 
 [tzdb]: https://www.iana.org/time-zones
 [elmtime]: https://package.elm-lang.org/packages/elm/time/latest/
+[getzone]: https://github.com/justinmimbs/timezone-data/blob/master/examples/GetZone.elm
 [timezone-json]: https://github.com/justinmimbs/timezone-json
 [time-elements]: https://github.com/github/time-elements
-[getzone]: https://github.com/justinmimbs/timezone-data/blob/master/examples/GetZone.elm
