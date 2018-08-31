@@ -285,11 +285,7 @@ def print_filecontent(version, rulesets, zones, links):
     zoneids = ", ".join([ zoneid for _, zoneid in zonenameid_pairs ])
 
     output = [
-        template_header.format(zoneids=zoneids),
-        "-- Version",
-        template_version.format(version=version),
-        "-- Bounds",
-        template_bounds.format(min=MIN_YEAR, max=MAX_YEAR),
+        template_header.format(zoneids=zoneids, version=version, min=MIN_YEAR, max=MAX_YEAR)
     ]
 
     # rulesets
@@ -367,25 +363,57 @@ def zoneid_from_name(name):
 
 template_header = """module TimeZone.Data exposing (Pack, version, minYear, maxYear, packs, {zoneids})
 
+{{-| This module contains data from the `{version}` release of the IANA Time
+Zone Database.
+
+@docs Pack, packs
+
+## Zones
+
+Data for each zone is contained in a `Pack` named after its zone name (e.g.
+_America/New_York_), where slashes are replaced by `__`, dashes are replaced
+by `_`, and the name is lowercased. For example, _America/Port-au-Prince_
+becomes `america__port_au_prince`.
+
+@docs {zoneids}
+
+## Metadata
+
+@docs version, minYear, maxYear
+
+-}}
+
 import Dict exposing (Dict)
 import Time exposing (Month(..), Weekday(..))
 import TimeZone.Types exposing (..)
 
+
+{{-| Represents information required to create a `Time.Zone`. A `Pack` must be
+converted to a `Time.Zone` with the `TimeZone.unpack` function.
+-}}
 type alias Pack =
     TimeZone.Types.Pack
-"""
 
-template_version = """
+
+-- Version
+
+{{-| What version of the IANA Time Zone Database is this data from?
+-}}
 version : String
 version =
     "{version}"
-"""
 
-template_bounds = """
+
+-- Bounds
+
+{{-| How far back does this data go?
+-}}
 minYear : Year
 minYear =
     {min}
 
+{{-| How far forward does it go?
+-}}
 maxYear : Year
 maxYear =
     {max}
@@ -401,6 +429,7 @@ template_ruleset = """
 template_rule = "Rule {from} {to} {month} ({dayofmonth}) {time} {clock} {save}"
 
 template_zone = """
+{{-| -}}
 {name} : Pack
 {name} =
     Packed <|
@@ -417,12 +446,23 @@ template_zonestate = "ZoneState {offset} ({zonerules})"
 template_datetime = "DateTime {year} {month} {day} {time} {clock}"
 
 template_link = """
+{{-| -}}
 {source} : Pack
 {source} =
     {target}
 """
 
 template_zonenameid_pairs = """
+{{-| You can look up a `Pack` by its zone name in the `packs` dictionary.
+
+    import Dict
+    import TimeZone.Data exposing (packs, america__new_york)
+
+    Dict.get "America/New_York" packs
+
+    -- Just america__new_york
+
+-}}
 packs : Dict String Pack
 packs =
     [ {pairs}

@@ -4,8 +4,16 @@ module TimeZone
         , getZone
         , unpack
           -- expose for testing
-        , unpackOffsets
+          --, unpackOffsets
         )
+
+{-|
+
+@docs unpack
+
+@docs getZone, Error
+
+-}
 
 import Dict
 import RataDie exposing (RataDie)
@@ -15,11 +23,16 @@ import TimeZone.Data
 import TimeZone.Types exposing (..)
 
 
+{-| Represents an error that may occur when trying to get the local zone.
+-}
 type Error
     = NoZoneName
     | NoDataForZoneName String
 
 
+{-| Try to get the local time zone. If the task succeeds, then you get the zone
+name along with the `Time.Zone`.
+-}
 getZone : Task Error ( String, Time.Zone )
 getZone =
     Time.getZoneName
@@ -43,6 +56,17 @@ getZone =
 -- unpack TimeZone.Data
 
 
+{-| Convert a `TimeZone.Data.Pack` to a `Time.Zone`.
+
+    import Time
+    import TimeZone exposing (unpack)
+    import TimeZone.Data
+
+    zone : Time.Zone
+    zone =
+        unpack TimeZone.Data.america__new_york
+
+-}
 unpack : TimeZone.Data.Pack -> Time.Zone
 unpack pack =
     let
