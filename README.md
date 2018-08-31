@@ -66,5 +66,12 @@ update (ReceiveTimeZone result) _ =
 ```
 
 
+## Alternatives
+
+Using this library to include all time zones in your compiled asset should increase its minified and gzipped size by about 18 KB. For a more lightweight approach to getting time zones into Elm, you may consider [fetching only the data you need at runtime][timezone-json]. And if your use case is taking UTC timestamps and displaying them nicely formatted in the client's local time, then you may look into using custom elements, like Github's [`time-elements`][time-elements].
+
+
 [tzdb]: https://www.iana.org/time-zones
 [elmtime]: https://package.elm-lang.org/packages/elm/time/latest/
+[timezone-json]: https://github.com/justinmimbs/timezone-json
+[time-elements]: https://github.com/github/time-elements
