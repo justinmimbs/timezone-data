@@ -23,7 +23,7 @@ main =
 type Model
     = Loading
     | Failure TimeZone.Error
-    | Success ( String, Time.Zone )
+    | Success String Time.Zone
 
 
 type Msg
@@ -44,8 +44,8 @@ init =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update (ReceiveTimeZone result) _ =
     ( case result of
-        Ok data ->
-            Success data
+        Ok ( zoneName, zone ) ->
+            Success zoneName zone
 
         Err error ->
             Failure error
@@ -68,7 +68,7 @@ view model =
             Failure error ->
                 [ Html.pre [ Html.Attributes.style "color" "red" ] [ Html.text (error |> timezoneErrorToString) ] ]
 
-            Success ( zoneName, zone ) ->
+            Success zoneName zone ->
                 [ Html.pre
                     []
                     [ [ "Examples of Posix times displayed in UTC and your local time:"

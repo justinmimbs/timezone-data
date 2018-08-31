@@ -26,10 +26,13 @@ Each `Pack` in the `TimeZone.Data` module is named after its zone name (e.g. _Am
 You can look up a `Pack` by its zone name in the `TimeZone.Data.packs` dictionary.
 
 ```elm
-Dict.get "America/New_York" TimeZone.Data.packs
-    == Just TimeZone.Data.america__new_york
-```
+import Dict
+import TimeZone.Data
 
+Dict.get "America/New_York" TimeZone.Data.packs
+
+-- Just TimeZone.Data.america__new_york
+```
 
 ### Get the local time zone
 
@@ -39,7 +42,7 @@ The `elm/time` library provides a task for getting the local zone name, `Time.ge
 type Model
     = Loading
     | Failure TimeZone.Error
-    | Success Time.Zone
+    | Success String Time.Zone
 
 
 type Msg
@@ -57,13 +60,15 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update (ReceiveTimeZone result) _ =
     ( case result of
         Ok ( zoneName, zone ) ->
-            Success zone
+            Success zoneName zone
 
         Err error ->
             Failure error
     , Cmd.none
     )
 ```
+
+See [this page][getzone] for a full example.
 
 
 ## Alternatives
@@ -75,3 +80,4 @@ Using this library to include all time zones in your compiled asset should incre
 [elmtime]: https://package.elm-lang.org/packages/elm/time/latest/
 [timezone-json]: https://github.com/justinmimbs/timezone-json
 [time-elements]: https://github.com/github/time-elements
+[getzone]: https://github.com/justinmimbs/timezone-data/blob/master/examples/GetZone.elm
