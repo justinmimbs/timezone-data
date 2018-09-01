@@ -9,8 +9,8 @@ Zone Database.
 ## Zones
 
 Data for each zone is contained in a `Pack` named after its zone name (e.g.
-_America/New_York_), where slashes are replaced by `__`, dashes are replaced
-by `_`, and the name is lowercased. For example, _America/Port-au-Prince_
+`America/New_York`), where slashes are replaced by `__`, dashes are replaced
+by `_`, and the name is lowercased. For example, `America/Port-au-Prince`
 becomes `america__port_au_prince`.
 
 @docs africa__abidjan, africa__accra, africa__addis_ababa, africa__algiers, africa__asmara, africa__bamako, africa__bangui, africa__banjul, africa__bissau, africa__blantyre, africa__brazzaville, africa__bujumbura, africa__cairo, africa__casablanca, africa__ceuta, africa__conakry, africa__dakar, africa__dar_es_salaam, africa__djibouti, africa__douala, africa__el_aaiun, africa__freetown, africa__gaborone, africa__harare, africa__johannesburg, africa__juba, africa__kampala, africa__khartoum, africa__kigali, africa__kinshasa, africa__lagos, africa__libreville, africa__lome, africa__luanda, africa__lubumbashi, africa__lusaka, africa__malabo, africa__maputo, africa__maseru, africa__mbabane, africa__mogadishu, africa__monrovia, africa__nairobi, africa__ndjamena, africa__niamey, africa__nouakchott, africa__ouagadougou, africa__porto_novo, africa__sao_tome, africa__tripoli, africa__tunis, africa__windhoek, america__adak, america__anchorage, america__anguilla, america__antigua, america__araguaina, america__argentina__buenos_aires, america__argentina__catamarca, america__argentina__cordoba, america__argentina__jujuy, america__argentina__la_rioja, america__argentina__mendoza, america__argentina__rio_gallegos, america__argentina__salta, america__argentina__san_juan, america__argentina__san_luis, america__argentina__tucuman, america__argentina__ushuaia, america__aruba, america__asuncion, america__atikokan, america__bahia, america__bahia_banderas, america__barbados, america__belem, america__belize, america__blanc_sablon, america__boa_vista, america__bogota, america__boise, america__cambridge_bay, america__campo_grande, america__cancun, america__caracas, america__cayenne, america__cayman, america__chicago, america__chihuahua, america__costa_rica, america__creston, america__cuiaba, america__curacao, america__danmarkshavn, america__dawson, america__dawson_creek, america__denver, america__detroit, america__dominica, america__edmonton, america__eirunepe, america__el_salvador, america__fort_nelson, america__fortaleza, america__glace_bay, america__godthab, america__goose_bay, america__grand_turk, america__grenada, america__guadeloupe, america__guatemala, america__guayaquil, america__guyana, america__halifax, america__havana, america__hermosillo, america__indiana__indianapolis, america__indiana__knox, america__indiana__marengo, america__indiana__petersburg, america__indiana__tell_city, america__indiana__vevay, america__indiana__vincennes, america__indiana__winamac, america__inuvik, america__iqaluit, america__jamaica, america__juneau, america__kentucky__louisville, america__kentucky__monticello, america__kralendijk, america__la_paz, america__lima, america__los_angeles, america__lower_princes, america__maceio, america__managua, america__manaus, america__marigot, america__martinique, america__matamoros, america__mazatlan, america__menominee, america__merida, america__metlakatla, america__mexico_city, america__miquelon, america__moncton, america__monterrey, america__montevideo, america__montserrat, america__nassau, america__new_york, america__nipigon, america__nome, america__noronha, america__north_dakota__beulah, america__north_dakota__center, america__north_dakota__new_salem, america__ojinaga, america__panama, america__pangnirtung, america__paramaribo, america__phoenix, america__port_au_prince, america__port_of_spain, america__porto_velho, america__puerto_rico, america__punta_arenas, america__rainy_river, america__rankin_inlet, america__recife, america__regina, america__resolute, america__rio_branco, america__santarem, america__santiago, america__santo_domingo, america__sao_paulo, america__scoresbysund, america__sitka, america__st_barthelemy, america__st_johns, america__st_kitts, america__st_lucia, america__st_thomas, america__st_vincent, america__swift_current, america__tegucigalpa, america__thule, america__thunder_bay, america__tijuana, america__toronto, america__tortola, america__vancouver, america__whitehorse, america__winnipeg, america__yakutat, america__yellowknife, antarctica__casey, antarctica__davis, antarctica__dumontdurville, antarctica__macquarie, antarctica__mawson, antarctica__mcmurdo, antarctica__palmer, antarctica__rothera, antarctica__syowa, antarctica__troll, antarctica__vostok, arctic__longyearbyen, asia__aden, asia__almaty, asia__amman, asia__anadyr, asia__aqtau, asia__aqtobe, asia__ashgabat, asia__atyrau, asia__baghdad, asia__bahrain, asia__baku, asia__bangkok, asia__barnaul, asia__beirut, asia__bishkek, asia__brunei, asia__chita, asia__choibalsan, asia__colombo, asia__damascus, asia__dhaka, asia__dili, asia__dubai, asia__dushanbe, asia__famagusta, asia__gaza, asia__hebron, asia__ho_chi_minh, asia__hong_kong, asia__hovd, asia__irkutsk, asia__istanbul, asia__jakarta, asia__jayapura, asia__jerusalem, asia__kabul, asia__kamchatka, asia__karachi, asia__kathmandu, asia__khandyga, asia__kolkata, asia__krasnoyarsk, asia__kuala_lumpur, asia__kuching, asia__kuwait, asia__macau, asia__magadan, asia__makassar, asia__manila, asia__muscat, asia__nicosia, asia__novokuznetsk, asia__novosibirsk, asia__omsk, asia__oral, asia__phnom_penh, asia__pontianak, asia__pyongyang, asia__qatar, asia__qyzylorda, asia__riyadh, asia__sakhalin, asia__samarkand, asia__seoul, asia__shanghai, asia__singapore, asia__srednekolymsk, asia__taipei, asia__tashkent, asia__tbilisi, asia__tehran, asia__thimphu, asia__tokyo, asia__tomsk, asia__ulaanbaatar, asia__urumqi, asia__ust_nera, asia__vientiane, asia__vladivostok, asia__yakutsk, asia__yangon, asia__yekaterinburg, asia__yerevan, atlantic__azores, atlantic__bermuda, atlantic__canary, atlantic__cape_verde, atlantic__faroe, atlantic__madeira, atlantic__reykjavik, atlantic__south_georgia, atlantic__st_helena, atlantic__stanley, australia__adelaide, australia__brisbane, australia__broken_hill, australia__currie, australia__darwin, australia__eucla, australia__hobart, australia__lindeman, australia__lord_howe, australia__melbourne, australia__perth, australia__sydney, europe__amsterdam, europe__andorra, europe__astrakhan, europe__athens, europe__belgrade, europe__berlin, europe__bratislava, europe__brussels, europe__bucharest, europe__budapest, europe__busingen, europe__chisinau, europe__copenhagen, europe__dublin, europe__gibraltar, europe__guernsey, europe__helsinki, europe__isle_of_man, europe__istanbul, europe__jersey, europe__kaliningrad, europe__kiev, europe__kirov, europe__lisbon, europe__ljubljana, europe__london, europe__luxembourg, europe__madrid, europe__malta, europe__mariehamn, europe__minsk, europe__monaco, europe__moscow, europe__nicosia, europe__oslo, europe__paris, europe__podgorica, europe__prague, europe__riga, europe__rome, europe__samara, europe__san_marino, europe__sarajevo, europe__saratov, europe__simferopol, europe__skopje, europe__sofia, europe__stockholm, europe__tallinn, europe__tirane, europe__ulyanovsk, europe__uzhgorod, europe__vaduz, europe__vatican, europe__vienna, europe__vilnius, europe__volgograd, europe__warsaw, europe__zagreb, europe__zaporozhye, europe__zurich, indian__antananarivo, indian__chagos, indian__christmas, indian__cocos, indian__comoro, indian__kerguelen, indian__mahe, indian__maldives, indian__mauritius, indian__mayotte, indian__reunion, pacific__apia, pacific__auckland, pacific__bougainville, pacific__chatham, pacific__chuuk, pacific__easter, pacific__efate, pacific__enderbury, pacific__fakaofo, pacific__fiji, pacific__funafuti, pacific__galapagos, pacific__gambier, pacific__guadalcanal, pacific__guam, pacific__honolulu, pacific__kiritimati, pacific__kosrae, pacific__kwajalein, pacific__majuro, pacific__marquesas, pacific__midway, pacific__nauru, pacific__niue, pacific__norfolk, pacific__noumea, pacific__pago_pago, pacific__palau, pacific__pitcairn, pacific__pohnpei, pacific__port_moresby, pacific__rarotonga, pacific__saipan, pacific__tahiti, pacific__tarawa, pacific__tongatapu, pacific__wake, pacific__wallis
@@ -1582,7 +1582,8 @@ rules_Zion =
 -- Zones
 
 
-{-| -}
+{-| `Africa/Abidjan`
+-}
 africa__abidjan : Pack
 africa__abidjan =
     Packed <|
@@ -1591,7 +1592,8 @@ africa__abidjan =
             (ZoneState 0 (Save 0))
 
 
-{-| -}
+{-| `Africa/Accra`
+-}
 africa__accra : Pack
 africa__accra =
     Packed <|
@@ -1600,7 +1602,8 @@ africa__accra =
             (ZoneState 0 (Save 0))
 
 
-{-| -}
+{-| `Africa/Algiers`
+-}
 africa__algiers : Pack
 africa__algiers =
     Packed <|
@@ -1612,7 +1615,8 @@ africa__algiers =
             (ZoneState 60 (Save 0))
 
 
-{-| -}
+{-| `Africa/Bissau`
+-}
 africa__bissau : Pack
 africa__bissau =
     Packed <|
@@ -1622,7 +1626,8 @@ africa__bissau =
             (ZoneState 0 (Save 0))
 
 
-{-| -}
+{-| `Africa/Cairo`
+-}
 africa__cairo : Pack
 africa__cairo =
     Packed <|
@@ -1631,7 +1636,8 @@ africa__cairo =
             (ZoneState 120 (Rules rules_Egypt))
 
 
-{-| -}
+{-| `Africa/Casablanca`
+-}
 africa__casablanca : Pack
 africa__casablanca =
     Packed <|
@@ -1642,7 +1648,8 @@ africa__casablanca =
             (ZoneState 0 (Rules rules_Morocco))
 
 
-{-| -}
+{-| `Africa/Ceuta`
+-}
 africa__ceuta : Pack
 africa__ceuta =
     Packed <|
@@ -1653,7 +1660,8 @@ africa__ceuta =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Africa/El_Aaiun`
+-}
 africa__el_aaiun : Pack
 africa__el_aaiun =
     Packed <|
@@ -1663,7 +1671,8 @@ africa__el_aaiun =
             (ZoneState 0 (Rules rules_Morocco))
 
 
-{-| -}
+{-| `Africa/Johannesburg`
+-}
 africa__johannesburg : Pack
 africa__johannesburg =
     Packed <|
@@ -1672,7 +1681,8 @@ africa__johannesburg =
             (ZoneState 120 (Save 0))
 
 
-{-| -}
+{-| `Africa/Juba`
+-}
 africa__juba : Pack
 africa__juba =
     Packed <|
@@ -1682,7 +1692,8 @@ africa__juba =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Africa/Khartoum`
+-}
 africa__khartoum : Pack
 africa__khartoum =
     Packed <|
@@ -1693,7 +1704,8 @@ africa__khartoum =
             (ZoneState 120 (Save 0))
 
 
-{-| -}
+{-| `Africa/Lagos`
+-}
 africa__lagos : Pack
 africa__lagos =
     Packed <|
@@ -1702,7 +1714,8 @@ africa__lagos =
             (ZoneState 60 (Save 0))
 
 
-{-| -}
+{-| `Africa/Maputo`
+-}
 africa__maputo : Pack
 africa__maputo =
     Packed <|
@@ -1711,7 +1724,8 @@ africa__maputo =
             (ZoneState 120 (Save 0))
 
 
-{-| -}
+{-| `Africa/Monrovia`
+-}
 africa__monrovia : Pack
 africa__monrovia =
     Packed <|
@@ -1721,7 +1735,8 @@ africa__monrovia =
             (ZoneState 0 (Save 0))
 
 
-{-| -}
+{-| `Africa/Nairobi`
+-}
 africa__nairobi : Pack
 africa__nairobi =
     Packed <|
@@ -1730,7 +1745,8 @@ africa__nairobi =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Africa/Ndjamena`
+-}
 africa__ndjamena : Pack
 africa__ndjamena =
     Packed <|
@@ -1741,7 +1757,8 @@ africa__ndjamena =
             (ZoneState 60 (Save 0))
 
 
-{-| -}
+{-| `Africa/Sao_Tome`
+-}
 africa__sao_tome : Pack
 africa__sao_tome =
     Packed <|
@@ -1751,7 +1768,8 @@ africa__sao_tome =
             (ZoneState 60 (Save 0))
 
 
-{-| -}
+{-| `Africa/Tripoli`
+-}
 africa__tripoli : Pack
 africa__tripoli =
     Packed <|
@@ -1766,7 +1784,8 @@ africa__tripoli =
             (ZoneState 120 (Save 0))
 
 
-{-| -}
+{-| `Africa/Tunis`
+-}
 africa__tunis : Pack
 africa__tunis =
     Packed <|
@@ -1775,7 +1794,8 @@ africa__tunis =
             (ZoneState 60 (Rules rules_Tunisia))
 
 
-{-| -}
+{-| `Africa/Windhoek`
+-}
 africa__windhoek : Pack
 africa__windhoek =
     Packed <|
@@ -1785,7 +1805,8 @@ africa__windhoek =
             (ZoneState 120 (Rules rules_Namibia))
 
 
-{-| -}
+{-| `America/Adak`
+-}
 america__adak : Pack
 america__adak =
     Packed <|
@@ -1796,7 +1817,8 @@ america__adak =
             (ZoneState -600 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Anchorage`
+-}
 america__anchorage : Pack
 america__anchorage =
     Packed <|
@@ -1807,7 +1829,8 @@ america__anchorage =
             (ZoneState -540 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Araguaina`
+-}
 america__araguaina : Pack
 america__araguaina =
     Packed <|
@@ -1821,7 +1844,8 @@ america__araguaina =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Argentina/Buenos_Aires`
+-}
 america__argentina__buenos_aires : Pack
 america__argentina__buenos_aires =
     Packed <|
@@ -1832,7 +1856,8 @@ america__argentina__buenos_aires =
             (ZoneState -180 (Rules rules_Arg))
 
 
-{-| -}
+{-| `America/Argentina/Catamarca`
+-}
 america__argentina__catamarca : Pack
 america__argentina__catamarca =
     Packed <|
@@ -1848,7 +1873,8 @@ america__argentina__catamarca =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Argentina/Cordoba`
+-}
 america__argentina__cordoba : Pack
 america__argentina__cordoba =
     Packed <|
@@ -1861,7 +1887,8 @@ america__argentina__cordoba =
             (ZoneState -180 (Rules rules_Arg))
 
 
-{-| -}
+{-| `America/Argentina/Jujuy`
+-}
 america__argentina__jujuy : Pack
 america__argentina__jujuy =
     Packed <|
@@ -1878,7 +1905,8 @@ america__argentina__jujuy =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Argentina/La_Rioja`
+-}
 america__argentina__la_rioja : Pack
 america__argentina__la_rioja =
     Packed <|
@@ -1894,7 +1922,8 @@ america__argentina__la_rioja =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Argentina/Mendoza`
+-}
 america__argentina__mendoza : Pack
 america__argentina__mendoza =
     Packed <|
@@ -1914,7 +1943,8 @@ america__argentina__mendoza =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Argentina/Rio_Gallegos`
+-}
 america__argentina__rio_gallegos : Pack
 america__argentina__rio_gallegos =
     Packed <|
@@ -1928,7 +1958,8 @@ america__argentina__rio_gallegos =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Argentina/Salta`
+-}
 america__argentina__salta : Pack
 america__argentina__salta =
     Packed <|
@@ -1942,7 +1973,8 @@ america__argentina__salta =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Argentina/San_Juan`
+-}
 america__argentina__san_juan : Pack
 america__argentina__san_juan =
     Packed <|
@@ -1958,7 +1990,8 @@ america__argentina__san_juan =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Argentina/San_Luis`
+-}
 america__argentina__san_luis : Pack
 america__argentina__san_luis =
     Packed <|
@@ -1978,7 +2011,8 @@ america__argentina__san_luis =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Argentina/Tucuman`
+-}
 america__argentina__tucuman : Pack
 america__argentina__tucuman =
     Packed <|
@@ -1993,7 +2027,8 @@ america__argentina__tucuman =
             (ZoneState -180 (Rules rules_Arg))
 
 
-{-| -}
+{-| `America/Argentina/Ushuaia`
+-}
 america__argentina__ushuaia : Pack
 america__argentina__ushuaia =
     Packed <|
@@ -2007,7 +2042,8 @@ america__argentina__ushuaia =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Asuncion`
+-}
 america__asuncion : Pack
 america__asuncion =
     Packed <|
@@ -2018,7 +2054,8 @@ america__asuncion =
             (ZoneState -240 (Rules rules_Para))
 
 
-{-| -}
+{-| `America/Atikokan`
+-}
 america__atikokan : Pack
 america__atikokan =
     Packed <|
@@ -2027,7 +2064,8 @@ america__atikokan =
             (ZoneState -300 (Save 0))
 
 
-{-| -}
+{-| `America/Bahia`
+-}
 america__bahia : Pack
 america__bahia =
     Packed <|
@@ -2039,7 +2077,8 @@ america__bahia =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Bahia_Banderas`
+-}
 america__bahia_banderas : Pack
 america__bahia_banderas =
     Packed <|
@@ -2050,7 +2089,8 @@ america__bahia_banderas =
             (ZoneState -360 (Rules rules_Mexico))
 
 
-{-| -}
+{-| `America/Barbados`
+-}
 america__barbados : Pack
 america__barbados =
     Packed <|
@@ -2059,7 +2099,8 @@ america__barbados =
             (ZoneState -240 (Rules rules_Barb))
 
 
-{-| -}
+{-| `America/Belem`
+-}
 america__belem : Pack
 america__belem =
     Packed <|
@@ -2069,7 +2110,8 @@ america__belem =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Belize`
+-}
 america__belize : Pack
 america__belize =
     Packed <|
@@ -2078,7 +2120,8 @@ america__belize =
             (ZoneState -360 (Rules rules_Belize))
 
 
-{-| -}
+{-| `America/Blanc-Sablon`
+-}
 america__blanc_sablon : Pack
 america__blanc_sablon =
     Packed <|
@@ -2088,7 +2131,8 @@ america__blanc_sablon =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Boa_Vista`
+-}
 america__boa_vista : Pack
 america__boa_vista =
     Packed <|
@@ -2100,7 +2144,8 @@ america__boa_vista =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Bogota`
+-}
 america__bogota : Pack
 america__bogota =
     Packed <|
@@ -2109,7 +2154,8 @@ america__bogota =
             (ZoneState -300 (Rules rules_CO))
 
 
-{-| -}
+{-| `America/Boise`
+-}
 america__boise : Pack
 america__boise =
     Packed <|
@@ -2120,7 +2166,8 @@ america__boise =
             (ZoneState -420 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Cambridge_Bay`
+-}
 america__cambridge_bay : Pack
 america__cambridge_bay =
     Packed <|
@@ -2133,7 +2180,8 @@ america__cambridge_bay =
             (ZoneState -420 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Campo_Grande`
+-}
 america__campo_grande : Pack
 america__campo_grande =
     Packed <|
@@ -2142,7 +2190,8 @@ america__campo_grande =
             (ZoneState -240 (Rules rules_Brazil))
 
 
-{-| -}
+{-| `America/Cancun`
+-}
 america__cancun : Pack
 america__cancun =
     Packed <|
@@ -2154,7 +2203,8 @@ america__cancun =
             (ZoneState -300 (Save 0))
 
 
-{-| -}
+{-| `America/Caracas`
+-}
 america__caracas : Pack
 america__caracas =
     Packed <|
@@ -2165,7 +2215,8 @@ america__caracas =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Cayenne`
+-}
 america__cayenne : Pack
 america__cayenne =
     Packed <|
@@ -2174,7 +2225,8 @@ america__cayenne =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Chicago`
+-}
 america__chicago : Pack
 america__chicago =
     Packed <|
@@ -2183,7 +2235,8 @@ america__chicago =
             (ZoneState -360 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Chihuahua`
+-}
 america__chihuahua : Pack
 america__chihuahua =
     Packed <|
@@ -2195,7 +2248,8 @@ america__chihuahua =
             (ZoneState -420 (Rules rules_Mexico))
 
 
-{-| -}
+{-| `America/Costa_Rica`
+-}
 america__costa_rica : Pack
 america__costa_rica =
     Packed <|
@@ -2204,7 +2258,8 @@ america__costa_rica =
             (ZoneState -360 (Rules rules_CR))
 
 
-{-| -}
+{-| `America/Creston`
+-}
 america__creston : Pack
 america__creston =
     Packed <|
@@ -2213,7 +2268,8 @@ america__creston =
             (ZoneState -420 (Save 0))
 
 
-{-| -}
+{-| `America/Cuiaba`
+-}
 america__cuiaba : Pack
 america__cuiaba =
     Packed <|
@@ -2224,7 +2280,8 @@ america__cuiaba =
             (ZoneState -240 (Rules rules_Brazil))
 
 
-{-| -}
+{-| `America/Curacao`
+-}
 america__curacao : Pack
 america__curacao =
     Packed <|
@@ -2233,7 +2290,8 @@ america__curacao =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Danmarkshavn`
+-}
 america__danmarkshavn : Pack
 america__danmarkshavn =
     Packed <|
@@ -2244,7 +2302,8 @@ america__danmarkshavn =
             (ZoneState 0 (Save 0))
 
 
-{-| -}
+{-| `America/Dawson`
+-}
 america__dawson : Pack
 america__dawson =
     Packed <|
@@ -2255,7 +2314,8 @@ america__dawson =
             (ZoneState -480 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Dawson_Creek`
+-}
 america__dawson_creek : Pack
 america__dawson_creek =
     Packed <|
@@ -2265,7 +2325,8 @@ america__dawson_creek =
             (ZoneState -420 (Save 0))
 
 
-{-| -}
+{-| `America/Denver`
+-}
 america__denver : Pack
 america__denver =
     Packed <|
@@ -2274,7 +2335,8 @@ america__denver =
             (ZoneState -420 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Detroit`
+-}
 america__detroit : Pack
 america__detroit =
     Packed <|
@@ -2286,7 +2348,8 @@ america__detroit =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Edmonton`
+-}
 america__edmonton : Pack
 america__edmonton =
     Packed <|
@@ -2296,7 +2359,8 @@ america__edmonton =
             (ZoneState -420 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Eirunepe`
+-}
 america__eirunepe : Pack
 america__eirunepe =
     Packed <|
@@ -2310,7 +2374,8 @@ america__eirunepe =
             (ZoneState -300 (Save 0))
 
 
-{-| -}
+{-| `America/El_Salvador`
+-}
 america__el_salvador : Pack
 america__el_salvador =
     Packed <|
@@ -2319,7 +2384,8 @@ america__el_salvador =
             (ZoneState -360 (Rules rules_Salv))
 
 
-{-| -}
+{-| `America/Fort_Nelson`
+-}
 america__fort_nelson : Pack
 america__fort_nelson =
     Packed <|
@@ -2330,7 +2396,8 @@ america__fort_nelson =
             (ZoneState -420 (Save 0))
 
 
-{-| -}
+{-| `America/Fortaleza`
+-}
 america__fortaleza : Pack
 america__fortaleza =
     Packed <|
@@ -2344,7 +2411,8 @@ america__fortaleza =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Glace_Bay`
+-}
 america__glace_bay : Pack
 america__glace_bay =
     Packed <|
@@ -2355,7 +2423,8 @@ america__glace_bay =
             (ZoneState -240 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Godthab`
+-}
 america__godthab : Pack
 america__godthab =
     Packed <|
@@ -2365,7 +2434,8 @@ america__godthab =
             (ZoneState -180 (Rules rules_EU))
 
 
-{-| -}
+{-| `America/Goose_Bay`
+-}
 america__goose_bay : Pack
 america__goose_bay =
     Packed <|
@@ -2375,7 +2445,8 @@ america__goose_bay =
             (ZoneState -240 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Grand_Turk`
+-}
 america__grand_turk : Pack
 america__grand_turk =
     Packed <|
@@ -2387,7 +2458,8 @@ america__grand_turk =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Guatemala`
+-}
 america__guatemala : Pack
 america__guatemala =
     Packed <|
@@ -2396,7 +2468,8 @@ america__guatemala =
             (ZoneState -360 (Rules rules_Guat))
 
 
-{-| -}
+{-| `America/Guayaquil`
+-}
 america__guayaquil : Pack
 america__guayaquil =
     Packed <|
@@ -2405,7 +2478,8 @@ america__guayaquil =
             (ZoneState -300 (Rules rules_Ecuador))
 
 
-{-| -}
+{-| `America/Guyana`
+-}
 america__guyana : Pack
 america__guyana =
     Packed <|
@@ -2416,7 +2490,8 @@ america__guyana =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Halifax`
+-}
 america__halifax : Pack
 america__halifax =
     Packed <|
@@ -2426,7 +2501,8 @@ america__halifax =
             (ZoneState -240 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Havana`
+-}
 america__havana : Pack
 america__havana =
     Packed <|
@@ -2435,7 +2511,8 @@ america__havana =
             (ZoneState -300 (Rules rules_Cuba))
 
 
-{-| -}
+{-| `America/Hermosillo`
+-}
 america__hermosillo : Pack
 america__hermosillo =
     Packed <|
@@ -2446,7 +2523,8 @@ america__hermosillo =
             (ZoneState -420 (Save 0))
 
 
-{-| -}
+{-| `America/Indiana/Indianapolis`
+-}
 america__indiana__indianapolis : Pack
 america__indiana__indianapolis =
     Packed <|
@@ -2457,7 +2535,8 @@ america__indiana__indianapolis =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Indiana/Knox`
+-}
 america__indiana__knox : Pack
 america__indiana__knox =
     Packed <|
@@ -2468,7 +2547,8 @@ america__indiana__knox =
             (ZoneState -360 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Indiana/Marengo`
+-}
 america__indiana__marengo : Pack
 america__indiana__marengo =
     Packed <|
@@ -2481,7 +2561,8 @@ america__indiana__marengo =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Indiana/Petersburg`
+-}
 america__indiana__petersburg : Pack
 america__indiana__petersburg =
     Packed <|
@@ -2493,7 +2574,8 @@ america__indiana__petersburg =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Indiana/Tell_City`
+-}
 america__indiana__tell_city : Pack
 america__indiana__tell_city =
     Packed <|
@@ -2504,7 +2586,8 @@ america__indiana__tell_city =
             (ZoneState -360 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Indiana/Vevay`
+-}
 america__indiana__vevay : Pack
 america__indiana__vevay =
     Packed <|
@@ -2515,7 +2598,8 @@ america__indiana__vevay =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Indiana/Vincennes`
+-}
 america__indiana__vincennes : Pack
 america__indiana__vincennes =
     Packed <|
@@ -2527,7 +2611,8 @@ america__indiana__vincennes =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Indiana/Winamac`
+-}
 america__indiana__winamac : Pack
 america__indiana__winamac =
     Packed <|
@@ -2539,7 +2624,8 @@ america__indiana__winamac =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Inuvik`
+-}
 america__inuvik : Pack
 america__inuvik =
     Packed <|
@@ -2550,7 +2636,8 @@ america__inuvik =
             (ZoneState -420 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Iqaluit`
+-}
 america__iqaluit : Pack
 america__iqaluit =
     Packed <|
@@ -2561,7 +2648,8 @@ america__iqaluit =
             (ZoneState -300 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Jamaica`
+-}
 america__jamaica : Pack
 america__jamaica =
     Packed <|
@@ -2572,7 +2660,8 @@ america__jamaica =
             (ZoneState -300 (Save 0))
 
 
-{-| -}
+{-| `America/Juneau`
+-}
 america__juneau : Pack
 america__juneau =
     Packed <|
@@ -2585,7 +2674,8 @@ america__juneau =
             (ZoneState -540 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Kentucky/Louisville`
+-}
 america__kentucky__louisville : Pack
 america__kentucky__louisville =
     Packed <|
@@ -2596,7 +2686,8 @@ america__kentucky__louisville =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Kentucky/Monticello`
+-}
 america__kentucky__monticello : Pack
 america__kentucky__monticello =
     Packed <|
@@ -2606,7 +2697,8 @@ america__kentucky__monticello =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/La_Paz`
+-}
 america__la_paz : Pack
 america__la_paz =
     Packed <|
@@ -2615,7 +2707,8 @@ america__la_paz =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Lima`
+-}
 america__lima : Pack
 america__lima =
     Packed <|
@@ -2624,7 +2717,8 @@ america__lima =
             (ZoneState -300 (Rules rules_Peru))
 
 
-{-| -}
+{-| `America/Los_Angeles`
+-}
 america__los_angeles : Pack
 america__los_angeles =
     Packed <|
@@ -2633,7 +2727,8 @@ america__los_angeles =
             (ZoneState -480 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Maceio`
+-}
 america__maceio : Pack
 america__maceio =
     Packed <|
@@ -2649,7 +2744,8 @@ america__maceio =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Managua`
+-}
 america__managua : Pack
 america__managua =
     Packed <|
@@ -2664,7 +2760,8 @@ america__managua =
             (ZoneState -360 (Rules rules_Nic))
 
 
-{-| -}
+{-| `America/Manaus`
+-}
 america__manaus : Pack
 america__manaus =
     Packed <|
@@ -2676,7 +2773,8 @@ america__manaus =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Martinique`
+-}
 america__martinique : Pack
 america__martinique =
     Packed <|
@@ -2687,7 +2785,8 @@ america__martinique =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Matamoros`
+-}
 america__matamoros : Pack
 america__matamoros =
     Packed <|
@@ -2699,7 +2798,8 @@ america__matamoros =
             (ZoneState -360 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Mazatlan`
+-}
 america__mazatlan : Pack
 america__mazatlan =
     Packed <|
@@ -2709,7 +2809,8 @@ america__mazatlan =
             (ZoneState -420 (Rules rules_Mexico))
 
 
-{-| -}
+{-| `America/Menominee`
+-}
 america__menominee : Pack
 america__menominee =
     Packed <|
@@ -2719,7 +2820,8 @@ america__menominee =
             (ZoneState -360 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Merida`
+-}
 america__merida : Pack
 america__merida =
     Packed <|
@@ -2730,7 +2832,8 @@ america__merida =
             (ZoneState -360 (Rules rules_Mexico))
 
 
-{-| -}
+{-| `America/Metlakatla`
+-}
 america__metlakatla : Pack
 america__metlakatla =
     Packed <|
@@ -2741,7 +2844,8 @@ america__metlakatla =
             (ZoneState -540 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Mexico_City`
+-}
 america__mexico_city : Pack
 america__mexico_city =
     Packed <|
@@ -2752,7 +2856,8 @@ america__mexico_city =
             (ZoneState -360 (Rules rules_Mexico))
 
 
-{-| -}
+{-| `America/Miquelon`
+-}
 america__miquelon : Pack
 america__miquelon =
     Packed <|
@@ -2763,7 +2868,8 @@ america__miquelon =
             (ZoneState -180 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Moncton`
+-}
 america__moncton : Pack
 america__moncton =
     Packed <|
@@ -2775,7 +2881,8 @@ america__moncton =
             (ZoneState -240 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Monterrey`
+-}
 america__monterrey : Pack
 america__monterrey =
     Packed <|
@@ -2786,7 +2893,8 @@ america__monterrey =
             (ZoneState -360 (Rules rules_Mexico))
 
 
-{-| -}
+{-| `America/Montevideo`
+-}
 america__montevideo : Pack
 america__montevideo =
     Packed <|
@@ -2799,7 +2907,8 @@ america__montevideo =
             (ZoneState -180 (Rules rules_Uruguay))
 
 
-{-| -}
+{-| `America/Nassau`
+-}
 america__nassau : Pack
 america__nassau =
     Packed <|
@@ -2809,7 +2918,8 @@ america__nassau =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/New_York`
+-}
 america__new_york : Pack
 america__new_york =
     Packed <|
@@ -2818,7 +2928,8 @@ america__new_york =
             (ZoneState -300 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Nipigon`
+-}
 america__nipigon : Pack
 america__nipigon =
     Packed <|
@@ -2827,7 +2938,8 @@ america__nipigon =
             (ZoneState -300 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Nome`
+-}
 america__nome : Pack
 america__nome =
     Packed <|
@@ -2838,7 +2950,8 @@ america__nome =
             (ZoneState -540 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Noronha`
+-}
 america__noronha : Pack
 america__noronha =
     Packed <|
@@ -2852,7 +2965,8 @@ america__noronha =
             (ZoneState -120 (Save 0))
 
 
-{-| -}
+{-| `America/North_Dakota/Beulah`
+-}
 america__north_dakota__beulah : Pack
 america__north_dakota__beulah =
     Packed <|
@@ -2862,7 +2976,8 @@ america__north_dakota__beulah =
             (ZoneState -360 (Rules rules_US))
 
 
-{-| -}
+{-| `America/North_Dakota/Center`
+-}
 america__north_dakota__center : Pack
 america__north_dakota__center =
     Packed <|
@@ -2872,7 +2987,8 @@ america__north_dakota__center =
             (ZoneState -360 (Rules rules_US))
 
 
-{-| -}
+{-| `America/North_Dakota/New_Salem`
+-}
 america__north_dakota__new_salem : Pack
 america__north_dakota__new_salem =
     Packed <|
@@ -2882,7 +2998,8 @@ america__north_dakota__new_salem =
             (ZoneState -360 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Ojinaga`
+-}
 america__ojinaga : Pack
 america__ojinaga =
     Packed <|
@@ -2895,7 +3012,8 @@ america__ojinaga =
             (ZoneState -420 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Panama`
+-}
 america__panama : Pack
 america__panama =
     Packed <|
@@ -2904,7 +3022,8 @@ america__panama =
             (ZoneState -300 (Save 0))
 
 
-{-| -}
+{-| `America/Pangnirtung`
+-}
 america__pangnirtung : Pack
 america__pangnirtung =
     Packed <|
@@ -2916,7 +3035,8 @@ america__pangnirtung =
             (ZoneState -300 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Paramaribo`
+-}
 america__paramaribo : Pack
 america__paramaribo =
     Packed <|
@@ -2926,7 +3046,8 @@ america__paramaribo =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Phoenix`
+-}
 america__phoenix : Pack
 america__phoenix =
     Packed <|
@@ -2935,7 +3056,8 @@ america__phoenix =
             (ZoneState -420 (Save 0))
 
 
-{-| -}
+{-| `America/Port-au-Prince`
+-}
 america__port_au_prince : Pack
 america__port_au_prince =
     Packed <|
@@ -2944,7 +3066,8 @@ america__port_au_prince =
             (ZoneState -300 (Rules rules_Haiti))
 
 
-{-| -}
+{-| `America/Port_of_Spain`
+-}
 america__port_of_spain : Pack
 america__port_of_spain =
     Packed <|
@@ -2953,7 +3076,8 @@ america__port_of_spain =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Porto_Velho`
+-}
 america__porto_velho : Pack
 america__porto_velho =
     Packed <|
@@ -2963,7 +3087,8 @@ america__porto_velho =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Puerto_Rico`
+-}
 america__puerto_rico : Pack
 america__puerto_rico =
     Packed <|
@@ -2972,7 +3097,8 @@ america__puerto_rico =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Punta_Arenas`
+-}
 america__punta_arenas : Pack
 america__punta_arenas =
     Packed <|
@@ -2982,7 +3108,8 @@ america__punta_arenas =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Rainy_River`
+-}
 america__rainy_river : Pack
 america__rainy_river =
     Packed <|
@@ -2991,7 +3118,8 @@ america__rainy_river =
             (ZoneState -360 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Rankin_Inlet`
+-}
 america__rankin_inlet : Pack
 america__rankin_inlet =
     Packed <|
@@ -3002,7 +3130,8 @@ america__rankin_inlet =
             (ZoneState -360 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Recife`
+-}
 america__recife : Pack
 america__recife =
     Packed <|
@@ -3016,7 +3145,8 @@ america__recife =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Regina`
+-}
 america__regina : Pack
 america__regina =
     Packed <|
@@ -3025,7 +3155,8 @@ america__regina =
             (ZoneState -360 (Save 0))
 
 
-{-| -}
+{-| `America/Resolute`
+-}
 america__resolute : Pack
 america__resolute =
     Packed <|
@@ -3038,7 +3169,8 @@ america__resolute =
             (ZoneState -360 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Rio_Branco`
+-}
 america__rio_branco : Pack
 america__rio_branco =
     Packed <|
@@ -3050,7 +3182,8 @@ america__rio_branco =
             (ZoneState -300 (Save 0))
 
 
-{-| -}
+{-| `America/Santarem`
+-}
 america__santarem : Pack
 america__santarem =
     Packed <|
@@ -3061,7 +3194,8 @@ america__santarem =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `America/Santiago`
+-}
 america__santiago : Pack
 america__santiago =
     Packed <|
@@ -3070,7 +3204,8 @@ america__santiago =
             (ZoneState -240 (Rules rules_Chile))
 
 
-{-| -}
+{-| `America/Santo_Domingo`
+-}
 america__santo_domingo : Pack
 america__santo_domingo =
     Packed <|
@@ -3082,7 +3217,8 @@ america__santo_domingo =
             (ZoneState -240 (Save 0))
 
 
-{-| -}
+{-| `America/Sao_Paulo`
+-}
 america__sao_paulo : Pack
 america__sao_paulo =
     Packed <|
@@ -3091,7 +3227,8 @@ america__sao_paulo =
             (ZoneState -180 (Rules rules_Brazil))
 
 
-{-| -}
+{-| `America/Scoresbysund`
+-}
 america__scoresbysund : Pack
 america__scoresbysund =
     Packed <|
@@ -3102,7 +3239,8 @@ america__scoresbysund =
             (ZoneState -60 (Rules rules_EU))
 
 
-{-| -}
+{-| `America/Sitka`
+-}
 america__sitka : Pack
 america__sitka =
     Packed <|
@@ -3113,7 +3251,8 @@ america__sitka =
             (ZoneState -540 (Rules rules_US))
 
 
-{-| -}
+{-| `America/St_Johns`
+-}
 america__st_johns : Pack
 america__st_johns =
     Packed <|
@@ -3123,7 +3262,8 @@ america__st_johns =
             (ZoneState -210 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Swift_Current`
+-}
 america__swift_current : Pack
 america__swift_current =
     Packed <|
@@ -3133,7 +3273,8 @@ america__swift_current =
             (ZoneState -360 (Save 0))
 
 
-{-| -}
+{-| `America/Tegucigalpa`
+-}
 america__tegucigalpa : Pack
 america__tegucigalpa =
     Packed <|
@@ -3142,7 +3283,8 @@ america__tegucigalpa =
             (ZoneState -360 (Rules rules_Hond))
 
 
-{-| -}
+{-| `America/Thule`
+-}
 america__thule : Pack
 america__thule =
     Packed <|
@@ -3151,7 +3293,8 @@ america__thule =
             (ZoneState -240 (Rules rules_Thule))
 
 
-{-| -}
+{-| `America/Thunder_Bay`
+-}
 america__thunder_bay : Pack
 america__thunder_bay =
     Packed <|
@@ -3163,7 +3306,8 @@ america__thunder_bay =
             (ZoneState -300 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Tijuana`
+-}
 america__tijuana : Pack
 america__tijuana =
     Packed <|
@@ -3177,7 +3321,8 @@ america__tijuana =
             (ZoneState -480 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Toronto`
+-}
 america__toronto : Pack
 america__toronto =
     Packed <|
@@ -3187,7 +3332,8 @@ america__toronto =
             (ZoneState -300 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Vancouver`
+-}
 america__vancouver : Pack
 america__vancouver =
     Packed <|
@@ -3197,7 +3343,8 @@ america__vancouver =
             (ZoneState -480 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Whitehorse`
+-}
 america__whitehorse : Pack
 america__whitehorse =
     Packed <|
@@ -3207,7 +3354,8 @@ america__whitehorse =
             (ZoneState -480 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Winnipeg`
+-}
 america__winnipeg : Pack
 america__winnipeg =
     Packed <|
@@ -3217,7 +3365,8 @@ america__winnipeg =
             (ZoneState -360 (Rules rules_Canada))
 
 
-{-| -}
+{-| `America/Yakutat`
+-}
 america__yakutat : Pack
 america__yakutat =
     Packed <|
@@ -3227,7 +3376,8 @@ america__yakutat =
             (ZoneState -540 (Rules rules_US))
 
 
-{-| -}
+{-| `America/Yellowknife`
+-}
 america__yellowknife : Pack
 america__yellowknife =
     Packed <|
@@ -3237,7 +3387,8 @@ america__yellowknife =
             (ZoneState -420 (Rules rules_Canada))
 
 
-{-| -}
+{-| `Antarctica/Casey`
+-}
 antarctica__casey : Pack
 antarctica__casey =
     Packed <|
@@ -3252,7 +3403,8 @@ antarctica__casey =
             (ZoneState 480 (Save 0))
 
 
-{-| -}
+{-| `Antarctica/Davis`
+-}
 antarctica__davis : Pack
 antarctica__davis =
     Packed <|
@@ -3265,7 +3417,8 @@ antarctica__davis =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Antarctica/DumontDUrville`
+-}
 antarctica__dumontdurville : Pack
 antarctica__dumontdurville =
     Packed <|
@@ -3274,7 +3427,8 @@ antarctica__dumontdurville =
             (ZoneState 600 (Save 0))
 
 
-{-| -}
+{-| `Antarctica/Macquarie`
+-}
 antarctica__macquarie : Pack
 antarctica__macquarie =
     Packed <|
@@ -3284,7 +3438,8 @@ antarctica__macquarie =
             (ZoneState 660 (Save 0))
 
 
-{-| -}
+{-| `Antarctica/Mawson`
+-}
 antarctica__mawson : Pack
 antarctica__mawson =
     Packed <|
@@ -3294,7 +3449,8 @@ antarctica__mawson =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Antarctica/Palmer`
+-}
 antarctica__palmer : Pack
 antarctica__palmer =
     Packed <|
@@ -3305,7 +3461,8 @@ antarctica__palmer =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `Antarctica/Rothera`
+-}
 antarctica__rothera : Pack
 antarctica__rothera =
     Packed <|
@@ -3315,7 +3472,8 @@ antarctica__rothera =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `Antarctica/Syowa`
+-}
 antarctica__syowa : Pack
 antarctica__syowa =
     Packed <|
@@ -3324,7 +3482,8 @@ antarctica__syowa =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Antarctica/Troll`
+-}
 antarctica__troll : Pack
 antarctica__troll =
     Packed <|
@@ -3334,7 +3493,8 @@ antarctica__troll =
             (ZoneState 0 (Rules rules_Troll))
 
 
-{-| -}
+{-| `Antarctica/Vostok`
+-}
 antarctica__vostok : Pack
 antarctica__vostok =
     Packed <|
@@ -3343,7 +3503,8 @@ antarctica__vostok =
             (ZoneState 360 (Save 0))
 
 
-{-| -}
+{-| `Asia/Almaty`
+-}
 asia__almaty : Pack
 asia__almaty =
     Packed <|
@@ -3355,7 +3516,8 @@ asia__almaty =
             (ZoneState 360 (Save 0))
 
 
-{-| -}
+{-| `Asia/Amman`
+-}
 asia__amman : Pack
 asia__amman =
     Packed <|
@@ -3364,7 +3526,8 @@ asia__amman =
             (ZoneState 120 (Rules rules_Jordan))
 
 
-{-| -}
+{-| `Asia/Anadyr`
+-}
 asia__anadyr : Pack
 asia__anadyr =
     Packed <|
@@ -3378,7 +3541,8 @@ asia__anadyr =
             (ZoneState 720 (Save 0))
 
 
-{-| -}
+{-| `Asia/Aqtau`
+-}
 asia__aqtau : Pack
 asia__aqtau =
     Packed <|
@@ -3393,7 +3557,8 @@ asia__aqtau =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Asia/Aqtobe`
+-}
 asia__aqtobe : Pack
 asia__aqtobe =
     Packed <|
@@ -3408,7 +3573,8 @@ asia__aqtobe =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Asia/Ashgabat`
+-}
 asia__ashgabat : Pack
 asia__ashgabat =
     Packed <|
@@ -3419,7 +3585,8 @@ asia__ashgabat =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Asia/Atyrau`
+-}
 asia__atyrau : Pack
 asia__atyrau =
     Packed <|
@@ -3434,7 +3601,8 @@ asia__atyrau =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Asia/Baghdad`
+-}
 asia__baghdad : Pack
 asia__baghdad =
     Packed <|
@@ -3444,7 +3612,8 @@ asia__baghdad =
             (ZoneState 180 (Rules rules_Iraq))
 
 
-{-| -}
+{-| `Asia/Baku`
+-}
 asia__baku : Pack
 asia__baku =
     Packed <|
@@ -3457,7 +3626,8 @@ asia__baku =
             (ZoneState 240 (Rules rules_Azer))
 
 
-{-| -}
+{-| `Asia/Bangkok`
+-}
 asia__bangkok : Pack
 asia__bangkok =
     Packed <|
@@ -3466,7 +3636,8 @@ asia__bangkok =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Asia/Barnaul`
+-}
 asia__barnaul : Pack
 asia__barnaul =
     Packed <|
@@ -3481,7 +3652,8 @@ asia__barnaul =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Asia/Beirut`
+-}
 asia__beirut : Pack
 asia__beirut =
     Packed <|
@@ -3490,7 +3662,8 @@ asia__beirut =
             (ZoneState 120 (Rules rules_Lebanon))
 
 
-{-| -}
+{-| `Asia/Bishkek`
+-}
 asia__bishkek : Pack
 asia__bishkek =
     Packed <|
@@ -3502,7 +3675,8 @@ asia__bishkek =
             (ZoneState 360 (Save 0))
 
 
-{-| -}
+{-| `Asia/Brunei`
+-}
 asia__brunei : Pack
 asia__brunei =
     Packed <|
@@ -3511,7 +3685,8 @@ asia__brunei =
             (ZoneState 480 (Save 0))
 
 
-{-| -}
+{-| `Asia/Chita`
+-}
 asia__chita : Pack
 asia__chita =
     Packed <|
@@ -3525,7 +3700,8 @@ asia__chita =
             (ZoneState 540 (Save 0))
 
 
-{-| -}
+{-| `Asia/Choibalsan`
+-}
 asia__choibalsan : Pack
 asia__choibalsan =
     Packed <|
@@ -3537,7 +3713,8 @@ asia__choibalsan =
             (ZoneState 480 (Rules rules_Mongol))
 
 
-{-| -}
+{-| `Asia/Colombo`
+-}
 asia__colombo : Pack
 asia__colombo =
     Packed <|
@@ -3549,7 +3726,8 @@ asia__colombo =
             (ZoneState 330 (Save 0))
 
 
-{-| -}
+{-| `Asia/Damascus`
+-}
 asia__damascus : Pack
 asia__damascus =
     Packed <|
@@ -3558,7 +3736,8 @@ asia__damascus =
             (ZoneState 120 (Rules rules_Syria))
 
 
-{-| -}
+{-| `Asia/Dhaka`
+-}
 asia__dhaka : Pack
 asia__dhaka =
     Packed <|
@@ -3568,7 +3747,8 @@ asia__dhaka =
             (ZoneState 360 (Rules rules_Dhaka))
 
 
-{-| -}
+{-| `Asia/Dili`
+-}
 asia__dili : Pack
 asia__dili =
     Packed <|
@@ -3579,7 +3759,8 @@ asia__dili =
             (ZoneState 540 (Save 0))
 
 
-{-| -}
+{-| `Asia/Dubai`
+-}
 asia__dubai : Pack
 asia__dubai =
     Packed <|
@@ -3588,7 +3769,8 @@ asia__dubai =
             (ZoneState 240 (Save 0))
 
 
-{-| -}
+{-| `Asia/Dushanbe`
+-}
 asia__dushanbe : Pack
 asia__dushanbe =
     Packed <|
@@ -3599,7 +3781,8 @@ asia__dushanbe =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Asia/Famagusta`
+-}
 asia__famagusta : Pack
 asia__famagusta =
     Packed <|
@@ -3611,7 +3794,8 @@ asia__famagusta =
             (ZoneState 120 (Rules rules_EUAsia))
 
 
-{-| -}
+{-| `Asia/Gaza`
+-}
 asia__gaza : Pack
 asia__gaza =
     Packed <|
@@ -3628,7 +3812,8 @@ asia__gaza =
             (ZoneState 120 (Rules rules_Palestine))
 
 
-{-| -}
+{-| `Asia/Hebron`
+-}
 asia__hebron : Pack
 asia__hebron =
     Packed <|
@@ -3639,7 +3824,8 @@ asia__hebron =
             (ZoneState 120 (Rules rules_Palestine))
 
 
-{-| -}
+{-| `Asia/Ho_Chi_Minh`
+-}
 asia__ho_chi_minh : Pack
 asia__ho_chi_minh =
     Packed <|
@@ -3649,7 +3835,8 @@ asia__ho_chi_minh =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Asia/Hong_Kong`
+-}
 asia__hong_kong : Pack
 asia__hong_kong =
     Packed <|
@@ -3658,7 +3845,8 @@ asia__hong_kong =
             (ZoneState 480 (Rules rules_HK))
 
 
-{-| -}
+{-| `Asia/Hovd`
+-}
 asia__hovd : Pack
 asia__hovd =
     Packed <|
@@ -3668,7 +3856,8 @@ asia__hovd =
             (ZoneState 420 (Rules rules_Mongol))
 
 
-{-| -}
+{-| `Asia/Irkutsk`
+-}
 asia__irkutsk : Pack
 asia__irkutsk =
     Packed <|
@@ -3681,7 +3870,8 @@ asia__irkutsk =
             (ZoneState 480 (Save 0))
 
 
-{-| -}
+{-| `Asia/Jakarta`
+-}
 asia__jakarta : Pack
 asia__jakarta =
     Packed <|
@@ -3690,7 +3880,8 @@ asia__jakarta =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Asia/Jayapura`
+-}
 asia__jayapura : Pack
 asia__jayapura =
     Packed <|
@@ -3699,7 +3890,8 @@ asia__jayapura =
             (ZoneState 540 (Save 0))
 
 
-{-| -}
+{-| `Asia/Jerusalem`
+-}
 asia__jerusalem : Pack
 asia__jerusalem =
     Packed <|
@@ -3708,7 +3900,8 @@ asia__jerusalem =
             (ZoneState 120 (Rules rules_Zion))
 
 
-{-| -}
+{-| `Asia/Kabul`
+-}
 asia__kabul : Pack
 asia__kabul =
     Packed <|
@@ -3717,7 +3910,8 @@ asia__kabul =
             (ZoneState 270 (Save 0))
 
 
-{-| -}
+{-| `Asia/Kamchatka`
+-}
 asia__kamchatka : Pack
 asia__kamchatka =
     Packed <|
@@ -3730,7 +3924,8 @@ asia__kamchatka =
             (ZoneState 720 (Save 0))
 
 
-{-| -}
+{-| `Asia/Karachi`
+-}
 asia__karachi : Pack
 asia__karachi =
     Packed <|
@@ -3740,7 +3935,8 @@ asia__karachi =
             (ZoneState 300 (Rules rules_Pakistan))
 
 
-{-| -}
+{-| `Asia/Kathmandu`
+-}
 asia__kathmandu : Pack
 asia__kathmandu =
     Packed <|
@@ -3750,7 +3946,8 @@ asia__kathmandu =
             (ZoneState 345 (Save 0))
 
 
-{-| -}
+{-| `Asia/Khandyga`
+-}
 asia__khandyga : Pack
 asia__khandyga =
     Packed <|
@@ -3765,7 +3962,8 @@ asia__khandyga =
             (ZoneState 540 (Save 0))
 
 
-{-| -}
+{-| `Asia/Kolkata`
+-}
 asia__kolkata : Pack
 asia__kolkata =
     Packed <|
@@ -3774,7 +3972,8 @@ asia__kolkata =
             (ZoneState 330 (Save 0))
 
 
-{-| -}
+{-| `Asia/Krasnoyarsk`
+-}
 asia__krasnoyarsk : Pack
 asia__krasnoyarsk =
     Packed <|
@@ -3787,7 +3986,8 @@ asia__krasnoyarsk =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Asia/Kuala_Lumpur`
+-}
 asia__kuala_lumpur : Pack
 asia__kuala_lumpur =
     Packed <|
@@ -3797,7 +3997,8 @@ asia__kuala_lumpur =
             (ZoneState 480 (Save 0))
 
 
-{-| -}
+{-| `Asia/Kuching`
+-}
 asia__kuching : Pack
 asia__kuching =
     Packed <|
@@ -3806,7 +4007,8 @@ asia__kuching =
             (ZoneState 480 (Save 0))
 
 
-{-| -}
+{-| `Asia/Macau`
+-}
 asia__macau : Pack
 asia__macau =
     Packed <|
@@ -3815,7 +4017,8 @@ asia__macau =
             (ZoneState 480 (Rules rules_Macau))
 
 
-{-| -}
+{-| `Asia/Magadan`
+-}
 asia__magadan : Pack
 asia__magadan =
     Packed <|
@@ -3829,7 +4032,8 @@ asia__magadan =
             (ZoneState 660 (Save 0))
 
 
-{-| -}
+{-| `Asia/Makassar`
+-}
 asia__makassar : Pack
 asia__makassar =
     Packed <|
@@ -3838,7 +4042,8 @@ asia__makassar =
             (ZoneState 480 (Save 0))
 
 
-{-| -}
+{-| `Asia/Manila`
+-}
 asia__manila : Pack
 asia__manila =
     Packed <|
@@ -3847,7 +4052,8 @@ asia__manila =
             (ZoneState 480 (Rules rules_Phil))
 
 
-{-| -}
+{-| `Asia/Nicosia`
+-}
 asia__nicosia : Pack
 asia__nicosia =
     Packed <|
@@ -3857,7 +4063,8 @@ asia__nicosia =
             (ZoneState 120 (Rules rules_EUAsia))
 
 
-{-| -}
+{-| `Asia/Novokuznetsk`
+-}
 asia__novokuznetsk : Pack
 asia__novokuznetsk =
     Packed <|
@@ -3870,7 +4077,8 @@ asia__novokuznetsk =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Asia/Novosibirsk`
+-}
 asia__novosibirsk : Pack
 asia__novosibirsk =
     Packed <|
@@ -3885,7 +4093,8 @@ asia__novosibirsk =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Asia/Omsk`
+-}
 asia__omsk : Pack
 asia__omsk =
     Packed <|
@@ -3898,7 +4107,8 @@ asia__omsk =
             (ZoneState 360 (Save 0))
 
 
-{-| -}
+{-| `Asia/Oral`
+-}
 asia__oral : Pack
 asia__oral =
     Packed <|
@@ -3914,7 +4124,8 @@ asia__oral =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Asia/Pontianak`
+-}
 asia__pontianak : Pack
 asia__pontianak =
     Packed <|
@@ -3924,7 +4135,8 @@ asia__pontianak =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Asia/Pyongyang`
+-}
 asia__pyongyang : Pack
 asia__pyongyang =
     Packed <|
@@ -3935,7 +4147,8 @@ asia__pyongyang =
             (ZoneState 540 (Save 0))
 
 
-{-| -}
+{-| `Asia/Qatar`
+-}
 asia__qatar : Pack
 asia__qatar =
     Packed <|
@@ -3945,7 +4158,8 @@ asia__qatar =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Asia/Qyzylorda`
+-}
 asia__qyzylorda : Pack
 asia__qyzylorda =
     Packed <|
@@ -3962,7 +4176,8 @@ asia__qyzylorda =
             (ZoneState 360 (Save 0))
 
 
-{-| -}
+{-| `Asia/Riyadh`
+-}
 asia__riyadh : Pack
 asia__riyadh =
     Packed <|
@@ -3971,7 +4186,8 @@ asia__riyadh =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Asia/Sakhalin`
+-}
 asia__sakhalin : Pack
 asia__sakhalin =
     Packed <|
@@ -3986,7 +4202,8 @@ asia__sakhalin =
             (ZoneState 660 (Save 0))
 
 
-{-| -}
+{-| `Asia/Samarkand`
+-}
 asia__samarkand : Pack
 asia__samarkand =
     Packed <|
@@ -3999,7 +4216,8 @@ asia__samarkand =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Asia/Seoul`
+-}
 asia__seoul : Pack
 asia__seoul =
     Packed <|
@@ -4008,7 +4226,8 @@ asia__seoul =
             (ZoneState 540 (Rules rules_ROK))
 
 
-{-| -}
+{-| `Asia/Shanghai`
+-}
 asia__shanghai : Pack
 asia__shanghai =
     Packed <|
@@ -4017,7 +4236,8 @@ asia__shanghai =
             (ZoneState 480 (Rules rules_PRC))
 
 
-{-| -}
+{-| `Asia/Singapore`
+-}
 asia__singapore : Pack
 asia__singapore =
     Packed <|
@@ -4027,7 +4247,8 @@ asia__singapore =
             (ZoneState 480 (Save 0))
 
 
-{-| -}
+{-| `Asia/Srednekolymsk`
+-}
 asia__srednekolymsk : Pack
 asia__srednekolymsk =
     Packed <|
@@ -4040,7 +4261,8 @@ asia__srednekolymsk =
             (ZoneState 660 (Save 0))
 
 
-{-| -}
+{-| `Asia/Taipei`
+-}
 asia__taipei : Pack
 asia__taipei =
     Packed <|
@@ -4049,7 +4271,8 @@ asia__taipei =
             (ZoneState 480 (Rules rules_Taiwan))
 
 
-{-| -}
+{-| `Asia/Tashkent`
+-}
 asia__tashkent : Pack
 asia__tashkent =
     Packed <|
@@ -4060,7 +4283,8 @@ asia__tashkent =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Asia/Tbilisi`
+-}
 asia__tbilisi : Pack
 asia__tbilisi =
     Packed <|
@@ -4076,7 +4300,8 @@ asia__tbilisi =
             (ZoneState 240 (Save 0))
 
 
-{-| -}
+{-| `Asia/Tehran`
+-}
 asia__tehran : Pack
 asia__tehran =
     Packed <|
@@ -4087,7 +4312,8 @@ asia__tehran =
             (ZoneState 210 (Rules rules_Iran))
 
 
-{-| -}
+{-| `Asia/Thimphu`
+-}
 asia__thimphu : Pack
 asia__thimphu =
     Packed <|
@@ -4097,7 +4323,8 @@ asia__thimphu =
             (ZoneState 360 (Save 0))
 
 
-{-| -}
+{-| `Asia/Tokyo`
+-}
 asia__tokyo : Pack
 asia__tokyo =
     Packed <|
@@ -4106,7 +4333,8 @@ asia__tokyo =
             (ZoneState 540 (Save 0))
 
 
-{-| -}
+{-| `Asia/Tomsk`
+-}
 asia__tomsk : Pack
 asia__tomsk =
     Packed <|
@@ -4121,7 +4349,8 @@ asia__tomsk =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Asia/Ulaanbaatar`
+-}
 asia__ulaanbaatar : Pack
 asia__ulaanbaatar =
     Packed <|
@@ -4131,7 +4360,8 @@ asia__ulaanbaatar =
             (ZoneState 480 (Rules rules_Mongol))
 
 
-{-| -}
+{-| `Asia/Urumqi`
+-}
 asia__urumqi : Pack
 asia__urumqi =
     Packed <|
@@ -4140,7 +4370,8 @@ asia__urumqi =
             (ZoneState 360 (Save 0))
 
 
-{-| -}
+{-| `Asia/Ust-Nera`
+-}
 asia__ust_nera : Pack
 asia__ust_nera =
     Packed <|
@@ -4155,7 +4386,8 @@ asia__ust_nera =
             (ZoneState 600 (Save 0))
 
 
-{-| -}
+{-| `Asia/Vladivostok`
+-}
 asia__vladivostok : Pack
 asia__vladivostok =
     Packed <|
@@ -4168,7 +4400,8 @@ asia__vladivostok =
             (ZoneState 600 (Save 0))
 
 
-{-| -}
+{-| `Asia/Yakutsk`
+-}
 asia__yakutsk : Pack
 asia__yakutsk =
     Packed <|
@@ -4181,7 +4414,8 @@ asia__yakutsk =
             (ZoneState 540 (Save 0))
 
 
-{-| -}
+{-| `Asia/Yangon`
+-}
 asia__yangon : Pack
 asia__yangon =
     Packed <|
@@ -4190,7 +4424,8 @@ asia__yangon =
             (ZoneState 390 (Save 0))
 
 
-{-| -}
+{-| `Asia/Yekaterinburg`
+-}
 asia__yekaterinburg : Pack
 asia__yekaterinburg =
     Packed <|
@@ -4203,7 +4438,8 @@ asia__yekaterinburg =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Asia/Yerevan`
+-}
 asia__yerevan : Pack
 asia__yerevan =
     Packed <|
@@ -4216,7 +4452,8 @@ asia__yerevan =
             (ZoneState 240 (Rules rules_Armenia))
 
 
-{-| -}
+{-| `Atlantic/Azores`
+-}
 atlantic__azores : Pack
 atlantic__azores =
     Packed <|
@@ -4228,7 +4465,8 @@ atlantic__azores =
             (ZoneState -60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Atlantic/Bermuda`
+-}
 atlantic__bermuda : Pack
 atlantic__bermuda =
     Packed <|
@@ -4239,7 +4477,8 @@ atlantic__bermuda =
             (ZoneState -240 (Rules rules_US))
 
 
-{-| -}
+{-| `Atlantic/Canary`
+-}
 atlantic__canary : Pack
 atlantic__canary =
     Packed <|
@@ -4250,7 +4489,8 @@ atlantic__canary =
             (ZoneState 0 (Rules rules_EU))
 
 
-{-| -}
+{-| `Atlantic/Cape_Verde`
+-}
 atlantic__cape_verde : Pack
 atlantic__cape_verde =
     Packed <|
@@ -4260,7 +4500,8 @@ atlantic__cape_verde =
             (ZoneState -60 (Save 0))
 
 
-{-| -}
+{-| `Atlantic/Faroe`
+-}
 atlantic__faroe : Pack
 atlantic__faroe =
     Packed <|
@@ -4270,7 +4511,8 @@ atlantic__faroe =
             (ZoneState 0 (Rules rules_EU))
 
 
-{-| -}
+{-| `Atlantic/Madeira`
+-}
 atlantic__madeira : Pack
 atlantic__madeira =
     Packed <|
@@ -4280,7 +4522,8 @@ atlantic__madeira =
             (ZoneState 0 (Rules rules_EU))
 
 
-{-| -}
+{-| `Atlantic/Reykjavik`
+-}
 atlantic__reykjavik : Pack
 atlantic__reykjavik =
     Packed <|
@@ -4289,7 +4532,8 @@ atlantic__reykjavik =
             (ZoneState 0 (Save 0))
 
 
-{-| -}
+{-| `Atlantic/South_Georgia`
+-}
 atlantic__south_georgia : Pack
 atlantic__south_georgia =
     Packed <|
@@ -4298,7 +4542,8 @@ atlantic__south_georgia =
             (ZoneState -120 (Save 0))
 
 
-{-| -}
+{-| `Atlantic/Stanley`
+-}
 atlantic__stanley : Pack
 atlantic__stanley =
     Packed <|
@@ -4310,7 +4555,8 @@ atlantic__stanley =
             (ZoneState -180 (Save 0))
 
 
-{-| -}
+{-| `Australia/Adelaide`
+-}
 australia__adelaide : Pack
 australia__adelaide =
     Packed <|
@@ -4320,7 +4566,8 @@ australia__adelaide =
             (ZoneState 570 (Rules rules_AS))
 
 
-{-| -}
+{-| `Australia/Brisbane`
+-}
 australia__brisbane : Pack
 australia__brisbane =
     Packed <|
@@ -4330,7 +4577,8 @@ australia__brisbane =
             (ZoneState 600 (Rules rules_AQ))
 
 
-{-| -}
+{-| `Australia/Broken_Hill`
+-}
 australia__broken_hill : Pack
 australia__broken_hill =
     Packed <|
@@ -4341,7 +4589,8 @@ australia__broken_hill =
             (ZoneState 570 (Rules rules_AS))
 
 
-{-| -}
+{-| `Australia/Currie`
+-}
 australia__currie : Pack
 australia__currie =
     Packed <|
@@ -4351,7 +4600,8 @@ australia__currie =
             (ZoneState 600 (Rules rules_AT))
 
 
-{-| -}
+{-| `Australia/Darwin`
+-}
 australia__darwin : Pack
 australia__darwin =
     Packed <|
@@ -4360,7 +4610,8 @@ australia__darwin =
             (ZoneState 570 (Save 0))
 
 
-{-| -}
+{-| `Australia/Eucla`
+-}
 australia__eucla : Pack
 australia__eucla =
     Packed <|
@@ -4369,7 +4620,8 @@ australia__eucla =
             (ZoneState 525 (Rules rules_AW))
 
 
-{-| -}
+{-| `Australia/Hobart`
+-}
 australia__hobart : Pack
 australia__hobart =
     Packed <|
@@ -4378,7 +4630,8 @@ australia__hobart =
             (ZoneState 600 (Rules rules_AT))
 
 
-{-| -}
+{-| `Australia/Lindeman`
+-}
 australia__lindeman : Pack
 australia__lindeman =
     Packed <|
@@ -4389,7 +4642,8 @@ australia__lindeman =
             (ZoneState 600 (Rules rules_Holiday))
 
 
-{-| -}
+{-| `Australia/Lord_Howe`
+-}
 australia__lord_howe : Pack
 australia__lord_howe =
     Packed <|
@@ -4400,7 +4654,8 @@ australia__lord_howe =
             (ZoneState 630 (Rules rules_LH))
 
 
-{-| -}
+{-| `Australia/Melbourne`
+-}
 australia__melbourne : Pack
 australia__melbourne =
     Packed <|
@@ -4410,7 +4665,8 @@ australia__melbourne =
             (ZoneState 600 (Rules rules_AV))
 
 
-{-| -}
+{-| `Australia/Perth`
+-}
 australia__perth : Pack
 australia__perth =
     Packed <|
@@ -4419,7 +4675,8 @@ australia__perth =
             (ZoneState 480 (Rules rules_AW))
 
 
-{-| -}
+{-| `Australia/Sydney`
+-}
 australia__sydney : Pack
 australia__sydney =
     Packed <|
@@ -4429,7 +4686,8 @@ australia__sydney =
             (ZoneState 600 (Rules rules_AN))
 
 
-{-| -}
+{-| `Europe/Amsterdam`
+-}
 europe__amsterdam : Pack
 europe__amsterdam =
     Packed <|
@@ -4439,7 +4697,8 @@ europe__amsterdam =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Andorra`
+-}
 europe__andorra : Pack
 europe__andorra =
     Packed <|
@@ -4449,7 +4708,8 @@ europe__andorra =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Astrakhan`
+-}
 europe__astrakhan : Pack
 europe__astrakhan =
     Packed <|
@@ -4464,7 +4724,8 @@ europe__astrakhan =
             (ZoneState 240 (Save 0))
 
 
-{-| -}
+{-| `Europe/Athens`
+-}
 europe__athens : Pack
 europe__athens =
     Packed <|
@@ -4474,7 +4735,8 @@ europe__athens =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Belgrade`
+-}
 europe__belgrade : Pack
 europe__belgrade =
     Packed <|
@@ -4484,7 +4746,8 @@ europe__belgrade =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Berlin`
+-}
 europe__berlin : Pack
 europe__berlin =
     Packed <|
@@ -4494,7 +4757,8 @@ europe__berlin =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Brussels`
+-}
 europe__brussels : Pack
 europe__brussels =
     Packed <|
@@ -4504,7 +4768,8 @@ europe__brussels =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Bucharest`
+-}
 europe__bucharest : Pack
 europe__bucharest =
     Packed <|
@@ -4517,7 +4782,8 @@ europe__bucharest =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Budapest`
+-}
 europe__budapest : Pack
 europe__budapest =
     Packed <|
@@ -4527,7 +4793,8 @@ europe__budapest =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Chisinau`
+-}
 europe__chisinau : Pack
 europe__chisinau =
     Packed <|
@@ -4539,7 +4806,8 @@ europe__chisinau =
             (ZoneState 120 (Rules rules_Moldova))
 
 
-{-| -}
+{-| `Europe/Copenhagen`
+-}
 europe__copenhagen : Pack
 europe__copenhagen =
     Packed <|
@@ -4549,7 +4817,8 @@ europe__copenhagen =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Dublin`
+-}
 europe__dublin : Pack
 europe__dublin =
     Packed <|
@@ -4558,7 +4827,8 @@ europe__dublin =
             (ZoneState 60 (Rules rules_Eire))
 
 
-{-| -}
+{-| `Europe/Gibraltar`
+-}
 europe__gibraltar : Pack
 europe__gibraltar =
     Packed <|
@@ -4568,7 +4838,8 @@ europe__gibraltar =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Helsinki`
+-}
 europe__helsinki : Pack
 europe__helsinki =
     Packed <|
@@ -4578,7 +4849,8 @@ europe__helsinki =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Istanbul`
+-}
 europe__istanbul : Pack
 europe__istanbul =
     Packed <|
@@ -4597,7 +4869,8 @@ europe__istanbul =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Europe/Kaliningrad`
+-}
 europe__kaliningrad : Pack
 europe__kaliningrad =
     Packed <|
@@ -4609,7 +4882,8 @@ europe__kaliningrad =
             (ZoneState 120 (Save 0))
 
 
-{-| -}
+{-| `Europe/Kiev`
+-}
 europe__kiev : Pack
 europe__kiev =
     Packed <|
@@ -4621,7 +4895,8 @@ europe__kiev =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Kirov`
+-}
 europe__kirov : Pack
 europe__kirov =
     Packed <|
@@ -4635,7 +4910,8 @@ europe__kirov =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Europe/Lisbon`
+-}
 europe__lisbon : Pack
 europe__lisbon =
     Packed <|
@@ -4648,7 +4924,8 @@ europe__lisbon =
             (ZoneState 0 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/London`
+-}
 europe__london : Pack
 europe__london =
     Packed <|
@@ -4659,7 +4936,8 @@ europe__london =
             (ZoneState 0 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Luxembourg`
+-}
 europe__luxembourg : Pack
 europe__luxembourg =
     Packed <|
@@ -4669,7 +4947,8 @@ europe__luxembourg =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Madrid`
+-}
 europe__madrid : Pack
 europe__madrid =
     Packed <|
@@ -4679,7 +4958,8 @@ europe__madrid =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Malta`
+-}
 europe__malta : Pack
 europe__malta =
     Packed <|
@@ -4690,7 +4970,8 @@ europe__malta =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Minsk`
+-}
 europe__minsk : Pack
 europe__minsk =
     Packed <|
@@ -4702,7 +4983,8 @@ europe__minsk =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Europe/Monaco`
+-}
 europe__monaco : Pack
 europe__monaco =
     Packed <|
@@ -4712,7 +4994,8 @@ europe__monaco =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Moscow`
+-}
 europe__moscow : Pack
 europe__moscow =
     Packed <|
@@ -4725,7 +5008,8 @@ europe__moscow =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Europe/Oslo`
+-}
 europe__oslo : Pack
 europe__oslo =
     Packed <|
@@ -4735,7 +5019,8 @@ europe__oslo =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Paris`
+-}
 europe__paris : Pack
 europe__paris =
     Packed <|
@@ -4745,7 +5030,8 @@ europe__paris =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Prague`
+-}
 europe__prague : Pack
 europe__prague =
     Packed <|
@@ -4755,7 +5041,8 @@ europe__prague =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Riga`
+-}
 europe__riga : Pack
 europe__riga =
     Packed <|
@@ -4769,7 +5056,8 @@ europe__riga =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Rome`
+-}
 europe__rome : Pack
 europe__rome =
     Packed <|
@@ -4779,7 +5067,8 @@ europe__rome =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Samara`
+-}
 europe__samara : Pack
 europe__samara =
     Packed <|
@@ -4794,7 +5083,8 @@ europe__samara =
             (ZoneState 240 (Save 0))
 
 
-{-| -}
+{-| `Europe/Saratov`
+-}
 europe__saratov : Pack
 europe__saratov =
     Packed <|
@@ -4809,7 +5099,8 @@ europe__saratov =
             (ZoneState 240 (Save 0))
 
 
-{-| -}
+{-| `Europe/Simferopol`
+-}
 europe__simferopol : Pack
 europe__simferopol =
     Packed <|
@@ -4828,7 +5119,8 @@ europe__simferopol =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Europe/Sofia`
+-}
 europe__sofia : Pack
 europe__sofia =
     Packed <|
@@ -4841,7 +5133,8 @@ europe__sofia =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Stockholm`
+-}
 europe__stockholm : Pack
 europe__stockholm =
     Packed <|
@@ -4851,7 +5144,8 @@ europe__stockholm =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Tallinn`
+-}
 europe__tallinn : Pack
 europe__tallinn =
     Packed <|
@@ -4865,7 +5159,8 @@ europe__tallinn =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Tirane`
+-}
 europe__tirane : Pack
 europe__tirane =
     Packed <|
@@ -4875,7 +5170,8 @@ europe__tirane =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Ulyanovsk`
+-}
 europe__ulyanovsk : Pack
 europe__ulyanovsk =
     Packed <|
@@ -4890,7 +5186,8 @@ europe__ulyanovsk =
             (ZoneState 240 (Save 0))
 
 
-{-| -}
+{-| `Europe/Uzhgorod`
+-}
 europe__uzhgorod : Pack
 europe__uzhgorod =
     Packed <|
@@ -4904,7 +5201,8 @@ europe__uzhgorod =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Vienna`
+-}
 europe__vienna : Pack
 europe__vienna =
     Packed <|
@@ -4914,7 +5212,8 @@ europe__vienna =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Vilnius`
+-}
 europe__vilnius : Pack
 europe__vilnius =
     Packed <|
@@ -4929,7 +5228,8 @@ europe__vilnius =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Volgograd`
+-}
 europe__volgograd : Pack
 europe__volgograd =
     Packed <|
@@ -4943,7 +5243,8 @@ europe__volgograd =
             (ZoneState 180 (Save 0))
 
 
-{-| -}
+{-| `Europe/Warsaw`
+-}
 europe__warsaw : Pack
 europe__warsaw =
     Packed <|
@@ -4954,7 +5255,8 @@ europe__warsaw =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Zaporozhye`
+-}
 europe__zaporozhye : Pack
 europe__zaporozhye =
     Packed <|
@@ -4965,7 +5267,8 @@ europe__zaporozhye =
             (ZoneState 120 (Rules rules_EU))
 
 
-{-| -}
+{-| `Europe/Zurich`
+-}
 europe__zurich : Pack
 europe__zurich =
     Packed <|
@@ -4975,7 +5278,8 @@ europe__zurich =
             (ZoneState 60 (Rules rules_EU))
 
 
-{-| -}
+{-| `Indian/Chagos`
+-}
 indian__chagos : Pack
 indian__chagos =
     Packed <|
@@ -4985,7 +5289,8 @@ indian__chagos =
             (ZoneState 360 (Save 0))
 
 
-{-| -}
+{-| `Indian/Christmas`
+-}
 indian__christmas : Pack
 indian__christmas =
     Packed <|
@@ -4994,7 +5299,8 @@ indian__christmas =
             (ZoneState 420 (Save 0))
 
 
-{-| -}
+{-| `Indian/Cocos`
+-}
 indian__cocos : Pack
 indian__cocos =
     Packed <|
@@ -5003,7 +5309,8 @@ indian__cocos =
             (ZoneState 390 (Save 0))
 
 
-{-| -}
+{-| `Indian/Kerguelen`
+-}
 indian__kerguelen : Pack
 indian__kerguelen =
     Packed <|
@@ -5012,7 +5319,8 @@ indian__kerguelen =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Indian/Mahe`
+-}
 indian__mahe : Pack
 indian__mahe =
     Packed <|
@@ -5021,7 +5329,8 @@ indian__mahe =
             (ZoneState 240 (Save 0))
 
 
-{-| -}
+{-| `Indian/Maldives`
+-}
 indian__maldives : Pack
 indian__maldives =
     Packed <|
@@ -5030,7 +5339,8 @@ indian__maldives =
             (ZoneState 300 (Save 0))
 
 
-{-| -}
+{-| `Indian/Mauritius`
+-}
 indian__mauritius : Pack
 indian__mauritius =
     Packed <|
@@ -5039,7 +5349,8 @@ indian__mauritius =
             (ZoneState 240 (Rules rules_Mauritius))
 
 
-{-| -}
+{-| `Indian/Reunion`
+-}
 indian__reunion : Pack
 indian__reunion =
     Packed <|
@@ -5048,7 +5359,8 @@ indian__reunion =
             (ZoneState 240 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Apia`
+-}
 pacific__apia : Pack
 pacific__apia =
     Packed <|
@@ -5058,7 +5370,8 @@ pacific__apia =
             (ZoneState 780 (Rules rules_WS))
 
 
-{-| -}
+{-| `Pacific/Auckland`
+-}
 pacific__auckland : Pack
 pacific__auckland =
     Packed <|
@@ -5067,7 +5380,8 @@ pacific__auckland =
             (ZoneState 720 (Rules rules_NZ))
 
 
-{-| -}
+{-| `Pacific/Bougainville`
+-}
 pacific__bougainville : Pack
 pacific__bougainville =
     Packed <|
@@ -5077,7 +5391,8 @@ pacific__bougainville =
             (ZoneState 660 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Chatham`
+-}
 pacific__chatham : Pack
 pacific__chatham =
     Packed <|
@@ -5086,7 +5401,8 @@ pacific__chatham =
             (ZoneState 765 (Rules rules_Chatham))
 
 
-{-| -}
+{-| `Pacific/Chuuk`
+-}
 pacific__chuuk : Pack
 pacific__chuuk =
     Packed <|
@@ -5095,7 +5411,8 @@ pacific__chuuk =
             (ZoneState 600 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Easter`
+-}
 pacific__easter : Pack
 pacific__easter =
     Packed <|
@@ -5105,7 +5422,8 @@ pacific__easter =
             (ZoneState -360 (Rules rules_Chile))
 
 
-{-| -}
+{-| `Pacific/Efate`
+-}
 pacific__efate : Pack
 pacific__efate =
     Packed <|
@@ -5114,7 +5432,8 @@ pacific__efate =
             (ZoneState 660 (Rules rules_Vanuatu))
 
 
-{-| -}
+{-| `Pacific/Enderbury`
+-}
 pacific__enderbury : Pack
 pacific__enderbury =
     Packed <|
@@ -5125,7 +5444,8 @@ pacific__enderbury =
             (ZoneState 780 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Fakaofo`
+-}
 pacific__fakaofo : Pack
 pacific__fakaofo =
     Packed <|
@@ -5135,7 +5455,8 @@ pacific__fakaofo =
             (ZoneState 780 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Fiji`
+-}
 pacific__fiji : Pack
 pacific__fiji =
     Packed <|
@@ -5144,7 +5465,8 @@ pacific__fiji =
             (ZoneState 720 (Rules rules_Fiji))
 
 
-{-| -}
+{-| `Pacific/Funafuti`
+-}
 pacific__funafuti : Pack
 pacific__funafuti =
     Packed <|
@@ -5153,7 +5475,8 @@ pacific__funafuti =
             (ZoneState 720 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Galapagos`
+-}
 pacific__galapagos : Pack
 pacific__galapagos =
     Packed <|
@@ -5163,7 +5486,8 @@ pacific__galapagos =
             (ZoneState -360 (Rules rules_Ecuador))
 
 
-{-| -}
+{-| `Pacific/Gambier`
+-}
 pacific__gambier : Pack
 pacific__gambier =
     Packed <|
@@ -5172,7 +5496,8 @@ pacific__gambier =
             (ZoneState -540 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Guadalcanal`
+-}
 pacific__guadalcanal : Pack
 pacific__guadalcanal =
     Packed <|
@@ -5181,7 +5506,8 @@ pacific__guadalcanal =
             (ZoneState 660 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Guam`
+-}
 pacific__guam : Pack
 pacific__guam =
     Packed <|
@@ -5191,7 +5517,8 @@ pacific__guam =
             (ZoneState 600 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Honolulu`
+-}
 pacific__honolulu : Pack
 pacific__honolulu =
     Packed <|
@@ -5200,7 +5527,8 @@ pacific__honolulu =
             (ZoneState -600 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Kiritimati`
+-}
 pacific__kiritimati : Pack
 pacific__kiritimati =
     Packed <|
@@ -5211,7 +5539,8 @@ pacific__kiritimati =
             (ZoneState 840 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Kosrae`
+-}
 pacific__kosrae : Pack
 pacific__kosrae =
     Packed <|
@@ -5221,7 +5550,8 @@ pacific__kosrae =
             (ZoneState 660 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Kwajalein`
+-}
 pacific__kwajalein : Pack
 pacific__kwajalein =
     Packed <|
@@ -5231,7 +5561,8 @@ pacific__kwajalein =
             (ZoneState 720 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Majuro`
+-}
 pacific__majuro : Pack
 pacific__majuro =
     Packed <|
@@ -5240,7 +5571,8 @@ pacific__majuro =
             (ZoneState 720 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Marquesas`
+-}
 pacific__marquesas : Pack
 pacific__marquesas =
     Packed <|
@@ -5249,7 +5581,8 @@ pacific__marquesas =
             (ZoneState -570 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Nauru`
+-}
 pacific__nauru : Pack
 pacific__nauru =
     Packed <|
@@ -5259,7 +5592,8 @@ pacific__nauru =
             (ZoneState 720 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Niue`
+-}
 pacific__niue : Pack
 pacific__niue =
     Packed <|
@@ -5269,7 +5603,8 @@ pacific__niue =
             (ZoneState -660 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Norfolk`
+-}
 pacific__norfolk : Pack
 pacific__norfolk =
     Packed <|
@@ -5281,7 +5616,8 @@ pacific__norfolk =
             (ZoneState 660 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Noumea`
+-}
 pacific__noumea : Pack
 pacific__noumea =
     Packed <|
@@ -5290,7 +5626,8 @@ pacific__noumea =
             (ZoneState 660 (Rules rules_NC))
 
 
-{-| -}
+{-| `Pacific/Pago_Pago`
+-}
 pacific__pago_pago : Pack
 pacific__pago_pago =
     Packed <|
@@ -5299,7 +5636,8 @@ pacific__pago_pago =
             (ZoneState -660 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Palau`
+-}
 pacific__palau : Pack
 pacific__palau =
     Packed <|
@@ -5308,7 +5646,8 @@ pacific__palau =
             (ZoneState 540 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Pitcairn`
+-}
 pacific__pitcairn : Pack
 pacific__pitcairn =
     Packed <|
@@ -5318,7 +5657,8 @@ pacific__pitcairn =
             (ZoneState -480 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Pohnpei`
+-}
 pacific__pohnpei : Pack
 pacific__pohnpei =
     Packed <|
@@ -5327,7 +5667,8 @@ pacific__pohnpei =
             (ZoneState 660 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Port_Moresby`
+-}
 pacific__port_moresby : Pack
 pacific__port_moresby =
     Packed <|
@@ -5336,7 +5677,8 @@ pacific__port_moresby =
             (ZoneState 600 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Rarotonga`
+-}
 pacific__rarotonga : Pack
 pacific__rarotonga =
     Packed <|
@@ -5346,7 +5688,8 @@ pacific__rarotonga =
             (ZoneState -600 (Rules rules_Cook))
 
 
-{-| -}
+{-| `Pacific/Tahiti`
+-}
 pacific__tahiti : Pack
 pacific__tahiti =
     Packed <|
@@ -5355,7 +5698,8 @@ pacific__tahiti =
             (ZoneState -600 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Tarawa`
+-}
 pacific__tarawa : Pack
 pacific__tarawa =
     Packed <|
@@ -5364,7 +5708,8 @@ pacific__tarawa =
             (ZoneState 720 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Tongatapu`
+-}
 pacific__tongatapu : Pack
 pacific__tongatapu =
     Packed <|
@@ -5374,7 +5719,8 @@ pacific__tongatapu =
             (ZoneState 780 (Rules rules_Tonga))
 
 
-{-| -}
+{-| `Pacific/Wake`
+-}
 pacific__wake : Pack
 pacific__wake =
     Packed <|
@@ -5383,7 +5729,8 @@ pacific__wake =
             (ZoneState 720 (Save 0))
 
 
-{-| -}
+{-| `Pacific/Wallis`
+-}
 pacific__wallis : Pack
 pacific__wallis =
     Packed <|
@@ -5396,475 +5743,554 @@ pacific__wallis =
 -- Links
 
 
-{-| -}
+{-| `Africa/Addis_Ababa` (alias of `Africa/Nairobi`)
+-}
 africa__addis_ababa : Pack
 africa__addis_ababa =
     africa__nairobi
 
 
-{-| -}
+{-| `Africa/Asmara` (alias of `Africa/Nairobi`)
+-}
 africa__asmara : Pack
 africa__asmara =
     africa__nairobi
 
 
-{-| -}
+{-| `Africa/Bamako` (alias of `Africa/Abidjan`)
+-}
 africa__bamako : Pack
 africa__bamako =
     africa__abidjan
 
 
-{-| -}
+{-| `Africa/Bangui` (alias of `Africa/Lagos`)
+-}
 africa__bangui : Pack
 africa__bangui =
     africa__lagos
 
 
-{-| -}
+{-| `Africa/Banjul` (alias of `Africa/Abidjan`)
+-}
 africa__banjul : Pack
 africa__banjul =
     africa__abidjan
 
 
-{-| -}
+{-| `Africa/Blantyre` (alias of `Africa/Maputo`)
+-}
 africa__blantyre : Pack
 africa__blantyre =
     africa__maputo
 
 
-{-| -}
+{-| `Africa/Brazzaville` (alias of `Africa/Lagos`)
+-}
 africa__brazzaville : Pack
 africa__brazzaville =
     africa__lagos
 
 
-{-| -}
+{-| `Africa/Bujumbura` (alias of `Africa/Maputo`)
+-}
 africa__bujumbura : Pack
 africa__bujumbura =
     africa__maputo
 
 
-{-| -}
+{-| `Africa/Conakry` (alias of `Africa/Abidjan`)
+-}
 africa__conakry : Pack
 africa__conakry =
     africa__abidjan
 
 
-{-| -}
+{-| `Africa/Dakar` (alias of `Africa/Abidjan`)
+-}
 africa__dakar : Pack
 africa__dakar =
     africa__abidjan
 
 
-{-| -}
+{-| `Africa/Dar_es_Salaam` (alias of `Africa/Nairobi`)
+-}
 africa__dar_es_salaam : Pack
 africa__dar_es_salaam =
     africa__nairobi
 
 
-{-| -}
+{-| `Africa/Djibouti` (alias of `Africa/Nairobi`)
+-}
 africa__djibouti : Pack
 africa__djibouti =
     africa__nairobi
 
 
-{-| -}
+{-| `Africa/Douala` (alias of `Africa/Lagos`)
+-}
 africa__douala : Pack
 africa__douala =
     africa__lagos
 
 
-{-| -}
+{-| `Africa/Freetown` (alias of `Africa/Abidjan`)
+-}
 africa__freetown : Pack
 africa__freetown =
     africa__abidjan
 
 
-{-| -}
+{-| `Africa/Gaborone` (alias of `Africa/Maputo`)
+-}
 africa__gaborone : Pack
 africa__gaborone =
     africa__maputo
 
 
-{-| -}
+{-| `Africa/Harare` (alias of `Africa/Maputo`)
+-}
 africa__harare : Pack
 africa__harare =
     africa__maputo
 
 
-{-| -}
+{-| `Africa/Kampala` (alias of `Africa/Nairobi`)
+-}
 africa__kampala : Pack
 africa__kampala =
     africa__nairobi
 
 
-{-| -}
+{-| `Africa/Kigali` (alias of `Africa/Maputo`)
+-}
 africa__kigali : Pack
 africa__kigali =
     africa__maputo
 
 
-{-| -}
+{-| `Africa/Kinshasa` (alias of `Africa/Lagos`)
+-}
 africa__kinshasa : Pack
 africa__kinshasa =
     africa__lagos
 
 
-{-| -}
+{-| `Africa/Libreville` (alias of `Africa/Lagos`)
+-}
 africa__libreville : Pack
 africa__libreville =
     africa__lagos
 
 
-{-| -}
+{-| `Africa/Lome` (alias of `Africa/Abidjan`)
+-}
 africa__lome : Pack
 africa__lome =
     africa__abidjan
 
 
-{-| -}
+{-| `Africa/Luanda` (alias of `Africa/Lagos`)
+-}
 africa__luanda : Pack
 africa__luanda =
     africa__lagos
 
 
-{-| -}
+{-| `Africa/Lubumbashi` (alias of `Africa/Maputo`)
+-}
 africa__lubumbashi : Pack
 africa__lubumbashi =
     africa__maputo
 
 
-{-| -}
+{-| `Africa/Lusaka` (alias of `Africa/Maputo`)
+-}
 africa__lusaka : Pack
 africa__lusaka =
     africa__maputo
 
 
-{-| -}
+{-| `Africa/Malabo` (alias of `Africa/Lagos`)
+-}
 africa__malabo : Pack
 africa__malabo =
     africa__lagos
 
 
-{-| -}
+{-| `Africa/Maseru` (alias of `Africa/Johannesburg`)
+-}
 africa__maseru : Pack
 africa__maseru =
     africa__johannesburg
 
 
-{-| -}
+{-| `Africa/Mbabane` (alias of `Africa/Johannesburg`)
+-}
 africa__mbabane : Pack
 africa__mbabane =
     africa__johannesburg
 
 
-{-| -}
+{-| `Africa/Mogadishu` (alias of `Africa/Nairobi`)
+-}
 africa__mogadishu : Pack
 africa__mogadishu =
     africa__nairobi
 
 
-{-| -}
+{-| `Africa/Niamey` (alias of `Africa/Lagos`)
+-}
 africa__niamey : Pack
 africa__niamey =
     africa__lagos
 
 
-{-| -}
+{-| `Africa/Nouakchott` (alias of `Africa/Abidjan`)
+-}
 africa__nouakchott : Pack
 africa__nouakchott =
     africa__abidjan
 
 
-{-| -}
+{-| `Africa/Ouagadougou` (alias of `Africa/Abidjan`)
+-}
 africa__ouagadougou : Pack
 africa__ouagadougou =
     africa__abidjan
 
 
-{-| -}
+{-| `Africa/Porto-Novo` (alias of `Africa/Lagos`)
+-}
 africa__porto_novo : Pack
 africa__porto_novo =
     africa__lagos
 
 
-{-| -}
+{-| `America/Anguilla` (alias of `America/Port_of_Spain`)
+-}
 america__anguilla : Pack
 america__anguilla =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/Antigua` (alias of `America/Port_of_Spain`)
+-}
 america__antigua : Pack
 america__antigua =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/Aruba` (alias of `America/Curacao`)
+-}
 america__aruba : Pack
 america__aruba =
     america__curacao
 
 
-{-| -}
+{-| `America/Cayman` (alias of `America/Panama`)
+-}
 america__cayman : Pack
 america__cayman =
     america__panama
 
 
-{-| -}
+{-| `America/Dominica` (alias of `America/Port_of_Spain`)
+-}
 america__dominica : Pack
 america__dominica =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/Grenada` (alias of `America/Port_of_Spain`)
+-}
 america__grenada : Pack
 america__grenada =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/Guadeloupe` (alias of `America/Port_of_Spain`)
+-}
 america__guadeloupe : Pack
 america__guadeloupe =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/Kralendijk` (alias of `America/Curacao`)
+-}
 america__kralendijk : Pack
 america__kralendijk =
     america__curacao
 
 
-{-| -}
+{-| `America/Lower_Princes` (alias of `America/Curacao`)
+-}
 america__lower_princes : Pack
 america__lower_princes =
     america__curacao
 
 
-{-| -}
+{-| `America/Marigot` (alias of `America/Port_of_Spain`)
+-}
 america__marigot : Pack
 america__marigot =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/Montserrat` (alias of `America/Port_of_Spain`)
+-}
 america__montserrat : Pack
 america__montserrat =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/St_Barthelemy` (alias of `America/Port_of_Spain`)
+-}
 america__st_barthelemy : Pack
 america__st_barthelemy =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/St_Kitts` (alias of `America/Port_of_Spain`)
+-}
 america__st_kitts : Pack
 america__st_kitts =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/St_Lucia` (alias of `America/Port_of_Spain`)
+-}
 america__st_lucia : Pack
 america__st_lucia =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/St_Thomas` (alias of `America/Port_of_Spain`)
+-}
 america__st_thomas : Pack
 america__st_thomas =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/St_Vincent` (alias of `America/Port_of_Spain`)
+-}
 america__st_vincent : Pack
 america__st_vincent =
     america__port_of_spain
 
 
-{-| -}
+{-| `America/Tortola` (alias of `America/Port_of_Spain`)
+-}
 america__tortola : Pack
 america__tortola =
     america__port_of_spain
 
 
-{-| -}
+{-| `Antarctica/McMurdo` (alias of `Pacific/Auckland`)
+-}
 antarctica__mcmurdo : Pack
 antarctica__mcmurdo =
     pacific__auckland
 
 
-{-| -}
+{-| `Arctic/Longyearbyen` (alias of `Europe/Oslo`)
+-}
 arctic__longyearbyen : Pack
 arctic__longyearbyen =
     europe__oslo
 
 
-{-| -}
+{-| `Asia/Aden` (alias of `Asia/Riyadh`)
+-}
 asia__aden : Pack
 asia__aden =
     asia__riyadh
 
 
-{-| -}
+{-| `Asia/Bahrain` (alias of `Asia/Qatar`)
+-}
 asia__bahrain : Pack
 asia__bahrain =
     asia__qatar
 
 
-{-| -}
+{-| `Asia/Istanbul` (alias of `Europe/Istanbul`)
+-}
 asia__istanbul : Pack
 asia__istanbul =
     europe__istanbul
 
 
-{-| -}
+{-| `Asia/Kuwait` (alias of `Asia/Riyadh`)
+-}
 asia__kuwait : Pack
 asia__kuwait =
     asia__riyadh
 
 
-{-| -}
+{-| `Asia/Muscat` (alias of `Asia/Dubai`)
+-}
 asia__muscat : Pack
 asia__muscat =
     asia__dubai
 
 
-{-| -}
+{-| `Asia/Phnom_Penh` (alias of `Asia/Bangkok`)
+-}
 asia__phnom_penh : Pack
 asia__phnom_penh =
     asia__bangkok
 
 
-{-| -}
+{-| `Asia/Vientiane` (alias of `Asia/Bangkok`)
+-}
 asia__vientiane : Pack
 asia__vientiane =
     asia__bangkok
 
 
-{-| -}
+{-| `Atlantic/St_Helena` (alias of `Africa/Abidjan`)
+-}
 atlantic__st_helena : Pack
 atlantic__st_helena =
     africa__abidjan
 
 
-{-| -}
+{-| `Europe/Bratislava` (alias of `Europe/Prague`)
+-}
 europe__bratislava : Pack
 europe__bratislava =
     europe__prague
 
 
-{-| -}
+{-| `Europe/Busingen` (alias of `Europe/Zurich`)
+-}
 europe__busingen : Pack
 europe__busingen =
     europe__zurich
 
 
-{-| -}
+{-| `Europe/Guernsey` (alias of `Europe/London`)
+-}
 europe__guernsey : Pack
 europe__guernsey =
     europe__london
 
 
-{-| -}
+{-| `Europe/Isle_of_Man` (alias of `Europe/London`)
+-}
 europe__isle_of_man : Pack
 europe__isle_of_man =
     europe__london
 
 
-{-| -}
+{-| `Europe/Jersey` (alias of `Europe/London`)
+-}
 europe__jersey : Pack
 europe__jersey =
     europe__london
 
 
-{-| -}
+{-| `Europe/Ljubljana` (alias of `Europe/Belgrade`)
+-}
 europe__ljubljana : Pack
 europe__ljubljana =
     europe__belgrade
 
 
-{-| -}
+{-| `Europe/Mariehamn` (alias of `Europe/Helsinki`)
+-}
 europe__mariehamn : Pack
 europe__mariehamn =
     europe__helsinki
 
 
-{-| -}
+{-| `Europe/Nicosia` (alias of `Asia/Nicosia`)
+-}
 europe__nicosia : Pack
 europe__nicosia =
     asia__nicosia
 
 
-{-| -}
+{-| `Europe/Podgorica` (alias of `Europe/Belgrade`)
+-}
 europe__podgorica : Pack
 europe__podgorica =
     europe__belgrade
 
 
-{-| -}
+{-| `Europe/San_Marino` (alias of `Europe/Rome`)
+-}
 europe__san_marino : Pack
 europe__san_marino =
     europe__rome
 
 
-{-| -}
+{-| `Europe/Sarajevo` (alias of `Europe/Belgrade`)
+-}
 europe__sarajevo : Pack
 europe__sarajevo =
     europe__belgrade
 
 
-{-| -}
+{-| `Europe/Skopje` (alias of `Europe/Belgrade`)
+-}
 europe__skopje : Pack
 europe__skopje =
     europe__belgrade
 
 
-{-| -}
+{-| `Europe/Vaduz` (alias of `Europe/Zurich`)
+-}
 europe__vaduz : Pack
 europe__vaduz =
     europe__zurich
 
 
-{-| -}
+{-| `Europe/Vatican` (alias of `Europe/Rome`)
+-}
 europe__vatican : Pack
 europe__vatican =
     europe__rome
 
 
-{-| -}
+{-| `Europe/Zagreb` (alias of `Europe/Belgrade`)
+-}
 europe__zagreb : Pack
 europe__zagreb =
     europe__belgrade
 
 
-{-| -}
+{-| `Indian/Antananarivo` (alias of `Africa/Nairobi`)
+-}
 indian__antananarivo : Pack
 indian__antananarivo =
     africa__nairobi
 
 
-{-| -}
+{-| `Indian/Comoro` (alias of `Africa/Nairobi`)
+-}
 indian__comoro : Pack
 indian__comoro =
     africa__nairobi
 
 
-{-| -}
+{-| `Indian/Mayotte` (alias of `Africa/Nairobi`)
+-}
 indian__mayotte : Pack
 indian__mayotte =
     africa__nairobi
 
 
-{-| -}
+{-| `Pacific/Midway` (alias of `Pacific/Pago_Pago`)
+-}
 pacific__midway : Pack
 pacific__midway =
     pacific__pago_pago
 
 
-{-| -}
+{-| `Pacific/Saipan` (alias of `Pacific/Guam`)
+-}
 pacific__saipan : Pack
 pacific__saipan =
     pacific__guam
