@@ -301,7 +301,7 @@ def print_filecontent(version, rulesets, zones, links):
     # links
     output.append("-- Links")
     for source, target in sorted(links.iteritems()):
-        output.append(template_link.format(source=zoneid_from_name(source), target=zoneid_from_name(target)))
+        output.append(print_link(source, target))
 
     # zonenameid_pairs
     output.append("-- Zones by name")
@@ -310,10 +310,10 @@ def print_filecontent(version, rulesets, zones, links):
     return "\n".join(output)
 
 
-def print_ruleset(name, rules):
-    name_ = rulesetid_from_name(name)
+def print_ruleset(rulesetname, rules):
+    rulesetid = rulesetid_from_name(rulesetname)
     rules_ = line_separator1.join(map(print_rule, rules))
-    return template_ruleset.format(name=name_, rules=rules_)
+    return template_ruleset.format(rulesetid=rulesetid, rules=rules_)
 
 
 def print_rule(rule):
@@ -321,11 +321,11 @@ def print_rule(rule):
     return template_rule.format(dayofmonth=dayofmonth, **rule)
 
 
-def print_zone(name, zone):
-    name_ = zoneid_from_name(name)
+def print_zone(zonename, zone):
+    zoneid = zoneid_from_name(zonename)
     history = line_separator3.join(map(print_zonestateuntil, zone["history"]))
     current = print_zonestate(**zone["current"])
-    return template_zone.format(name=name_, history=history, current=current)
+    return template_zone.format(zonename=zonename, zoneid=zoneid, history=history, current=current)
 
 
 def print_zonestateuntil(( state, until )):
@@ -345,6 +345,13 @@ def print_zonerules(zonerules):
 
     else:
         return " ".join(map(str, zonerules))
+
+
+def print_link(source, target):
+    sourceid = zoneid_from_name(source)
+    targetid = zoneid_from_name(target)
+    return template_link.format(sourcename=source, targetname=target, sourceid=sourceid, targetid=targetid)
+
 
 def print_zonenameid_pairs(zonenameid_pairs):
     pairs = [ template_zonenameid_pair.format(k, v) for k, v in zonenameid_pairs ]
@@ -371,8 +378,8 @@ Zone Database.
 ## Zones
 
 Data for each zone is contained in a `Pack` named after its zone name (e.g.
-_America/New_York_), where slashes are replaced by `__`, dashes are replaced
-by `_`, and the name is lowercased. For example, _America/Port-au-Prince_
+`America/New_York`), where slashes are replaced by `__`, dashes are replaced
+by `_`, and the name is lowercased. For example, `America/Port-au-Prince`
 becomes `america__port_au_prince`.
 
 @docs {zoneids}
@@ -420,8 +427,8 @@ maxYear =
 """
 
 template_ruleset = """
-{name} : List Rule
-{name} =
+{rulesetid} : List Rule
+{rulesetid} =
     [ {rules}
     ]
 """
@@ -429,9 +436,10 @@ template_ruleset = """
 template_rule = "Rule {from} {to} {month} ({dayofmonth}) {time} {clock} {save}"
 
 template_zone = """
-{{-| -}}
-{name} : Pack
-{name} =
+{{-| `{zonename}`
+-}}
+{zoneid} : Pack
+{zoneid} =
     Packed <|
         Zone
             [ {history}
@@ -446,10 +454,11 @@ template_zonestate = "ZoneState {offset} ({zonerules})"
 template_datetime = "DateTime {year} {month} {day} {time} {clock}"
 
 template_link = """
-{{-| -}}
-{source} : Pack
-{source} =
-    {target}
+{{-| `{sourcename}` (alias of `{targetname}`)
+-}}
+{sourceid} : Pack
+{sourceid} =
+    {targetid}
 """
 
 template_zonenameid_pairs = """
@@ -475,6 +484,17 @@ template_zonenameid_pair = "( \"{0}\", {1} )"
 line_separator1 = "\n    , "
 
 line_separator3 = "\n            , "
+
+
+# file
+
+def create_textfile(filepath, filecontent):
+    if not os.path.exists(os.path.dirname(filepath)):
+       os.makedirs(os.path.dirname(filepath))
+
+    output = io.open(filepath, "w", encoding="utf-8")
+    output.write(unicode(filecontent, encoding="utf-8-sig"))
+    output.close()
 
 
 # main
@@ -514,14 +534,7 @@ def main():
     filecontent = print_filecontent(args.version, rulesets, zones, links)
 
     # write file
-    filepath = os.path.abspath(args.output)
-
-    if not os.path.exists(os.path.dirname(filepath)):
-       os.makedirs(os.path.dirname(filepath))
-
-    output = io.open(filepath, "w", encoding="utf-8")
-    output.write(unicode(filecontent, encoding="utf-8-sig"))
-    output.close()
+    create_textfile(os.path.abspath(args.output), filecontent)
 
 
 if __name__ == "__main__":
