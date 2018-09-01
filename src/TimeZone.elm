@@ -9,9 +9,15 @@ module TimeZone
 
 {-|
 
-@docs unpack
+
+## Get the local time zone
 
 @docs getZone, Error
+
+
+## Get a specific time zone
+
+@docs unpack
 
 -}
 
