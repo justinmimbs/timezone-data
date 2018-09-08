@@ -7,7 +7,6 @@ import Html.Attributes
 import Task exposing (Task)
 import Time exposing (Month(..), Posix, Weekday(..))
 import TimeZone
-import TimeZone.Data
 
 
 main : Program () Model Msg

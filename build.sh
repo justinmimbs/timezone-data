@@ -17,7 +17,7 @@ git -C tz -c advice.detachedHead=false checkout $version
 
 # build file
 
-output="src/TimeZone/Data.elm"
+output="src/TimeZone.elm"
 
 echo "Creating file $output for version $version"
 ./build.py tz $version $output

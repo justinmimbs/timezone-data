@@ -31,30 +31,29 @@ See [this page][getzone] for a full example.
 
 ### Get a specific time zone
 
-Data is contained in the `TimeZone.Data` module, where each zone is packaged as a `TimeZone.Data.Pack` type. A `Pack` must be unpacked to a `Time.Zone` with the `TimeZone.unpack` function.
+Each zone is stored as a function, waiting to be evaluated to a `Time.Zone`.
 
 ```elm
 import Time
-import TimeZone
-import TimeZone.Data
+import TimeZone exposing (america__new_york)
+
+
+-- unevaluated
+
+lazyZone : () -> Time.Zone
+lazyZone =
+    america__new_york
+
+
+-- evaluated
 
 zone : Time.Zone
 zone =
-    TimeZone.unpack TimeZone.Data.america__new_york
+    america__new_york ()
 ```
 
-Each `Pack` in the `TimeZone.Data` module is named after its zone name (e.g. `America/New_York`), where slashes are replaced by `__`, dashes are replaced by `_`, and the name is lowercased. For example, `America/Port-au-Prince` becomes `america__port_au_prince`.
-
-You can look up a `Pack` by its zone name in the `TimeZone.Data.packs` dictionary.
-
-```elm
-import Dict
-import TimeZone.Data
-
-Dict.get "America/New_York" TimeZone.Data.packs
-
--- Just TimeZone.Data.america__new_york
-```
+Once evaluated, you should store the `Time.Zone` values you need in your model
+so that they don't need to be evaluated again.
 
 
 ## Alternatives

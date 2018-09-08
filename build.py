@@ -282,10 +282,19 @@ def rulesetname_from_zonerules(zonerules):
 
 def print_filecontent(version, rulesets, zones, links):
     zonenameid_pairs = [ ( name, zoneid_from_name(name) ) for name in sorted(zones.keys() + links.keys()) ]
-    zoneids = ", ".join([ zoneid for _, zoneid in zonenameid_pairs ])
+
+    template = open("template.elm").read()
+    keywords = re.compile(r"VERSION|MIN_YEAR|MAX_YEAR|ZONE_IDS|ZONE_NAME_ID_PAIRS")
+    substitutions = {
+        "VERSION": version,
+        "MIN_YEAR": str(MIN_YEAR),
+        "MAX_YEAR": str(MAX_YEAR),
+        "ZONE_IDS": ", ".join([ zoneid for _, zoneid in zonenameid_pairs ]),
+        "ZONE_NAME_ID_PAIRS": print_zonenameid_pairs(zonenameid_pairs)
+    }
 
     output = [
-        template_header.format(zoneids=zoneids, version=version, min=MIN_YEAR, max=MAX_YEAR)
+        keywords.sub(lambda m: substitutions[m.group(0)], template)
     ]
 
     # rulesets
@@ -302,10 +311,6 @@ def print_filecontent(version, rulesets, zones, links):
     output.append("-- Links")
     for source, target in sorted(links.iteritems()):
         output.append(print_link(source, target))
-
-    # zonenameid_pairs
-    output.append("-- Zones by name")
-    output.append(print_zonenameid_pairs(zonenameid_pairs))
 
     return "\n".join(output)
 
@@ -355,7 +360,7 @@ def print_link(source, target):
 
 def print_zonenameid_pairs(zonenameid_pairs):
     pairs = [ template_zonenameid_pair.format(k, v) for k, v in zonenameid_pairs ]
-    return template_zonenameid_pairs.format(pairs=line_separator1.join(pairs))
+    return line_separator1.join(pairs)
 
 
 def rulesetid_from_name(name):
@@ -367,64 +372,6 @@ def zoneid_from_name(name):
 
 
 # templates
-
-template_header = """module TimeZone.Data exposing (Pack, version, minYear, maxYear, packs, {zoneids})
-
-{{-| This module contains data from the `{version}` release of the IANA Time
-Zone Database.
-
-@docs Pack, packs
-
-## Zones
-
-Data for each zone is contained in a `Pack` named after its zone name (e.g.
-`America/New_York`), where slashes are replaced by `__`, dashes are replaced
-by `_`, and the name is lowercased. For example, `America/Port-au-Prince`
-becomes `america__port_au_prince`.
-
-@docs {zoneids}
-
-## Metadata
-
-@docs version, minYear, maxYear
-
--}}
-
-import Dict exposing (Dict)
-import Time exposing (Month(..), Weekday(..))
-import TimeZone.Types exposing (..)
-
-
-{{-| Represents information required to create a `Time.Zone`. A `Pack` must be
-converted to a `Time.Zone` with the `TimeZone.unpack` function.
--}}
-type alias Pack =
-    TimeZone.Types.Pack
-
-
--- Version
-
-{{-| What version of the IANA Time Zone Database is this data from?
--}}
-version : String
-version =
-    "{version}"
-
-
--- Bounds
-
-{{-| How far back does this data go?
--}}
-minYear : Year
-minYear =
-    {min}
-
-{{-| How far forward does it go?
--}}
-maxYear : Year
-maxYear =
-    {max}
-"""
 
 template_ruleset = """
 {rulesetid} : List Rule
@@ -438,9 +385,9 @@ template_rule = "Rule {from} {to} {month} ({dayofmonth}) {time} {clock} {save}"
 template_zone = """
 {{-| `{zonename}`
 -}}
-{zoneid} : Pack
-{zoneid} =
-    Packed <|
+{zoneid} : () -> Time.Zone
+{zoneid} _ =
+    fromSpecification <|
         Zone
             [ {history}
             ]
@@ -456,27 +403,9 @@ template_datetime = "DateTime {year} {month} {day} {time} {clock}"
 template_link = """
 {{-| `{sourcename}` (alias of `{targetname}`)
 -}}
-{sourceid} : Pack
+{sourceid} : () -> Time.Zone
 {sourceid} =
     {targetid}
-"""
-
-template_zonenameid_pairs = """
-{{-| You can look up a `Pack` by its zone name in the `packs` dictionary.
-
-    import Dict
-    import TimeZone.Data exposing (packs, america__new_york)
-
-    Dict.get "America/New_York" packs
-
-    -- Just america__new_york
-
--}}
-packs : Dict String Pack
-packs =
-    [ {pairs}
-    ]
-        |> Dict.fromList
 """
 
 template_zonenameid_pair = "( \"{0}\", {1} )"

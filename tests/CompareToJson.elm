@@ -9,7 +9,6 @@ import Json.Decode as Decode exposing (Decoder)
 import Task exposing (Task)
 import Time
 import TimeZone
-import TimeZone.Data exposing (Pack)
 
 
 main : Program () Model Msg
@@ -28,20 +27,14 @@ type Model
     | Processing
         { results : List ( String, Maybe String )
         , zoneName : String
-        , pack : Pack
-        , queue : List ( String, Pack )
+        , zone : () -> Time.Zone
+        , queue : List ( String, () -> Time.Zone )
         }
     | Finished (List ( String, Maybe String ))
 
 
-type alias ZoneOffsets =
-    { changes : List { start : Int, offset : Int }
-    , initial : Int
-    }
-
-
 type Msg
-    = ReceiveZone String (Result Http.Error ZoneOffsets)
+    = ReceiveZone String (Result Http.Error Time.Zone)
 
 
 init : ( Model, Cmd Msg )
@@ -61,12 +54,12 @@ update (ReceiveZone zoneName receivedZone) model =
         CheckingJson ->
             case receivedZone of
                 Ok _ ->
-                    case TimeZone.Data.packs |> Dict.toList of
-                        ( firstZoneName, firstPack ) :: rest ->
+                    case TimeZone.zones |> Dict.toList of
+                        ( firstZoneName, firstZone ) :: rest ->
                             ( Processing
                                 { results = []
                                 , zoneName = firstZoneName
-                                , pack = firstPack
+                                , zone = firstZone
                                 , queue = rest
                                 }
                             , fetchZone firstZoneName
@@ -85,14 +78,14 @@ update (ReceiveZone zoneName receivedZone) model =
             else
                 let
                     results =
-                        compareToJson zoneName current.pack receivedZone :: current.results
+                        compareToJson zoneName current.zone receivedZone :: current.results
                 in
                 case current.queue of
-                    ( nextZoneName, nextPack ) :: rest ->
+                    ( nextZoneName, nextZone ) :: rest ->
                         ( Processing
                             { results = results
                             , zoneName = nextZoneName
-                            , pack = nextPack
+                            , zone = nextZone
                             , queue = rest
                             }
                         , fetchZone nextZoneName
@@ -105,8 +98,8 @@ update (ReceiveZone zoneName receivedZone) model =
             ( model, Cmd.none )
 
 
-compareToJson : String -> Pack -> Result Http.Error ZoneOffsets -> ( String, Maybe String )
-compareToJson zoneName pack result =
+compareToJson : String -> (() -> Time.Zone) -> Result Http.Error Time.Zone -> ( String, Maybe String )
+compareToJson zoneName zone result =
     let
         error =
             case result of
@@ -114,7 +107,7 @@ compareToJson zoneName pack result =
                     Just "Loading failed"
 
                 Ok fetchedZone ->
-                    if fetchedZone /= TimeZone.unpackOffsets pack then
+                    if fetchedZone /= zone () then
                         Just "Does not match!"
 
                     else
@@ -130,16 +123,16 @@ compareToJson zoneName pack result =
 fetchZone : String -> Cmd Msg
 fetchZone zoneName =
     Http.get
-        ("/json/" ++ TimeZone.Data.version ++ "/" ++ zoneName ++ ".json")
-        decodeZoneOffsets
+        ("/json/" ++ TimeZone.version ++ "/" ++ zoneName ++ ".json")
+        decodeZone
         |> Http.send (ReceiveZone zoneName)
 
 
-decodeZoneOffsets : Decoder ZoneOffsets
-decodeZoneOffsets =
-    Decode.map2 ZoneOffsets
-        (Decode.index 0 (Decode.list decodeOffsetChange))
+decodeZone : Decoder Time.Zone
+decodeZone =
+    Decode.map2 Time.customZone
         (Decode.index 1 Decode.int)
+        (Decode.index 0 (Decode.list decodeOffsetChange))
 
 
 decodeOffsetChange : Decoder { start : Int, offset : Int }
