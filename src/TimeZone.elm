@@ -5,7 +5,7 @@ module TimeZone exposing
     , version
     )
 
-{-| This library provides time zone data from the `2018e` release of the IANA
+{-| This library provides time zone data from the `2018f` release of the IANA
 Time Zone Database.
 
 
@@ -44,7 +44,7 @@ import TimeZone.Specification exposing (Clock(..), DateTime, DayOfMonth(..), Rul
 -}
 version : String
 version =
-    "2018e"
+    "2018f"
 
 
 minYear : Int
@@ -895,8 +895,10 @@ rules_Chile =
     , Rule 2011 2011 Aug (First Sun 16) 240 Universal 60
     , Rule 2012 2014 Apr (First Sun 23) 180 Universal 0
     , Rule 2012 2014 Sep (First Sun 2) 240 Universal 60
-    , Rule 2016 maxYear May (First Sun 9) 180 Universal 0
-    , Rule 2016 maxYear Aug (First Sun 9) 240 Universal 60
+    , Rule 2016 2018 May (First Sun 9) 180 Universal 0
+    , Rule 2016 2018 Aug (First Sun 9) 240 Universal 60
+    , Rule 2019 maxYear Apr (First Sun 2) 180 Universal 0
+    , Rule 2019 maxYear Sep (First Sun 2) 240 Universal 60
     ]
 
 
@@ -1083,7 +1085,7 @@ rules_Fiji =
     , Rule 2012 2013 Jan (First Sun 18) 180 WallClock 0
     , Rule 2014 2014 Jan (First Sun 18) 120 WallClock 0
     , Rule 2014 maxYear Nov (First Sun 1) 120 WallClock 60
-    , Rule 2015 maxYear Jan (First Sun 14) 180 WallClock 0
+    , Rule 2015 maxYear Jan (First Sun 13) 180 WallClock 0
     ]
 
 
@@ -1391,14 +1393,12 @@ rules_Libya =
 
 rules_Macau : List Rule
 rules_Macau =
-    [ Rule 1966 1971 Apr (First Sun 16) 210 WallClock 60
-    , Rule 1966 1971 Oct (First Sun 16) 210 WallClock 0
-    , Rule 1972 1974 Apr (First Sun 15) 0 WallClock 60
-    , Rule 1972 1973 Oct (First Sun 15) 0 WallClock 0
-    , Rule 1974 1977 Oct (First Sun 15) 210 WallClock 0
-    , Rule 1975 1977 Apr (First Sun 15) 210 WallClock 60
-    , Rule 1978 1980 Apr (First Sun 15) 0 WallClock 60
-    , Rule 1978 1980 Oct (First Sun 15) 0 WallClock 0
+    [ Rule 1965 1973 Apr (First Sun 16) 210 WallClock 60
+    , Rule 1967 1976 Oct (First Sun 16) 210 WallClock 0
+    , Rule 1973 1973 Dec (Day 30) 210 WallClock 60
+    , Rule 1975 1976 Apr (First Sun 16) 210 WallClock 60
+    , Rule 1979 1979 May (Day 13) 210 WallClock 60
+    , Rule 1979 1979 Oct (First Sun 16) 210 WallClock 0
     ]
 
 
@@ -1567,9 +1567,9 @@ rules_Nic =
 
 rules_PRC : List Rule
 rules_PRC =
-    [ Rule 1986 1986 May (Day 4) 0 WallClock 60
-    , Rule 1986 1991 Sep (First Sun 11) 0 WallClock 0
-    , Rule 1987 1991 Apr (First Sun 10) 0 WallClock 60
+    [ Rule 1986 1986 May (Day 4) 120 WallClock 60
+    , Rule 1986 1991 Sep (First Sun 11) 120 WallClock 0
+    , Rule 1987 1991 Apr (First Sun 11) 120 WallClock 60
     ]
 
 
@@ -4617,7 +4617,7 @@ asia__pyongyang _ =
     fromSpecification <|
         Zone
             [ ( ZoneState 540 (Save 0), DateTime 2015 Aug 15 0 WallClock )
-            , ( ZoneState 510 (Save 0), DateTime 2018 May 5 0 WallClock )
+            , ( ZoneState 510 (Save 0), DateTime 2018 May 4 1410 WallClock )
             ]
             (ZoneState 540 (Save 0))
 
@@ -5714,8 +5714,9 @@ europe__volgograd _ =
             , ( ZoneState 240 (Save 0), DateTime 1992 Mar 29 120 Standard )
             , ( ZoneState 180 (Rules rules_Russia), DateTime 2011 Mar 27 120 Standard )
             , ( ZoneState 240 (Save 0), DateTime 2014 Oct 26 120 Standard )
+            , ( ZoneState 180 (Save 0), DateTime 2018 Oct 28 120 Standard )
             ]
-            (ZoneState 180 (Save 0))
+            (ZoneState 240 (Save 0))
 
 
 {-| `Europe/Warsaw`
