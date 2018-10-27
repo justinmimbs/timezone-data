@@ -5,7 +5,7 @@ module TimeZone exposing
     , version
     )
 
-{-| This library provides time zone data from the `2018f` release of the IANA
+{-| This library provides time zone data from the `2018g` release of the IANA
 Time Zone Database.
 
 
@@ -44,7 +44,7 @@ import TimeZone.Specification exposing (Clock(..), DateTime, DayOfMonth(..), Rul
 -}
 version : String
 version =
-    "2018f"
+    "2018g"
 
 
 minYear : Int
@@ -1487,8 +1487,8 @@ rules_Morocco =
     , Rule 2012 2012 Sep (Day 30) 180 WallClock 0
     , Rule 2013 2013 Jul (Day 7) 180 WallClock 0
     , Rule 2013 2013 Aug (Day 10) 120 WallClock 60
-    , Rule 2013 maxYear Oct (Last Sun) 180 WallClock 0
-    , Rule 2014 2021 Mar (Last Sun) 120 WallClock 60
+    , Rule 2013 2018 Oct (Last Sun) 180 WallClock 0
+    , Rule 2014 2018 Mar (Last Sun) 120 WallClock 60
     , Rule 2014 2014 Jun (Day 28) 180 WallClock 0
     , Rule 2014 2014 Aug (Day 2) 120 WallClock 60
     , Rule 2015 2015 Jun (Day 14) 180 WallClock 0
@@ -1499,19 +1499,6 @@ rules_Morocco =
     , Rule 2017 2017 Jul (Day 2) 120 WallClock 60
     , Rule 2018 2018 May (Day 13) 180 WallClock 0
     , Rule 2018 2018 Jun (Day 17) 120 WallClock 60
-    , Rule 2019 2019 May (Day 5) 180 WallClock 0
-    , Rule 2019 2019 Jun (Day 9) 120 WallClock 60
-    , Rule 2020 2020 Apr (Day 19) 180 WallClock 0
-    , Rule 2020 2020 May (Day 24) 120 WallClock 60
-    , Rule 2021 2021 Apr (Day 11) 180 WallClock 0
-    , Rule 2021 2021 May (Day 16) 120 WallClock 60
-    , Rule 2022 2022 May (Day 8) 120 WallClock 60
-    , Rule 2023 2023 Apr (Day 23) 120 WallClock 60
-    , Rule 2024 2024 Apr (Day 14) 120 WallClock 60
-    , Rule 2025 2025 Apr (Day 6) 120 WallClock 60
-    , Rule 2026 maxYear Mar (Last Sun) 120 WallClock 60
-    , Rule 2036 2036 Oct (Day 19) 180 WallClock 0
-    , Rule 2037 2037 Oct (Day 4) 180 WallClock 0
     ]
 
 
@@ -2119,8 +2106,9 @@ africa__casablanca _ =
         Zone
             [ ( ZoneState 0 (Rules rules_Morocco), DateTime 1984 Mar 16 0 WallClock )
             , ( ZoneState 60 (Save 0), DateTime 1986 Jan 1 0 WallClock )
+            , ( ZoneState 0 (Rules rules_Morocco), DateTime 2018 Oct 27 0 WallClock )
             ]
-            (ZoneState 0 (Rules rules_Morocco))
+            (ZoneState 60 (Save 0))
 
 
 {-| `Africa/Ceuta`
@@ -2142,8 +2130,9 @@ africa__el_aaiun _ =
     fromSpecification <|
         Zone
             [ ( ZoneState -60 (Save 0), DateTime 1976 Apr 14 0 WallClock )
+            , ( ZoneState 0 (Rules rules_Morocco), DateTime 2018 Oct 27 0 WallClock )
             ]
-            (ZoneState 0 (Rules rules_Morocco))
+            (ZoneState 60 (Save 0))
 
 
 {-| `Africa/Johannesburg`
