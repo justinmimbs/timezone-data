@@ -5,7 +5,7 @@ module TimeZone exposing
     , version
     )
 
-{-| This library provides time zone data from the `2018h` release of the IANA
+{-| This library provides time zone data from the `2018i` release of the IANA
 Time Zone Database.
 
 
@@ -44,7 +44,7 @@ import TimeZone.Specification exposing (Clock(..), DateTime, DayOfMonth(..), Rul
 -}
 version : String
 version =
-    "2018h"
+    "2018i"
 
 
 minYear : Int
@@ -2285,8 +2285,9 @@ africa__sao_tome _ =
     fromSpecification <|
         Zone
             [ ( ZoneState 0 (Save 0), DateTime 2018 Jan 1 60 WallClock )
+            , ( ZoneState 60 (Save 0), DateTime 2019 Jan 1 120 WallClock )
             ]
-            (ZoneState 60 (Save 0))
+            (ZoneState 0 (Save 0))
 
 
 {-| `Africa/Tripoli`
