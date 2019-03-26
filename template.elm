@@ -1,12 +1,14 @@
 module TimeZone exposing
-    ( getZone, Error(..)
+    ( version
+    , getZone, Error(..)
     , zones
     , ZONE_IDS
-    , version
     )
 
 {-| This library provides time zone data from the `VERSION` release of the IANA
 Time Zone Database.
+
+@docs version
 
 
 ## Local zone
@@ -27,11 +29,6 @@ becomes `america__port_au_prince`.
 
 @docs ZONE_IDS
 
-
-## Metadata
-
-@docs version
-
 -}
 
 import Dict exposing (Dict)
@@ -40,7 +37,7 @@ import Time exposing (Month(..), Weekday(..))
 import TimeZone.Specification exposing (Clock(..), DateTime, DayOfMonth(..), Rule, Zone, ZoneRules(..), ZoneState)
 
 
-{-| What version of the IANA Time Zone Database is this data from?
+{-| What release of the IANA Time Zone Database is this data from?
 -}
 version : String
 version =
