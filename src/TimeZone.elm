@@ -544,20 +544,20 @@ rules_AN : List Rule
 rules_AN =
     [ Rule 1971 1985 Oct (Last Sun) 120 Standard 60
     , Rule 1972 1972 Feb (Day 27) 120 Standard 0
-    , Rule 1973 1981 Mar (First Sun 1) 120 Standard 0
-    , Rule 1982 1982 Apr (First Sun 1) 120 Standard 0
-    , Rule 1983 1985 Mar (First Sun 1) 120 Standard 0
-    , Rule 1986 1989 Mar (First Sun 15) 120 Standard 0
+    , Rule 1973 1981 Mar (Next Sun 1) 120 Standard 0
+    , Rule 1982 1982 Apr (Next Sun 1) 120 Standard 0
+    , Rule 1983 1985 Mar (Next Sun 1) 120 Standard 0
+    , Rule 1986 1989 Mar (Next Sun 15) 120 Standard 0
     , Rule 1986 1986 Oct (Day 19) 120 Standard 60
     , Rule 1987 1999 Oct (Last Sun) 120 Standard 60
-    , Rule 1990 1995 Mar (First Sun 1) 120 Standard 0
+    , Rule 1990 1995 Mar (Next Sun 1) 120 Standard 0
     , Rule 1996 2005 Mar (Last Sun) 120 Standard 0
     , Rule 2000 2000 Aug (Last Sun) 120 Standard 60
     , Rule 2001 2007 Oct (Last Sun) 120 Standard 60
-    , Rule 2006 2006 Apr (First Sun 1) 120 Standard 0
+    , Rule 2006 2006 Apr (Next Sun 1) 120 Standard 0
     , Rule 2007 2007 Mar (Last Sun) 120 Standard 0
-    , Rule 2008 maxYear Apr (First Sun 1) 120 Standard 0
-    , Rule 2008 maxYear Oct (First Sun 1) 120 Standard 60
+    , Rule 2008 maxYear Apr (Next Sun 1) 120 Standard 0
+    , Rule 2008 maxYear Oct (Next Sun 1) 120 Standard 60
     ]
 
 
@@ -566,7 +566,7 @@ rules_AQ =
     [ Rule 1971 1971 Oct (Last Sun) 120 Standard 60
     , Rule 1972 1972 Feb (Last Sun) 120 Standard 0
     , Rule 1989 1991 Oct (Last Sun) 120 Standard 60
-    , Rule 1990 1992 Mar (First Sun 1) 120 Standard 0
+    , Rule 1990 1992 Mar (Next Sun 1) 120 Standard 0
     ]
 
 
@@ -576,8 +576,8 @@ rules_AS =
     , Rule 1986 1986 Oct (Day 19) 120 Standard 60
     , Rule 1987 2007 Oct (Last Sun) 120 Standard 60
     , Rule 1972 1972 Feb (Day 27) 120 Standard 0
-    , Rule 1973 1985 Mar (First Sun 1) 120 Standard 0
-    , Rule 1986 1990 Mar (First Sun 15) 120 Standard 0
+    , Rule 1973 1985 Mar (Next Sun 1) 120 Standard 0
+    , Rule 1986 1990 Mar (Next Sun 15) 120 Standard 0
     , Rule 1991 1991 Mar (Day 3) 120 Standard 0
     , Rule 1992 1992 Mar (Day 22) 120 Standard 0
     , Rule 1993 1993 Mar (Day 7) 120 Standard 0
@@ -585,30 +585,30 @@ rules_AS =
     , Rule 1995 2005 Mar (Last Sun) 120 Standard 0
     , Rule 2006 2006 Apr (Day 2) 120 Standard 0
     , Rule 2007 2007 Mar (Last Sun) 120 Standard 0
-    , Rule 2008 maxYear Apr (First Sun 1) 120 Standard 0
-    , Rule 2008 maxYear Oct (First Sun 1) 120 Standard 60
+    , Rule 2008 maxYear Apr (Next Sun 1) 120 Standard 0
+    , Rule 2008 maxYear Oct (Next Sun 1) 120 Standard 60
     ]
 
 
 rules_AT : List Rule
 rules_AT =
     [ Rule 1968 1985 Oct (Last Sun) 120 Standard 60
-    , Rule 1969 1971 Mar (First Sun 8) 120 Standard 0
+    , Rule 1969 1971 Mar (Next Sun 8) 120 Standard 0
     , Rule 1972 1972 Feb (Last Sun) 120 Standard 0
-    , Rule 1973 1981 Mar (First Sun 1) 120 Standard 0
+    , Rule 1973 1981 Mar (Next Sun 1) 120 Standard 0
     , Rule 1982 1983 Mar (Last Sun) 120 Standard 0
-    , Rule 1984 1986 Mar (First Sun 1) 120 Standard 0
-    , Rule 1986 1986 Oct (First Sun 15) 120 Standard 60
-    , Rule 1987 1990 Mar (First Sun 15) 120 Standard 0
-    , Rule 1987 1987 Oct (First Sun 22) 120 Standard 60
+    , Rule 1984 1986 Mar (Next Sun 1) 120 Standard 0
+    , Rule 1986 1986 Oct (Next Sun 15) 120 Standard 60
+    , Rule 1987 1990 Mar (Next Sun 15) 120 Standard 0
+    , Rule 1987 1987 Oct (Next Sun 22) 120 Standard 60
     , Rule 1988 1990 Oct (Last Sun) 120 Standard 60
-    , Rule 1991 1999 Oct (First Sun 1) 120 Standard 60
+    , Rule 1991 1999 Oct (Next Sun 1) 120 Standard 60
     , Rule 1991 2005 Mar (Last Sun) 120 Standard 0
     , Rule 2000 2000 Aug (Last Sun) 120 Standard 60
-    , Rule 2001 maxYear Oct (First Sun 1) 120 Standard 60
-    , Rule 2006 2006 Apr (First Sun 1) 120 Standard 0
+    , Rule 2001 maxYear Oct (Next Sun 1) 120 Standard 60
+    , Rule 2006 2006 Apr (Next Sun 1) 120 Standard 0
     , Rule 2007 2007 Mar (Last Sun) 120 Standard 0
-    , Rule 2008 maxYear Apr (First Sun 1) 120 Standard 0
+    , Rule 2008 maxYear Apr (Next Sun 1) 120 Standard 0
     ]
 
 
@@ -616,29 +616,29 @@ rules_AV : List Rule
 rules_AV =
     [ Rule 1971 1985 Oct (Last Sun) 120 Standard 60
     , Rule 1972 1972 Feb (Last Sun) 120 Standard 0
-    , Rule 1973 1985 Mar (First Sun 1) 120 Standard 0
-    , Rule 1986 1990 Mar (First Sun 15) 120 Standard 0
-    , Rule 1986 1987 Oct (First Sun 15) 120 Standard 60
+    , Rule 1973 1985 Mar (Next Sun 1) 120 Standard 0
+    , Rule 1986 1990 Mar (Next Sun 15) 120 Standard 0
+    , Rule 1986 1987 Oct (Next Sun 15) 120 Standard 60
     , Rule 1988 1999 Oct (Last Sun) 120 Standard 60
-    , Rule 1991 1994 Mar (First Sun 1) 120 Standard 0
+    , Rule 1991 1994 Mar (Next Sun 1) 120 Standard 0
     , Rule 1995 2005 Mar (Last Sun) 120 Standard 0
     , Rule 2000 2000 Aug (Last Sun) 120 Standard 60
     , Rule 2001 2007 Oct (Last Sun) 120 Standard 60
-    , Rule 2006 2006 Apr (First Sun 1) 120 Standard 0
+    , Rule 2006 2006 Apr (Next Sun 1) 120 Standard 0
     , Rule 2007 2007 Mar (Last Sun) 120 Standard 0
-    , Rule 2008 maxYear Apr (First Sun 1) 120 Standard 0
-    , Rule 2008 maxYear Oct (First Sun 1) 120 Standard 60
+    , Rule 2008 maxYear Apr (Next Sun 1) 120 Standard 0
+    , Rule 2008 maxYear Oct (Next Sun 1) 120 Standard 60
     ]
 
 
 rules_AW : List Rule
 rules_AW =
     [ Rule 1974 1974 Oct (Last Sun) 120 Standard 60
-    , Rule 1975 1975 Mar (First Sun 1) 120 Standard 0
+    , Rule 1975 1975 Mar (Next Sun 1) 120 Standard 0
     , Rule 1983 1983 Oct (Last Sun) 120 Standard 60
-    , Rule 1984 1984 Mar (First Sun 1) 120 Standard 0
+    , Rule 1984 1984 Mar (Next Sun 1) 120 Standard 0
     , Rule 1991 1991 Nov (Day 17) 120 Standard 60
-    , Rule 1992 1992 Mar (First Sun 1) 120 Standard 0
+    , Rule 1992 1992 Mar (Next Sun 1) 120 Standard 0
     , Rule 2006 2006 Dec (Day 3) 120 Standard 60
     , Rule 2007 2009 Mar (Last Sun) 120 Standard 0
     , Rule 2007 2008 Oct (Last Sun) 120 Standard 60
@@ -686,17 +686,17 @@ rules_Algeria =
 
 rules_Arg : List Rule
 rules_Arg =
-    [ Rule 1968 1969 Apr (First Sun 1) 0 WallClock 0
+    [ Rule 1968 1969 Apr (Next Sun 1) 0 WallClock 0
     , Rule 1974 1974 Jan (Day 23) 0 WallClock 60
     , Rule 1974 1974 May (Day 1) 0 WallClock 0
     , Rule 1988 1988 Dec (Day 1) 0 WallClock 60
-    , Rule 1989 1993 Mar (First Sun 1) 0 WallClock 0
-    , Rule 1989 1992 Oct (First Sun 15) 0 WallClock 60
-    , Rule 1999 1999 Oct (First Sun 1) 0 WallClock 60
+    , Rule 1989 1993 Mar (Next Sun 1) 0 WallClock 0
+    , Rule 1989 1992 Oct (Next Sun 15) 0 WallClock 60
+    , Rule 1999 1999 Oct (Next Sun 1) 0 WallClock 60
     , Rule 2000 2000 Mar (Day 3) 0 WallClock 0
     , Rule 2007 2007 Dec (Day 30) 0 WallClock 60
-    , Rule 2008 2009 Mar (First Sun 15) 0 WallClock 0
-    , Rule 2008 2008 Oct (First Sun 15) 0 WallClock 60
+    , Rule 2008 2009 Mar (Next Sun 15) 0 WallClock 0
+    , Rule 2008 2008 Oct (Next Sun 15) 0 WallClock 60
     ]
 
 
@@ -731,8 +731,8 @@ rules_Bahamas =
 rules_Barb : List Rule
 rules_Barb =
     [ Rule 1977 1977 Jun (Day 12) 120 WallClock 60
-    , Rule 1977 1978 Oct (First Sun 1) 120 WallClock 0
-    , Rule 1978 1980 Apr (First Sun 15) 120 WallClock 60
+    , Rule 1977 1978 Oct (Next Sun 1) 120 WallClock 0
+    , Rule 1978 1980 Apr (Next Sun 15) 120 WallClock 60
     , Rule 1979 1979 Sep (Day 30) 120 WallClock 0
     , Rule 1980 1980 Sep (Day 25) 120 WallClock 0
     ]
@@ -765,8 +765,8 @@ rules_Brazil =
     , Rule 1992 1992 Feb (Day 9) 0 WallClock 0
     , Rule 1992 1992 Oct (Day 25) 0 WallClock 60
     , Rule 1993 1993 Jan (Day 31) 0 WallClock 0
-    , Rule 1993 1995 Oct (First Sun 11) 0 WallClock 60
-    , Rule 1994 1995 Feb (First Sun 15) 0 WallClock 0
+    , Rule 1993 1995 Oct (Next Sun 11) 0 WallClock 60
+    , Rule 1994 1995 Feb (Next Sun 15) 0 WallClock 0
     , Rule 1996 1996 Feb (Day 11) 0 WallClock 0
     , Rule 1996 1996 Oct (Day 6) 0 WallClock 60
     , Rule 1997 1997 Feb (Day 16) 0 WallClock 0
@@ -776,29 +776,29 @@ rules_Brazil =
     , Rule 1999 1999 Feb (Day 21) 0 WallClock 0
     , Rule 1999 1999 Oct (Day 3) 0 WallClock 60
     , Rule 2000 2000 Feb (Day 27) 0 WallClock 0
-    , Rule 2000 2001 Oct (First Sun 8) 0 WallClock 60
-    , Rule 2001 2006 Feb (First Sun 15) 0 WallClock 0
+    , Rule 2000 2001 Oct (Next Sun 8) 0 WallClock 60
+    , Rule 2001 2006 Feb (Next Sun 15) 0 WallClock 0
     , Rule 2002 2002 Nov (Day 3) 0 WallClock 60
     , Rule 2003 2003 Oct (Day 19) 0 WallClock 60
     , Rule 2004 2004 Nov (Day 2) 0 WallClock 60
     , Rule 2005 2005 Oct (Day 16) 0 WallClock 60
     , Rule 2006 2006 Nov (Day 5) 0 WallClock 60
     , Rule 2007 2007 Feb (Day 25) 0 WallClock 0
-    , Rule 2007 2007 Oct (First Sun 8) 0 WallClock 60
-    , Rule 2008 2017 Oct (First Sun 15) 0 WallClock 60
-    , Rule 2008 2011 Feb (First Sun 15) 0 WallClock 0
-    , Rule 2012 2012 Feb (First Sun 22) 0 WallClock 0
-    , Rule 2013 2014 Feb (First Sun 15) 0 WallClock 0
-    , Rule 2015 2015 Feb (First Sun 22) 0 WallClock 0
-    , Rule 2016 2022 Feb (First Sun 15) 0 WallClock 0
-    , Rule 2018 maxYear Nov (First Sun 1) 0 WallClock 60
-    , Rule 2023 2023 Feb (First Sun 22) 0 WallClock 0
-    , Rule 2024 2025 Feb (First Sun 15) 0 WallClock 0
-    , Rule 2026 2026 Feb (First Sun 22) 0 WallClock 0
-    , Rule 2027 2033 Feb (First Sun 15) 0 WallClock 0
-    , Rule 2034 2034 Feb (First Sun 22) 0 WallClock 0
-    , Rule 2035 2036 Feb (First Sun 15) 0 WallClock 0
-    , Rule 2037 2037 Feb (First Sun 22) 0 WallClock 0
+    , Rule 2007 2007 Oct (Next Sun 8) 0 WallClock 60
+    , Rule 2008 2017 Oct (Next Sun 15) 0 WallClock 60
+    , Rule 2008 2011 Feb (Next Sun 15) 0 WallClock 0
+    , Rule 2012 2012 Feb (Next Sun 22) 0 WallClock 0
+    , Rule 2013 2014 Feb (Next Sun 15) 0 WallClock 0
+    , Rule 2015 2015 Feb (Next Sun 22) 0 WallClock 0
+    , Rule 2016 2022 Feb (Next Sun 15) 0 WallClock 0
+    , Rule 2018 maxYear Nov (Next Sun 1) 0 WallClock 60
+    , Rule 2023 2023 Feb (Next Sun 22) 0 WallClock 0
+    , Rule 2024 2025 Feb (Next Sun 15) 0 WallClock 0
+    , Rule 2026 2026 Feb (Next Sun 22) 0 WallClock 0
+    , Rule 2027 2033 Feb (Next Sun 15) 0 WallClock 0
+    , Rule 2034 2034 Feb (Next Sun 22) 0 WallClock 0
+    , Rule 2035 2036 Feb (Next Sun 15) 0 WallClock 0
+    , Rule 2037 2037 Feb (Next Sun 22) 0 WallClock 0
     ]
 
 
@@ -806,7 +806,7 @@ rules_Bulg : List Rule
 rules_Bulg =
     [ Rule 1979 1979 Mar (Day 31) 1380 WallClock 60
     , Rule 1979 1979 Oct (Day 1) 60 WallClock 0
-    , Rule 1980 1982 Apr (First Sat 1) 1380 WallClock 60
+    , Rule 1980 1982 Apr (Next Sat 1) 1380 WallClock 60
     , Rule 1980 1980 Sep (Day 29) 60 WallClock 0
     , Rule 1981 1981 Sep (Day 27) 120 WallClock 0
     ]
@@ -814,7 +814,7 @@ rules_Bulg =
 
 rules_C_Eur : List Rule
 rules_C_Eur =
-    [ Rule 1977 1980 Apr (First Sun 1) 120 Standard 60
+    [ Rule 1977 1980 Apr (Next Sun 1) 120 Standard 60
     , Rule 1977 1977 Sep (Last Sun) 120 Standard 0
     , Rule 1978 1978 Oct (Day 1) 120 Standard 0
     , Rule 1979 1995 Sep (Last Sun) 120 Standard 0
@@ -833,8 +833,8 @@ rules_CO =
 rules_CR : List Rule
 rules_CR =
     [ Rule 1979 1980 Feb (Last Sun) 0 WallClock 60
-    , Rule 1979 1980 Jun (First Sun 1) 0 WallClock 0
-    , Rule 1991 1992 Jan (First Sat 15) 0 WallClock 60
+    , Rule 1979 1980 Jun (Next Sun 1) 0 WallClock 0
+    , Rule 1991 1992 Jan (Next Sat 15) 0 WallClock 60
     , Rule 1991 1991 Jul (Day 1) 0 WallClock 0
     , Rule 1992 1992 Mar (Day 15) 0 WallClock 0
     ]
@@ -844,23 +844,23 @@ rules_Canada : List Rule
 rules_Canada =
     [ Rule 1974 1986 Apr (Last Sun) 120 WallClock 60
     , Rule 1974 2006 Oct (Last Sun) 120 WallClock 0
-    , Rule 1987 2006 Apr (First Sun 1) 120 WallClock 60
-    , Rule 2007 maxYear Mar (First Sun 8) 120 WallClock 60
-    , Rule 2007 maxYear Nov (First Sun 1) 120 WallClock 0
+    , Rule 1987 2006 Apr (Next Sun 1) 120 WallClock 60
+    , Rule 2007 maxYear Mar (Next Sun 8) 120 WallClock 60
+    , Rule 2007 maxYear Nov (Next Sun 1) 120 WallClock 0
     ]
 
 
 rules_Chatham : List Rule
 rules_Chatham =
-    [ Rule 1974 1974 Nov (First Sun 1) 165 Standard 60
+    [ Rule 1974 1974 Nov (Next Sun 1) 165 Standard 60
     , Rule 1975 1975 Feb (Last Sun) 165 Standard 0
     , Rule 1975 1988 Oct (Last Sun) 165 Standard 60
-    , Rule 1976 1989 Mar (First Sun 1) 165 Standard 0
-    , Rule 1989 1989 Oct (First Sun 8) 165 Standard 60
-    , Rule 1990 2006 Oct (First Sun 1) 165 Standard 60
-    , Rule 1990 2007 Mar (First Sun 15) 165 Standard 0
+    , Rule 1976 1989 Mar (Next Sun 1) 165 Standard 0
+    , Rule 1989 1989 Oct (Next Sun 8) 165 Standard 60
+    , Rule 1990 2006 Oct (Next Sun 1) 165 Standard 60
+    , Rule 1990 2007 Mar (Next Sun 15) 165 Standard 0
     , Rule 2007 maxYear Sep (Last Sun) 165 Standard 60
-    , Rule 2008 maxYear Apr (First Sun 1) 165 Standard 0
+    , Rule 2008 maxYear Apr (Next Sun 1) 165 Standard 0
     ]
 
 
@@ -870,40 +870,40 @@ rules_Chile =
     , Rule 1969 1969 Nov (Day 23) 240 Universal 60
     , Rule 1970 1970 Mar (Day 29) 180 Universal 0
     , Rule 1971 1971 Mar (Day 14) 180 Universal 0
-    , Rule 1970 1972 Oct (First Sun 9) 240 Universal 60
-    , Rule 1972 1986 Mar (First Sun 9) 180 Universal 0
+    , Rule 1970 1972 Oct (Next Sun 9) 240 Universal 60
+    , Rule 1972 1986 Mar (Next Sun 9) 180 Universal 0
     , Rule 1973 1973 Sep (Day 30) 240 Universal 60
-    , Rule 1974 1987 Oct (First Sun 9) 240 Universal 60
+    , Rule 1974 1987 Oct (Next Sun 9) 240 Universal 60
     , Rule 1987 1987 Apr (Day 12) 180 Universal 0
-    , Rule 1988 1990 Mar (First Sun 9) 180 Universal 0
-    , Rule 1988 1989 Oct (First Sun 9) 240 Universal 60
+    , Rule 1988 1990 Mar (Next Sun 9) 180 Universal 0
+    , Rule 1988 1989 Oct (Next Sun 9) 240 Universal 60
     , Rule 1990 1990 Sep (Day 16) 240 Universal 60
-    , Rule 1991 1996 Mar (First Sun 9) 180 Universal 0
-    , Rule 1991 1997 Oct (First Sun 9) 240 Universal 60
+    , Rule 1991 1996 Mar (Next Sun 9) 180 Universal 0
+    , Rule 1991 1997 Oct (Next Sun 9) 240 Universal 60
     , Rule 1997 1997 Mar (Day 30) 180 Universal 0
-    , Rule 1998 1998 Mar (First Sun 9) 180 Universal 0
+    , Rule 1998 1998 Mar (Next Sun 9) 180 Universal 0
     , Rule 1998 1998 Sep (Day 27) 240 Universal 60
     , Rule 1999 1999 Apr (Day 4) 180 Universal 0
-    , Rule 1999 2010 Oct (First Sun 9) 240 Universal 60
-    , Rule 2000 2007 Mar (First Sun 9) 180 Universal 0
+    , Rule 1999 2010 Oct (Next Sun 9) 240 Universal 60
+    , Rule 2000 2007 Mar (Next Sun 9) 180 Universal 0
     , Rule 2008 2008 Mar (Day 30) 180 Universal 0
-    , Rule 2009 2009 Mar (First Sun 9) 180 Universal 0
-    , Rule 2010 2010 Apr (First Sun 1) 180 Universal 0
-    , Rule 2011 2011 May (First Sun 2) 180 Universal 0
-    , Rule 2011 2011 Aug (First Sun 16) 240 Universal 60
-    , Rule 2012 2014 Apr (First Sun 23) 180 Universal 0
-    , Rule 2012 2014 Sep (First Sun 2) 240 Universal 60
-    , Rule 2016 2018 May (First Sun 9) 180 Universal 0
-    , Rule 2016 2018 Aug (First Sun 9) 240 Universal 60
-    , Rule 2019 maxYear Apr (First Sun 2) 180 Universal 0
-    , Rule 2019 maxYear Sep (First Sun 2) 240 Universal 60
+    , Rule 2009 2009 Mar (Next Sun 9) 180 Universal 0
+    , Rule 2010 2010 Apr (Next Sun 1) 180 Universal 0
+    , Rule 2011 2011 May (Next Sun 2) 180 Universal 0
+    , Rule 2011 2011 Aug (Next Sun 16) 240 Universal 60
+    , Rule 2012 2014 Apr (Next Sun 23) 180 Universal 0
+    , Rule 2012 2014 Sep (Next Sun 2) 240 Universal 60
+    , Rule 2016 2018 May (Next Sun 9) 180 Universal 0
+    , Rule 2016 2018 Aug (Next Sun 9) 240 Universal 60
+    , Rule 2019 maxYear Apr (Next Sun 2) 180 Universal 0
+    , Rule 2019 maxYear Sep (Next Sun 2) 240 Universal 60
     ]
 
 
 rules_Cook : List Rule
 rules_Cook =
     [ Rule 1978 1978 Nov (Day 12) 0 WallClock 30
-    , Rule 1979 1991 Mar (First Sun 1) 0 WallClock 0
+    , Rule 1979 1991 Mar (Next Sun 1) 0 WallClock 0
     , Rule 1979 1990 Oct (Last Sun) 0 WallClock 30
     ]
 
@@ -915,27 +915,27 @@ rules_Cuba =
     , Rule 1972 1974 Oct (Day 8) 0 WallClock 0
     , Rule 1975 1977 Oct (Last Sun) 0 WallClock 0
     , Rule 1978 1978 May (Day 7) 0 WallClock 60
-    , Rule 1978 1990 Oct (First Sun 8) 0 WallClock 0
-    , Rule 1979 1980 Mar (First Sun 15) 0 WallClock 60
-    , Rule 1981 1985 May (First Sun 5) 0 WallClock 60
-    , Rule 1986 1989 Mar (First Sun 14) 0 WallClock 60
-    , Rule 1990 1997 Apr (First Sun 1) 0 WallClock 60
-    , Rule 1991 1995 Oct (First Sun 8) 0 Standard 0
+    , Rule 1978 1990 Oct (Next Sun 8) 0 WallClock 0
+    , Rule 1979 1980 Mar (Next Sun 15) 0 WallClock 60
+    , Rule 1981 1985 May (Next Sun 5) 0 WallClock 60
+    , Rule 1986 1989 Mar (Next Sun 14) 0 WallClock 60
+    , Rule 1990 1997 Apr (Next Sun 1) 0 WallClock 60
+    , Rule 1991 1995 Oct (Next Sun 8) 0 Standard 0
     , Rule 1996 1996 Oct (Day 6) 0 Standard 0
     , Rule 1997 1997 Oct (Day 12) 0 Standard 0
     , Rule 1998 1999 Mar (Last Sun) 0 Standard 60
     , Rule 1998 2003 Oct (Last Sun) 0 Standard 0
-    , Rule 2000 2003 Apr (First Sun 1) 0 Standard 60
+    , Rule 2000 2003 Apr (Next Sun 1) 0 Standard 60
     , Rule 2004 2004 Mar (Last Sun) 0 Standard 60
     , Rule 2006 2010 Oct (Last Sun) 0 Standard 0
-    , Rule 2007 2007 Mar (First Sun 8) 0 Standard 60
-    , Rule 2008 2008 Mar (First Sun 15) 0 Standard 60
-    , Rule 2009 2010 Mar (First Sun 8) 0 Standard 60
-    , Rule 2011 2011 Mar (First Sun 15) 0 Standard 60
+    , Rule 2007 2007 Mar (Next Sun 8) 0 Standard 60
+    , Rule 2008 2008 Mar (Next Sun 15) 0 Standard 60
+    , Rule 2009 2010 Mar (Next Sun 8) 0 Standard 60
+    , Rule 2011 2011 Mar (Next Sun 15) 0 Standard 60
     , Rule 2011 2011 Nov (Day 13) 0 Standard 0
     , Rule 2012 2012 Apr (Day 1) 0 Standard 60
-    , Rule 2012 maxYear Nov (First Sun 1) 0 Standard 0
-    , Rule 2013 maxYear Mar (First Sun 8) 0 Standard 60
+    , Rule 2012 maxYear Nov (Next Sun 1) 0 Standard 0
+    , Rule 2013 maxYear Mar (Next Sun 8) 0 Standard 60
     ]
 
 
@@ -945,7 +945,7 @@ rules_Cyprus =
     , Rule 1975 1975 Oct (Day 12) 0 WallClock 0
     , Rule 1976 1976 May (Day 15) 0 WallClock 60
     , Rule 1976 1976 Oct (Day 11) 0 WallClock 0
-    , Rule 1977 1980 Apr (First Sun 1) 0 WallClock 60
+    , Rule 1977 1980 Apr (Next Sun 1) 0 WallClock 60
     , Rule 1977 1977 Sep (Day 25) 0 WallClock 0
     , Rule 1978 1978 Oct (Day 2) 0 WallClock 0
     , Rule 1979 1997 Sep (Last Sun) 0 WallClock 0
@@ -971,7 +971,7 @@ rules_Dhaka =
 
 rules_E_Eur : List Rule
 rules_E_Eur =
-    [ Rule 1977 1980 Apr (First Sun 1) 0 WallClock 60
+    [ Rule 1977 1980 Apr (Next Sun 1) 0 WallClock 60
     , Rule 1977 1977 Sep (Last Sun) 0 WallClock 0
     , Rule 1978 1978 Oct (Day 1) 0 WallClock 0
     , Rule 1979 1995 Sep (Last Sun) 0 WallClock 0
@@ -990,7 +990,7 @@ rules_E_EurAsia =
 
 rules_EU : List Rule
 rules_EU =
-    [ Rule 1977 1980 Apr (First Sun 1) 60 Universal 60
+    [ Rule 1977 1980 Apr (Next Sun 1) 60 Universal 60
     , Rule 1977 1977 Sep (Last Sun) 60 Universal 0
     , Rule 1978 1978 Oct (Day 1) 60 Universal 0
     , Rule 1979 1995 Sep (Last Sun) 60 Universal 0
@@ -1035,7 +1035,7 @@ rules_Egypt =
     , Rule 1995 2010 Apr (Last Fri) 0 Standard 60
     , Rule 1995 2005 Sep (Last Thu) 1440 WallClock 0
     , Rule 2006 2006 Sep (Day 21) 1440 WallClock 0
-    , Rule 2007 2007 Sep (First Thu 1) 1440 WallClock 0
+    , Rule 2007 2007 Sep (Next Thu 1) 1440 WallClock 0
     , Rule 2008 2008 Aug (Last Thu) 1440 WallClock 0
     , Rule 2009 2009 Aug (Day 20) 1440 WallClock 0
     , Rule 2010 2010 Aug (Day 10) 1440 WallClock 0
@@ -1051,11 +1051,11 @@ rules_Egypt =
 rules_Eire : List Rule
 rules_Eire =
     [ Rule 1971 1971 Oct (Day 31) 120 Universal -60
-    , Rule 1972 1980 Mar (First Sun 16) 120 Universal 0
-    , Rule 1972 1980 Oct (First Sun 23) 120 Universal -60
+    , Rule 1972 1980 Mar (Next Sun 16) 120 Universal 0
+    , Rule 1972 1980 Oct (Next Sun 23) 120 Universal -60
     , Rule 1981 maxYear Mar (Last Sun) 60 Universal 0
-    , Rule 1981 1989 Oct (First Sun 23) 60 Universal -60
-    , Rule 1990 1995 Oct (First Sun 22) 60 Universal -60
+    , Rule 1981 1989 Oct (Next Sun 23) 60 Universal -60
+    , Rule 1990 1995 Oct (Next Sun 22) 60 Universal -60
     , Rule 1996 maxYear Oct (Last Sun) 60 Universal -60
     ]
 
@@ -1065,25 +1065,25 @@ rules_Falk =
     [ Rule 1983 1983 Sep (Last Sun) 0 WallClock 60
     , Rule 1984 1985 Apr (Last Sun) 0 WallClock 0
     , Rule 1984 1984 Sep (Day 16) 0 WallClock 60
-    , Rule 1985 2000 Sep (First Sun 9) 0 WallClock 60
-    , Rule 1986 2000 Apr (First Sun 16) 0 WallClock 0
-    , Rule 2001 2010 Apr (First Sun 15) 120 WallClock 0
-    , Rule 2001 2010 Sep (First Sun 1) 120 WallClock 60
+    , Rule 1985 2000 Sep (Next Sun 9) 0 WallClock 60
+    , Rule 1986 2000 Apr (Next Sun 16) 0 WallClock 0
+    , Rule 2001 2010 Apr (Next Sun 15) 120 WallClock 0
+    , Rule 2001 2010 Sep (Next Sun 1) 120 WallClock 60
     ]
 
 
 rules_Fiji : List Rule
 rules_Fiji =
-    [ Rule 1998 1999 Nov (First Sun 1) 120 WallClock 60
+    [ Rule 1998 1999 Nov (Next Sun 1) 120 WallClock 60
     , Rule 1999 2000 Feb (Last Sun) 180 WallClock 0
     , Rule 2009 2009 Nov (Day 29) 120 WallClock 60
     , Rule 2010 2010 Mar (Last Sun) 180 WallClock 0
-    , Rule 2010 2013 Oct (First Sun 21) 120 WallClock 60
-    , Rule 2011 2011 Mar (First Sun 1) 180 WallClock 0
-    , Rule 2012 2013 Jan (First Sun 18) 180 WallClock 0
-    , Rule 2014 2014 Jan (First Sun 18) 120 WallClock 0
-    , Rule 2014 maxYear Nov (First Sun 1) 120 WallClock 60
-    , Rule 2015 maxYear Jan (First Sun 13) 180 WallClock 0
+    , Rule 2010 2013 Oct (Next Sun 21) 120 WallClock 60
+    , Rule 2011 2011 Mar (Next Sun 1) 180 WallClock 0
+    , Rule 2012 2013 Jan (Next Sun 18) 180 WallClock 0
+    , Rule 2014 2014 Jan (Next Sun 18) 120 WallClock 0
+    , Rule 2014 maxYear Nov (Next Sun 1) 120 WallClock 60
+    , Rule 2015 maxYear Jan (Next Sun 13) 180 WallClock 0
     ]
 
 
@@ -1103,11 +1103,11 @@ rules_France =
 
 rules_GB_Eire : List Rule
 rules_GB_Eire =
-    [ Rule 1972 1980 Mar (First Sun 16) 120 Standard 60
-    , Rule 1972 1980 Oct (First Sun 23) 120 Standard 0
+    [ Rule 1972 1980 Mar (Next Sun 16) 120 Standard 60
+    , Rule 1972 1980 Oct (Next Sun 23) 120 Standard 0
     , Rule 1981 1995 Mar (Last Sun) 60 Universal 60
-    , Rule 1981 1989 Oct (First Sun 23) 60 Universal 0
-    , Rule 1990 1995 Oct (First Sun 22) 60 Universal 0
+    , Rule 1981 1989 Oct (Next Sun 23) 60 Universal 0
+    , Rule 1990 1995 Oct (Next Sun 22) 60 Universal 0
     ]
 
 
@@ -1117,7 +1117,7 @@ rules_Greece =
     , Rule 1975 1975 Nov (Day 26) 0 Standard 0
     , Rule 1976 1976 Apr (Day 11) 120 Standard 60
     , Rule 1976 1976 Oct (Day 10) 120 Standard 0
-    , Rule 1977 1978 Apr (First Sun 1) 120 Standard 60
+    , Rule 1977 1978 Apr (Next Sun 1) 120 Standard 60
     , Rule 1977 1977 Sep (Day 26) 120 Standard 0
     , Rule 1978 1978 Sep (Day 24) 240 WallClock 0
     , Rule 1979 1979 Apr (Day 1) 540 WallClock 60
@@ -1133,7 +1133,7 @@ rules_Guam =
     , Rule 1969 1969 Jun (Day 22) 120 WallClock 60
     , Rule 1969 1969 Aug (Day 31) 120 WallClock 0
     , Rule 1970 1971 Apr (Last Sun) 120 WallClock 60
-    , Rule 1970 1971 Sep (First Sun 1) 120 WallClock 0
+    , Rule 1970 1971 Sep (Next Sun 1) 120 WallClock 0
     , Rule 1973 1973 Dec (Day 16) 120 WallClock 60
     , Rule 1974 1974 Feb (Day 24) 120 WallClock 0
     , Rule 1976 1976 May (Day 26) 120 WallClock 60
@@ -1158,11 +1158,11 @@ rules_Guat =
 
 rules_HK : List Rule
 rules_HK =
-    [ Rule 1965 1976 Apr (First Sun 16) 210 WallClock 60
-    , Rule 1965 1976 Oct (First Sun 16) 210 WallClock 0
+    [ Rule 1965 1976 Apr (Next Sun 16) 210 WallClock 60
+    , Rule 1965 1976 Oct (Next Sun 16) 210 WallClock 0
     , Rule 1973 1973 Dec (Day 30) 210 WallClock 60
-    , Rule 1979 1979 May (First Sun 8) 210 WallClock 60
-    , Rule 1979 1979 Oct (First Sun 16) 210 WallClock 0
+    , Rule 1979 1979 May (Next Sun 8) 210 WallClock 60
+    , Rule 1979 1979 Oct (Next Sun 16) 210 WallClock 0
     ]
 
 
@@ -1171,14 +1171,14 @@ rules_Haiti =
     [ Rule 1983 1983 May (Day 8) 0 WallClock 60
     , Rule 1984 1987 Apr (Last Sun) 0 WallClock 60
     , Rule 1983 1987 Oct (Last Sun) 0 WallClock 0
-    , Rule 1988 1997 Apr (First Sun 1) 60 Standard 60
+    , Rule 1988 1997 Apr (Next Sun 1) 60 Standard 60
     , Rule 1988 1997 Oct (Last Sun) 60 Standard 0
-    , Rule 2005 2006 Apr (First Sun 1) 0 WallClock 60
+    , Rule 2005 2006 Apr (Next Sun 1) 0 WallClock 60
     , Rule 2005 2006 Oct (Last Sun) 0 WallClock 0
-    , Rule 2012 2015 Mar (First Sun 8) 120 WallClock 60
-    , Rule 2012 2015 Nov (First Sun 1) 120 WallClock 0
-    , Rule 2017 maxYear Mar (First Sun 8) 120 WallClock 60
-    , Rule 2017 maxYear Nov (First Sun 1) 120 WallClock 0
+    , Rule 2012 2015 Mar (Next Sun 8) 120 WallClock 60
+    , Rule 2012 2015 Nov (Next Sun 1) 120 WallClock 0
+    , Rule 2017 maxYear Mar (Next Sun 8) 120 WallClock 60
+    , Rule 2017 maxYear Nov (Next Sun 1) 120 WallClock 0
     ]
 
 
@@ -1192,16 +1192,16 @@ rules_Halifax =
 rules_Holiday : List Rule
 rules_Holiday =
     [ Rule 1992 1993 Oct (Last Sun) 120 Standard 60
-    , Rule 1993 1994 Mar (First Sun 1) 120 Standard 0
+    , Rule 1993 1994 Mar (Next Sun 1) 120 Standard 0
     ]
 
 
 rules_Hond : List Rule
 rules_Hond =
-    [ Rule 1987 1988 May (First Sun 1) 0 WallClock 60
+    [ Rule 1987 1988 May (Next Sun 1) 0 WallClock 60
     , Rule 1987 1988 Sep (Last Sun) 0 WallClock 0
-    , Rule 2006 2006 May (First Sun 1) 0 WallClock 60
-    , Rule 2006 2006 Aug (First Mon 1) 0 WallClock 0
+    , Rule 2006 2006 May (Next Sun 1) 0 WallClock 60
+    , Rule 2006 2006 Aug (Next Mon 1) 0 WallClock 0
     ]
 
 
@@ -1280,11 +1280,11 @@ rules_Iraq =
 
 rules_Italy : List Rule
 rules_Italy =
-    [ Rule 1967 1969 Sep (First Sun 22) 0 Standard 0
+    [ Rule 1967 1969 Sep (Next Sun 22) 0 Standard 0
     , Rule 1969 1969 Jun (Day 1) 0 Standard 60
     , Rule 1970 1970 May (Day 31) 0 Standard 60
     , Rule 1970 1970 Sep (Last Sun) 0 Standard 0
-    , Rule 1971 1972 May (First Sun 22) 0 Standard 60
+    , Rule 1971 1972 May (Next Sun 22) 0 Standard 60
     , Rule 1971 1971 Sep (Last Sun) 0 Standard 0
     , Rule 1972 1972 Oct (Day 1) 0 Standard 0
     , Rule 1973 1973 Jun (Day 3) 0 Standard 60
@@ -1293,7 +1293,7 @@ rules_Italy =
     , Rule 1975 1975 Jun (Day 1) 0 Standard 60
     , Rule 1975 1977 Sep (Last Sun) 0 Standard 0
     , Rule 1976 1976 May (Day 30) 0 Standard 60
-    , Rule 1977 1979 May (First Sun 22) 0 Standard 60
+    , Rule 1977 1979 May (Next Sun 22) 0 Standard 60
     , Rule 1978 1978 Oct (Day 1) 0 Standard 0
     , Rule 1979 1979 Sep (Day 30) 0 Standard 0
     ]
@@ -1310,17 +1310,17 @@ rules_Jordan =
     , Rule 1978 1978 Sep (Day 30) 0 WallClock 0
     , Rule 1985 1985 Apr (Day 1) 0 WallClock 60
     , Rule 1985 1985 Oct (Day 1) 0 WallClock 0
-    , Rule 1986 1988 Apr (First Fri 1) 0 WallClock 60
-    , Rule 1986 1990 Oct (First Fri 1) 0 WallClock 0
+    , Rule 1986 1988 Apr (Next Fri 1) 0 WallClock 60
+    , Rule 1986 1990 Oct (Next Fri 1) 0 WallClock 0
     , Rule 1989 1989 May (Day 8) 0 WallClock 60
     , Rule 1990 1990 Apr (Day 27) 0 WallClock 60
     , Rule 1991 1991 Apr (Day 17) 0 WallClock 60
     , Rule 1991 1991 Sep (Day 27) 0 WallClock 0
     , Rule 1992 1992 Apr (Day 10) 0 WallClock 60
-    , Rule 1992 1993 Oct (First Fri 1) 0 WallClock 0
-    , Rule 1993 1998 Apr (First Fri 1) 0 WallClock 60
-    , Rule 1994 1994 Sep (First Fri 15) 0 WallClock 0
-    , Rule 1995 1998 Sep (First Fri 15) 0 Standard 0
+    , Rule 1992 1993 Oct (Next Fri 1) 0 WallClock 0
+    , Rule 1993 1998 Apr (Next Fri 1) 0 WallClock 60
+    , Rule 1994 1994 Sep (Next Fri 15) 0 WallClock 0
+    , Rule 1995 1998 Sep (Next Fri 15) 0 Standard 0
     , Rule 1999 1999 Jul (Day 1) 0 Standard 60
     , Rule 1999 2002 Sep (Last Fri) 0 Standard 0
     , Rule 2000 2001 Mar (Last Thu) 0 Standard 60
@@ -1337,7 +1337,7 @@ rules_Jordan =
 
 rules_Kyrgyz : List Rule
 rules_Kyrgyz =
-    [ Rule 1992 1996 Apr (First Sun 7) 0 Standard 60
+    [ Rule 1992 1996 Apr (Next Sun 7) 0 Standard 60
     , Rule 1992 1996 Sep (Last Sun) 0 WallClock 0
     , Rule 1997 2005 Mar (Last Sun) 150 WallClock 60
     , Rule 1997 2004 Oct (Last Sun) 150 WallClock 0
@@ -1347,19 +1347,19 @@ rules_Kyrgyz =
 rules_LH : List Rule
 rules_LH =
     [ Rule 1981 1984 Oct (Last Sun) 120 WallClock 60
-    , Rule 1982 1985 Mar (First Sun 1) 120 WallClock 0
+    , Rule 1982 1985 Mar (Next Sun 1) 120 WallClock 0
     , Rule 1985 1985 Oct (Last Sun) 120 WallClock 30
-    , Rule 1986 1989 Mar (First Sun 15) 120 WallClock 0
+    , Rule 1986 1989 Mar (Next Sun 15) 120 WallClock 0
     , Rule 1986 1986 Oct (Day 19) 120 WallClock 30
     , Rule 1987 1999 Oct (Last Sun) 120 WallClock 30
-    , Rule 1990 1995 Mar (First Sun 1) 120 WallClock 0
+    , Rule 1990 1995 Mar (Next Sun 1) 120 WallClock 0
     , Rule 1996 2005 Mar (Last Sun) 120 WallClock 0
     , Rule 2000 2000 Aug (Last Sun) 120 WallClock 30
     , Rule 2001 2007 Oct (Last Sun) 120 WallClock 30
-    , Rule 2006 2006 Apr (First Sun 1) 120 WallClock 0
+    , Rule 2006 2006 Apr (Next Sun 1) 120 WallClock 0
     , Rule 2007 2007 Mar (Last Sun) 120 WallClock 0
-    , Rule 2008 maxYear Apr (First Sun 1) 120 WallClock 0
-    , Rule 2008 maxYear Oct (First Sun 1) 120 WallClock 30
+    , Rule 2008 maxYear Apr (Next Sun 1) 120 WallClock 0
+    , Rule 2008 maxYear Oct (Next Sun 1) 120 WallClock 30
     ]
 
 
@@ -1407,12 +1407,12 @@ rules_Libya =
 
 rules_Macau : List Rule
 rules_Macau =
-    [ Rule 1965 1973 Apr (First Sun 16) 210 WallClock 60
-    , Rule 1967 1976 Oct (First Sun 16) 210 WallClock 0
+    [ Rule 1965 1973 Apr (Next Sun 16) 210 WallClock 60
+    , Rule 1967 1976 Oct (Next Sun 16) 210 WallClock 0
     , Rule 1973 1973 Dec (Day 30) 210 WallClock 60
-    , Rule 1975 1976 Apr (First Sun 16) 210 WallClock 60
+    , Rule 1975 1976 Apr (Next Sun 16) 210 WallClock 60
     , Rule 1979 1979 May (Day 13) 210 WallClock 60
-    , Rule 1979 1979 Oct (First Sun 16) 210 WallClock 0
+    , Rule 1979 1979 Oct (Next Sun 16) 210 WallClock 0
     ]
 
 
@@ -1422,8 +1422,8 @@ rules_Malta =
     , Rule 1973 1973 Sep (Day 29) 0 Standard 0
     , Rule 1974 1974 Apr (Day 21) 0 Standard 60
     , Rule 1974 1974 Sep (Day 16) 0 Standard 0
-    , Rule 1975 1979 Apr (First Sun 15) 120 WallClock 60
-    , Rule 1975 1980 Sep (First Sun 15) 120 WallClock 0
+    , Rule 1975 1979 Apr (Next Sun 15) 120 WallClock 60
+    , Rule 1975 1980 Sep (Next Sun 15) 120 WallClock 0
     , Rule 1980 1980 Mar (Day 31) 120 WallClock 60
     ]
 
@@ -1439,11 +1439,11 @@ rules_Mauritius =
 
 rules_Mexico : List Rule
 rules_Mexico =
-    [ Rule 1996 2000 Apr (First Sun 1) 120 WallClock 60
+    [ Rule 1996 2000 Apr (Next Sun 1) 120 WallClock 60
     , Rule 1996 2000 Oct (Last Sun) 120 WallClock 0
-    , Rule 2001 2001 May (First Sun 1) 120 WallClock 60
+    , Rule 2001 2001 May (Next Sun 1) 120 WallClock 60
     , Rule 2001 2001 Sep (Last Sun) 120 WallClock 0
-    , Rule 2002 maxYear Apr (First Sun 1) 120 WallClock 60
+    , Rule 2002 maxYear Apr (Next Sun 1) 120 WallClock 60
     , Rule 2002 maxYear Oct (Last Sun) 120 WallClock 0
     ]
 
@@ -1459,7 +1459,7 @@ rules_Moncton : List Rule
 rules_Moncton =
     [ Rule 1946 1972 Apr (Last Sun) 120 WallClock 60
     , Rule 1957 1972 Oct (Last Sun) 120 WallClock 0
-    , Rule 1993 2006 Apr (First Sun 1) 1 WallClock 60
+    , Rule 1993 2006 Apr (Next Sun 1) 1 WallClock 60
     , Rule 1993 2006 Oct (Last Sun) 1 WallClock 0
     ]
 
@@ -1558,7 +1558,7 @@ rules_Morocco =
 
 rules_NC : List Rule
 rules_NC =
-    [ Rule 1977 1978 Dec (First Sun 1) 0 WallClock 60
+    [ Rule 1977 1978 Dec (Next Sun 1) 0 WallClock 60
     , Rule 1978 1979 Feb (Day 27) 0 WallClock 0
     , Rule 1996 1996 Dec (Day 1) 120 Standard 60
     , Rule 1997 1997 Mar (Day 2) 120 Standard 0
@@ -1569,55 +1569,55 @@ rules_NT_YK : List Rule
 rules_NT_YK =
     [ Rule 1980 1986 Apr (Last Sun) 120 WallClock 60
     , Rule 1980 2006 Oct (Last Sun) 120 WallClock 0
-    , Rule 1987 2006 Apr (First Sun 1) 120 WallClock 60
+    , Rule 1987 2006 Apr (Next Sun 1) 120 WallClock 60
     ]
 
 
 rules_NZ : List Rule
 rules_NZ =
-    [ Rule 1974 1974 Nov (First Sun 1) 120 Standard 60
+    [ Rule 1974 1974 Nov (Next Sun 1) 120 Standard 60
     , Rule 1975 1975 Feb (Last Sun) 120 Standard 0
     , Rule 1975 1988 Oct (Last Sun) 120 Standard 60
-    , Rule 1976 1989 Mar (First Sun 1) 120 Standard 0
-    , Rule 1989 1989 Oct (First Sun 8) 120 Standard 60
-    , Rule 1990 2006 Oct (First Sun 1) 120 Standard 60
-    , Rule 1990 2007 Mar (First Sun 15) 120 Standard 0
+    , Rule 1976 1989 Mar (Next Sun 1) 120 Standard 0
+    , Rule 1989 1989 Oct (Next Sun 8) 120 Standard 60
+    , Rule 1990 2006 Oct (Next Sun 1) 120 Standard 60
+    , Rule 1990 2007 Mar (Next Sun 15) 120 Standard 0
     , Rule 2007 maxYear Sep (Last Sun) 120 Standard 60
-    , Rule 2008 maxYear Apr (First Sun 1) 120 Standard 0
+    , Rule 2008 maxYear Apr (Next Sun 1) 120 Standard 0
     ]
 
 
 rules_Namibia : List Rule
 rules_Namibia =
     [ Rule 1994 1994 Mar (Day 21) 0 WallClock -60
-    , Rule 1994 2017 Sep (First Sun 1) 120 WallClock 0
-    , Rule 1995 2017 Apr (First Sun 1) 120 WallClock -60
+    , Rule 1994 2017 Sep (Next Sun 1) 120 WallClock 0
+    , Rule 1995 2017 Apr (Next Sun 1) 120 WallClock -60
     ]
 
 
 rules_Nic : List Rule
 rules_Nic =
-    [ Rule 1979 1980 Mar (First Sun 16) 0 WallClock 60
-    , Rule 1979 1980 Jun (First Mon 23) 0 WallClock 0
+    [ Rule 1979 1980 Mar (Next Sun 16) 0 WallClock 60
+    , Rule 1979 1980 Jun (Next Mon 23) 0 WallClock 0
     , Rule 2005 2005 Apr (Day 10) 0 WallClock 60
-    , Rule 2005 2005 Oct (First Sun 1) 0 WallClock 0
+    , Rule 2005 2005 Oct (Next Sun 1) 0 WallClock 0
     , Rule 2006 2006 Apr (Day 30) 120 WallClock 60
-    , Rule 2006 2006 Oct (First Sun 1) 60 WallClock 0
+    , Rule 2006 2006 Oct (Next Sun 1) 60 WallClock 0
     ]
 
 
 rules_PRC : List Rule
 rules_PRC =
     [ Rule 1986 1986 May (Day 4) 120 WallClock 60
-    , Rule 1986 1991 Sep (First Sun 11) 120 WallClock 0
-    , Rule 1987 1991 Apr (First Sun 11) 120 WallClock 60
+    , Rule 1986 1991 Sep (Next Sun 11) 120 WallClock 0
+    , Rule 1987 1991 Apr (Next Sun 11) 120 WallClock 60
     ]
 
 
 rules_Pakistan : List Rule
 rules_Pakistan =
-    [ Rule 2002 2002 Apr (First Sun 2) 0 WallClock 60
-    , Rule 2002 2002 Oct (First Sun 2) 0 WallClock 0
+    [ Rule 2002 2002 Apr (Next Sun 2) 0 WallClock 60
+    , Rule 2002 2002 Oct (Next Sun 2) 0 WallClock 0
     , Rule 2008 2008 Jun (Day 1) 0 WallClock 60
     , Rule 2008 2009 Nov (Day 1) 0 WallClock 0
     , Rule 2009 2009 Apr (Day 15) 0 WallClock 60
@@ -1626,16 +1626,16 @@ rules_Pakistan =
 
 rules_Palestine : List Rule
 rules_Palestine =
-    [ Rule 1999 2005 Apr (First Fri 15) 0 WallClock 60
-    , Rule 1999 2003 Oct (First Fri 15) 0 WallClock 0
+    [ Rule 1999 2005 Apr (Next Fri 15) 0 WallClock 60
+    , Rule 1999 2003 Oct (Next Fri 15) 0 WallClock 0
     , Rule 2004 2004 Oct (Day 1) 60 WallClock 0
     , Rule 2005 2005 Oct (Day 4) 120 WallClock 0
     , Rule 2006 2007 Apr (Day 1) 0 WallClock 60
     , Rule 2006 2006 Sep (Day 22) 0 WallClock 0
-    , Rule 2007 2007 Sep (First Thu 8) 120 WallClock 0
+    , Rule 2007 2007 Sep (Next Thu 8) 120 WallClock 0
     , Rule 2008 2009 Mar (Last Fri) 0 WallClock 60
     , Rule 2008 2008 Sep (Day 1) 0 WallClock 0
-    , Rule 2009 2009 Sep (First Fri 1) 60 WallClock 0
+    , Rule 2009 2009 Sep (Next Fri 1) 60 WallClock 0
     , Rule 2010 2010 Mar (Day 26) 0 WallClock 60
     , Rule 2010 2010 Aug (Day 11) 0 WallClock 0
     , Rule 2011 2011 Apr (Day 1) 1 WallClock 60
@@ -1644,10 +1644,10 @@ rules_Palestine =
     , Rule 2011 2011 Sep (Day 30) 0 WallClock 0
     , Rule 2012 2014 Mar (Last Thu) 1440 WallClock 60
     , Rule 2012 2012 Sep (Day 21) 60 WallClock 0
-    , Rule 2013 2013 Sep (First Fri 21) 0 WallClock 0
-    , Rule 2014 2015 Oct (First Fri 21) 0 WallClock 0
+    , Rule 2013 2013 Sep (Next Fri 21) 0 WallClock 0
+    , Rule 2014 2015 Oct (Next Fri 21) 0 WallClock 0
     , Rule 2015 2015 Mar (Last Fri) 1440 WallClock 60
-    , Rule 2016 maxYear Mar (First Sat 24) 60 WallClock 60
+    , Rule 2016 maxYear Mar (Next Sat 24) 60 WallClock 60
     , Rule 2016 maxYear Oct (Last Sat) 60 WallClock 0
     ]
 
@@ -1666,16 +1666,16 @@ rules_Para =
     , Rule 1993 1995 Oct (Day 1) 0 WallClock 60
     , Rule 1994 1995 Feb (Last Sun) 0 WallClock 0
     , Rule 1996 1996 Mar (Day 1) 0 WallClock 0
-    , Rule 1996 2001 Oct (First Sun 1) 0 WallClock 60
+    , Rule 1996 2001 Oct (Next Sun 1) 0 WallClock 60
     , Rule 1997 1997 Feb (Last Sun) 0 WallClock 0
-    , Rule 1998 2001 Mar (First Sun 1) 0 WallClock 0
-    , Rule 2002 2004 Apr (First Sun 1) 0 WallClock 0
-    , Rule 2002 2003 Sep (First Sun 1) 0 WallClock 60
-    , Rule 2004 2009 Oct (First Sun 15) 0 WallClock 60
-    , Rule 2005 2009 Mar (First Sun 8) 0 WallClock 0
-    , Rule 2010 maxYear Oct (First Sun 1) 0 WallClock 60
-    , Rule 2010 2012 Apr (First Sun 8) 0 WallClock 0
-    , Rule 2013 maxYear Mar (First Sun 22) 0 WallClock 0
+    , Rule 1998 2001 Mar (Next Sun 1) 0 WallClock 0
+    , Rule 2002 2004 Apr (Next Sun 1) 0 WallClock 0
+    , Rule 2002 2003 Sep (Next Sun 1) 0 WallClock 60
+    , Rule 2004 2009 Oct (Next Sun 15) 0 WallClock 60
+    , Rule 2005 2009 Mar (Next Sun 8) 0 WallClock 0
+    , Rule 2010 maxYear Oct (Next Sun 1) 0 WallClock 60
+    , Rule 2010 2012 Apr (Next Sun 8) 0 WallClock 0
+    , Rule 2013 maxYear Mar (Next Sun 22) 0 WallClock 0
     ]
 
 
@@ -1701,7 +1701,7 @@ rules_Port : List Rule
 rules_Port =
     [ Rule 1977 1977 Mar (Day 27) 0 Standard 60
     , Rule 1977 1977 Sep (Day 25) 0 Standard 0
-    , Rule 1978 1979 Apr (First Sun 1) 0 Standard 60
+    , Rule 1978 1979 Apr (Next Sun 1) 0 Standard 60
     , Rule 1978 1978 Oct (Day 1) 0 Standard 0
     , Rule 1979 1982 Sep (Last Sun) 60 Standard 0
     , Rule 1980 1980 Mar (Last Sun) 0 Standard 60
@@ -1712,8 +1712,8 @@ rules_Port =
 
 rules_ROK : List Rule
 rules_ROK =
-    [ Rule 1987 1988 May (First Sun 8) 120 WallClock 60
-    , Rule 1987 1988 Oct (First Sun 8) 180 WallClock 0
+    [ Rule 1987 1988 May (Next Sun 8) 120 WallClock 60
+    , Rule 1987 1988 Oct (Next Sun 8) 180 WallClock 0
     ]
 
 
@@ -1750,22 +1750,22 @@ rules_RussiaAsia =
 
 rules_Salv : List Rule
 rules_Salv =
-    [ Rule 1987 1988 May (First Sun 1) 0 WallClock 60
+    [ Rule 1987 1988 May (Next Sun 1) 0 WallClock 60
     , Rule 1987 1988 Sep (Last Sun) 0 WallClock 0
     ]
 
 
 rules_SanLuis : List Rule
 rules_SanLuis =
-    [ Rule 2008 2009 Mar (First Sun 8) 0 WallClock 0
-    , Rule 2007 2008 Oct (First Sun 8) 0 WallClock 60
+    [ Rule 2008 2009 Mar (Next Sun 8) 0 WallClock 0
+    , Rule 2007 2008 Oct (Next Sun 8) 0 WallClock 60
     ]
 
 
 rules_Spain : List Rule
 rules_Spain =
-    [ Rule 1974 1975 Apr (First Sat 12) 1380 WallClock 60
-    , Rule 1974 1975 Oct (First Sun 1) 60 WallClock 0
+    [ Rule 1974 1975 Apr (Next Sat 12) 1380 WallClock 60
+    , Rule 1974 1975 Oct (Next Sun 1) 60 WallClock 0
     , Rule 1976 1976 Mar (Day 27) 1380 WallClock 60
     , Rule 1976 1977 Sep (Last Sun) 60 WallClock 0
     , Rule 1977 1977 Apr (Day 2) 1380 WallClock 60
@@ -1790,12 +1790,12 @@ rules_StJohns : List Rule
 rules_StJohns =
     [ Rule 1951 1986 Apr (Last Sun) 120 WallClock 60
     , Rule 1960 1986 Oct (Last Sun) 120 WallClock 0
-    , Rule 1987 1987 Apr (First Sun 1) 1 WallClock 60
+    , Rule 1987 1987 Apr (Next Sun 1) 1 WallClock 60
     , Rule 1987 2006 Oct (Last Sun) 1 WallClock 0
-    , Rule 1988 1988 Apr (First Sun 1) 1 WallClock 120
-    , Rule 1989 2006 Apr (First Sun 1) 1 WallClock 60
-    , Rule 2007 2011 Mar (First Sun 8) 1 WallClock 60
-    , Rule 2007 2010 Nov (First Sun 1) 1 WallClock 0
+    , Rule 1988 1988 Apr (Next Sun 1) 1 WallClock 120
+    , Rule 1989 2006 Apr (Next Sun 1) 1 WallClock 60
+    , Rule 2007 2011 Mar (Next Sun 8) 1 WallClock 60
+    , Rule 2007 2010 Nov (Next Sun 1) 1 WallClock 0
     ]
 
 
@@ -1835,11 +1835,11 @@ rules_Syria =
     , Rule 1999 2006 Apr (Day 1) 0 WallClock 60
     , Rule 2006 2006 Sep (Day 22) 0 WallClock 0
     , Rule 2007 2007 Mar (Last Fri) 0 WallClock 60
-    , Rule 2007 2007 Nov (First Fri 1) 0 WallClock 0
-    , Rule 2008 2008 Apr (First Fri 1) 0 WallClock 60
+    , Rule 2007 2007 Nov (Next Fri 1) 0 WallClock 0
+    , Rule 2008 2008 Apr (Next Fri 1) 0 WallClock 60
     , Rule 2008 2008 Nov (Day 1) 0 WallClock 0
     , Rule 2009 2009 Mar (Last Fri) 0 WallClock 60
-    , Rule 2010 2011 Apr (First Fri 1) 0 WallClock 60
+    , Rule 2010 2011 Apr (Next Fri 1) 0 WallClock 60
     , Rule 2012 maxYear Mar (Last Fri) 0 WallClock 60
     , Rule 2009 maxYear Oct (Last Fri) 0 WallClock 0
     ]
@@ -1858,10 +1858,10 @@ rules_Thule : List Rule
 rules_Thule =
     [ Rule 1991 1992 Mar (Last Sun) 120 WallClock 60
     , Rule 1991 1992 Sep (Last Sun) 120 WallClock 0
-    , Rule 1993 2006 Apr (First Sun 1) 120 WallClock 60
+    , Rule 1993 2006 Apr (Next Sun 1) 120 WallClock 60
     , Rule 1993 2006 Oct (Last Sun) 120 WallClock 0
-    , Rule 2007 maxYear Mar (First Sun 8) 120 WallClock 60
-    , Rule 2007 maxYear Nov (First Sun 1) 120 WallClock 0
+    , Rule 2007 maxYear Mar (Next Sun 8) 120 WallClock 60
+    , Rule 2007 maxYear Nov (Next Sun 1) 120 WallClock 0
     ]
 
 
@@ -1869,10 +1869,10 @@ rules_Tonga : List Rule
 rules_Tonga =
     [ Rule 1999 1999 Oct (Day 7) 120 Standard 60
     , Rule 2000 2000 Mar (Day 19) 120 Standard 0
-    , Rule 2000 2001 Nov (First Sun 1) 120 WallClock 60
+    , Rule 2000 2001 Nov (Next Sun 1) 120 WallClock 60
     , Rule 2001 2002 Jan (Last Sun) 120 WallClock 0
-    , Rule 2016 2016 Nov (First Sun 1) 120 WallClock 60
-    , Rule 2017 2017 Jan (First Sun 15) 180 WallClock 0
+    , Rule 2016 2016 Nov (Next Sun 1) 120 WallClock 60
+    , Rule 2017 2017 Jan (Next Sun 15) 180 WallClock 0
     ]
 
 
@@ -1909,8 +1909,8 @@ rules_Tunisia =
 
 rules_Turkey : List Rule
 rules_Turkey =
-    [ Rule 1970 1972 May (First Sun 2) 0 WallClock 60
-    , Rule 1970 1972 Oct (First Sun 2) 0 WallClock 0
+    [ Rule 1970 1972 May (Next Sun 2) 0 WallClock 60
+    , Rule 1970 1972 Oct (Next Sun 2) 0 WallClock 0
     , Rule 1973 1973 Jun (Day 3) 60 WallClock 60
     , Rule 1973 1973 Nov (Day 4) 180 WallClock 0
     , Rule 1974 1974 Mar (Day 31) 120 WallClock 60
@@ -1918,10 +1918,10 @@ rules_Turkey =
     , Rule 1975 1975 Mar (Day 30) 0 WallClock 60
     , Rule 1975 1976 Oct (Last Sun) 0 WallClock 0
     , Rule 1976 1976 Jun (Day 1) 0 WallClock 60
-    , Rule 1977 1978 Apr (First Sun 1) 0 WallClock 60
+    , Rule 1977 1978 Apr (Next Sun 1) 0 WallClock 60
     , Rule 1977 1977 Oct (Day 16) 0 WallClock 0
-    , Rule 1979 1980 Apr (First Sun 1) 180 WallClock 60
-    , Rule 1979 1982 Oct (First Mon 11) 0 WallClock 0
+    , Rule 1979 1980 Apr (Next Sun 1) 180 WallClock 60
+    , Rule 1979 1982 Oct (Next Mon 11) 0 WallClock 0
     , Rule 1981 1982 Mar (Last Sun) 180 WallClock 60
     , Rule 1983 1983 Jul (Day 31) 0 WallClock 60
     , Rule 1983 1983 Oct (Day 2) 0 WallClock 0
@@ -1942,9 +1942,9 @@ rules_US =
     , Rule 1974 1974 Jan (Day 6) 120 WallClock 60
     , Rule 1975 1975 Feb (Day 23) 120 WallClock 60
     , Rule 1976 1986 Apr (Last Sun) 120 WallClock 60
-    , Rule 1987 2006 Apr (First Sun 1) 120 WallClock 60
-    , Rule 2007 maxYear Mar (First Sun 8) 120 WallClock 60
-    , Rule 2007 maxYear Nov (First Sun 1) 120 WallClock 0
+    , Rule 1987 2006 Apr (Next Sun 1) 120 WallClock 60
+    , Rule 2007 maxYear Mar (Next Sun 8) 120 WallClock 60
+    , Rule 2007 maxYear Nov (Next Sun 1) 120 WallClock 0
     ]
 
 
@@ -1962,7 +1962,7 @@ rules_Uruguay =
     , Rule 1976 1976 Dec (Day 19) 0 WallClock 60
     , Rule 1977 1977 Mar (Day 6) 0 WallClock 0
     , Rule 1977 1977 Dec (Day 4) 0 WallClock 60
-    , Rule 1978 1979 Mar (First Sun 1) 0 WallClock 0
+    , Rule 1978 1979 Mar (Next Sun 1) 0 WallClock 0
     , Rule 1978 1978 Dec (Day 17) 0 WallClock 60
     , Rule 1979 1979 Apr (Day 29) 0 WallClock 60
     , Rule 1980 1980 Mar (Day 16) 0 WallClock 0
@@ -1972,15 +1972,15 @@ rules_Uruguay =
     , Rule 1989 1989 Mar (Day 5) 0 WallClock 0
     , Rule 1989 1989 Oct (Day 29) 0 WallClock 60
     , Rule 1990 1990 Feb (Day 25) 0 WallClock 0
-    , Rule 1990 1991 Oct (First Sun 21) 0 WallClock 60
-    , Rule 1991 1992 Mar (First Sun 1) 0 WallClock 0
+    , Rule 1990 1991 Oct (Next Sun 21) 0 WallClock 60
+    , Rule 1991 1992 Mar (Next Sun 1) 0 WallClock 0
     , Rule 1992 1992 Oct (Day 18) 0 WallClock 60
     , Rule 1993 1993 Feb (Day 28) 0 WallClock 0
     , Rule 2004 2004 Sep (Day 19) 0 WallClock 60
     , Rule 2005 2005 Mar (Day 27) 120 WallClock 0
     , Rule 2005 2005 Oct (Day 9) 120 WallClock 60
-    , Rule 2006 2015 Mar (First Sun 8) 120 WallClock 0
-    , Rule 2006 2014 Oct (First Sun 1) 120 WallClock 60
+    , Rule 2006 2015 Mar (Next Sun 8) 120 WallClock 0
+    , Rule 2006 2014 Oct (Next Sun 1) 120 WallClock 60
     ]
 
 
@@ -1994,17 +1994,17 @@ rules_Vanc =
 rules_Vanuatu : List Rule
 rules_Vanuatu =
     [ Rule 1983 1983 Sep (Day 25) 0 WallClock 60
-    , Rule 1984 1991 Mar (First Sun 23) 0 WallClock 0
+    , Rule 1984 1991 Mar (Next Sun 23) 0 WallClock 0
     , Rule 1984 1984 Oct (Day 23) 0 WallClock 60
-    , Rule 1985 1991 Sep (First Sun 23) 0 WallClock 60
-    , Rule 1992 1993 Jan (First Sun 23) 0 WallClock 0
-    , Rule 1992 1992 Oct (First Sun 23) 0 WallClock 60
+    , Rule 1985 1991 Sep (Next Sun 23) 0 WallClock 60
+    , Rule 1992 1993 Jan (Next Sun 23) 0 WallClock 0
+    , Rule 1992 1992 Oct (Next Sun 23) 0 WallClock 60
     ]
 
 
 rules_W_Eur : List Rule
 rules_W_Eur =
-    [ Rule 1977 1980 Apr (First Sun 1) 60 Standard 60
+    [ Rule 1977 1980 Apr (Next Sun 1) 60 Standard 60
     , Rule 1977 1977 Sep (Last Sun) 60 Standard 0
     , Rule 1978 1978 Oct (Day 1) 60 Standard 0
     , Rule 1979 1995 Sep (Last Sun) 60 Standard 0
@@ -2016,9 +2016,9 @@ rules_W_Eur =
 rules_WS : List Rule
 rules_WS =
     [ Rule 2010 2010 Sep (Last Sun) 0 WallClock 60
-    , Rule 2011 2011 Apr (First Sat 1) 240 WallClock 0
+    , Rule 2011 2011 Apr (Next Sat 1) 240 WallClock 0
     , Rule 2011 2011 Sep (Last Sat) 180 WallClock 60
-    , Rule 2012 maxYear Apr (First Sun 1) 240 WallClock 0
+    , Rule 2012 maxYear Apr (Next Sun 1) 240 WallClock 0
     , Rule 2012 maxYear Sep (Last Sun) 180 WallClock 60
     ]
 
@@ -2027,7 +2027,7 @@ rules_Winn : List Rule
 rules_Winn =
     [ Rule 1966 1986 Apr (Last Sun) 120 Standard 60
     , Rule 1966 2005 Oct (Last Sun) 120 Standard 0
-    , Rule 1987 2005 Apr (First Sun 1) 120 Standard 60
+    , Rule 1987 2005 Apr (Next Sun 1) 120 Standard 60
     ]
 
 
@@ -2083,7 +2083,7 @@ rules_Zion =
     , Rule 2004 2004 Sep (Day 22) 60 WallClock 0
     , Rule 2005 2005 Apr (Day 1) 120 WallClock 60
     , Rule 2005 2005 Oct (Day 9) 120 WallClock 0
-    , Rule 2006 2010 Mar (First Fri 26) 120 WallClock 60
+    , Rule 2006 2010 Mar (Next Fri 26) 120 WallClock 60
     , Rule 2006 2006 Oct (Day 1) 120 WallClock 0
     , Rule 2007 2007 Sep (Day 16) 120 WallClock 0
     , Rule 2008 2008 Oct (Day 5) 120 WallClock 0
@@ -2091,9 +2091,9 @@ rules_Zion =
     , Rule 2010 2010 Sep (Day 12) 120 WallClock 0
     , Rule 2011 2011 Apr (Day 1) 120 WallClock 60
     , Rule 2011 2011 Oct (Day 2) 120 WallClock 0
-    , Rule 2012 2012 Mar (First Fri 26) 120 WallClock 60
+    , Rule 2012 2012 Mar (Next Fri 26) 120 WallClock 60
     , Rule 2012 2012 Sep (Day 23) 120 WallClock 0
-    , Rule 2013 maxYear Mar (First Fri 23) 120 WallClock 60
+    , Rule 2013 maxYear Mar (Next Fri 23) 120 WallClock 60
     , Rule 2013 maxYear Oct (Last Sun) 120 WallClock 0
     ]
 

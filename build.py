@@ -124,7 +124,12 @@ def parse_dayofmonth(string):
     elif string[3:5] == ">=":
         weekday = string[0:3]
         after = int(string[5:])
-        return [ "First", weekday, after ]
+        return [ "Next", weekday, after ]
+
+    elif string[3:5] == "<=":
+        weekday = string[0:3]
+        after = int(string[5:])
+        return [ "Prev", weekday, after ]
 
     else:
         return [ "Day", int(string) ]

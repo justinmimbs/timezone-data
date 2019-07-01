@@ -18,7 +18,8 @@ type alias Minutes =
 
 type DayOfMonth
     = Day Int
-    | First Weekday Int
+    | Next Weekday Int
+    | Prev Weekday Int
     | Last Weekday
 
 
@@ -201,9 +202,13 @@ rulesToOffsetChanges previousOffset start until standardOffset rules =
                                                 Day day ->
                                                     RataDie.dayOfMonth year rule.month day
 
-                                                First weekday onOrAfterDay ->
-                                                    RataDie.dayOfMonth year rule.month onOrAfterDay
+                                                Next weekday after ->
+                                                    RataDie.dayOfMonth year rule.month after
                                                         |> RataDie.ceilingWeekday weekday
+
+                                                Prev weekday before ->
+                                                    RataDie.dayOfMonth year rule.month before
+                                                        |> RataDie.floorWeekday weekday
 
                                                 Last weekday ->
                                                     RataDie.lastOfMonth year rule.month
