@@ -3,7 +3,7 @@
     "name": "justinmimbs/timezone-data",
     "summary": "Time zone data from the IANA Time Zone Database for using with elm/time",
     "license": "BSD-3-Clause",
-    "version": "9.0.0",
+    "version": "10.0.0",
     "exposed-modules": [
         "TimeZone"
     ],
