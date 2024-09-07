@@ -2,10 +2,10 @@ module TimeZone exposing
     ( version
     , getZone, Error(..)
     , zones
-    , africa__abidjan, africa__algiers, africa__bissau, africa__cairo, africa__casablanca, africa__ceuta, africa__el_aaiun, africa__johannesburg, africa__juba, africa__khartoum, africa__lagos, africa__maputo, africa__monrovia, africa__nairobi, africa__ndjamena, africa__sao_tome, africa__tripoli, africa__tunis, africa__windhoek, america__adak, america__anchorage, america__araguaina, america__argentina__buenos_aires, america__argentina__catamarca, america__argentina__cordoba, america__argentina__jujuy, america__argentina__la_rioja, america__argentina__mendoza, america__argentina__rio_gallegos, america__argentina__salta, america__argentina__san_juan, america__argentina__san_luis, america__argentina__tucuman, america__argentina__ushuaia, america__asuncion, america__bahia, america__bahia_banderas, america__barbados, america__belem, america__belize, america__boa_vista, america__bogota, america__boise, america__cambridge_bay, america__campo_grande, america__cancun, america__caracas, america__cayenne, america__chicago, america__chihuahua, america__ciudad_juarez, america__costa_rica, america__cuiaba, america__danmarkshavn, america__dawson, america__dawson_creek, america__denver, america__detroit, america__edmonton, america__eirunepe, america__el_salvador, america__fort_nelson, america__fortaleza, america__glace_bay, america__goose_bay, america__grand_turk, america__guatemala, america__guayaquil, america__guyana, america__halifax, america__havana, america__hermosillo, america__indiana__indianapolis, america__indiana__knox, america__indiana__marengo, america__indiana__petersburg, america__indiana__tell_city, america__indiana__vevay, america__indiana__vincennes, america__indiana__winamac, america__inuvik, america__iqaluit, america__jamaica, america__juneau, america__kentucky__louisville, america__kentucky__monticello, america__la_paz, america__lima, america__los_angeles, america__maceio, america__managua, america__manaus, america__martinique, america__matamoros, america__mazatlan, america__menominee, america__merida, america__metlakatla, america__mexico_city, america__miquelon, america__moncton, america__monterrey, america__montevideo, america__new_york, america__nome, america__noronha, america__north_dakota__beulah, america__north_dakota__center, america__north_dakota__new_salem, america__nuuk, america__ojinaga, america__panama, america__paramaribo, america__phoenix, america__port_au_prince, america__porto_velho, america__puerto_rico, america__punta_arenas, america__rankin_inlet, america__recife, america__regina, america__resolute, america__rio_branco, america__santarem, america__santiago, america__santo_domingo, america__sao_paulo, america__scoresbysund, america__sitka, america__st_johns, america__swift_current, america__tegucigalpa, america__thule, america__tijuana, america__toronto, america__vancouver, america__whitehorse, america__winnipeg, america__yakutat, antarctica__casey, antarctica__davis, antarctica__macquarie, antarctica__mawson, antarctica__palmer, antarctica__rothera, antarctica__troll, antarctica__vostok, asia__almaty, asia__amman, asia__anadyr, asia__aqtau, asia__aqtobe, asia__ashgabat, asia__atyrau, asia__baghdad, asia__baku, asia__bangkok, asia__barnaul, asia__beirut, asia__bishkek, asia__chita, asia__choibalsan, asia__colombo, asia__damascus, asia__dhaka, asia__dili, asia__dubai, asia__dushanbe, asia__famagusta, asia__gaza, asia__hebron, asia__ho_chi_minh, asia__hong_kong, asia__hovd, asia__irkutsk, asia__jakarta, asia__jayapura, asia__jerusalem, asia__kabul, asia__kamchatka, asia__karachi, asia__kathmandu, asia__khandyga, asia__kolkata, asia__krasnoyarsk, asia__kuching, asia__macau, asia__magadan, asia__makassar, asia__manila, asia__nicosia, asia__novokuznetsk, asia__novosibirsk, asia__omsk, asia__oral, asia__pontianak, asia__pyongyang, asia__qatar, asia__qostanay, asia__qyzylorda, asia__riyadh, asia__sakhalin, asia__samarkand, asia__seoul, asia__shanghai, asia__singapore, asia__srednekolymsk, asia__taipei, asia__tashkent, asia__tbilisi, asia__tehran, asia__thimphu, asia__tokyo, asia__tomsk, asia__ulaanbaatar, asia__urumqi, asia__ust_nera, asia__vladivostok, asia__yakutsk, asia__yangon, asia__yekaterinburg, asia__yerevan, atlantic__azores, atlantic__bermuda, atlantic__canary, atlantic__cape_verde, atlantic__faroe, atlantic__madeira, atlantic__south_georgia, atlantic__stanley, australia__adelaide, australia__brisbane, australia__broken_hill, australia__darwin, australia__eucla, australia__hobart, australia__lindeman, australia__lord_howe, australia__melbourne, australia__perth, australia__sydney, europe__andorra, europe__astrakhan, europe__athens, europe__belgrade, europe__berlin, europe__brussels, europe__bucharest, europe__budapest, europe__chisinau, europe__dublin, europe__gibraltar, europe__helsinki, europe__istanbul, europe__kaliningrad, europe__kirov, europe__kyiv, europe__lisbon, europe__london, europe__madrid, europe__malta, europe__minsk, europe__moscow, europe__paris, europe__prague, europe__riga, europe__rome, europe__samara, europe__saratov, europe__simferopol, europe__sofia, europe__tallinn, europe__tirane, europe__ulyanovsk, europe__vienna, europe__vilnius, europe__volgograd, europe__warsaw, europe__zurich, indian__chagos, indian__maldives, indian__mauritius, pacific__apia, pacific__auckland, pacific__bougainville, pacific__chatham, pacific__easter, pacific__efate, pacific__fakaofo, pacific__fiji, pacific__galapagos, pacific__gambier, pacific__guadalcanal, pacific__guam, pacific__honolulu, pacific__kanton, pacific__kiritimati, pacific__kosrae, pacific__kwajalein, pacific__marquesas, pacific__nauru, pacific__niue, pacific__norfolk, pacific__noumea, pacific__pago_pago, pacific__palau, pacific__pitcairn, pacific__port_moresby, pacific__rarotonga, pacific__tahiti, pacific__tarawa, pacific__tongatapu
+    , africa__abidjan, africa__algiers, africa__bissau, africa__cairo, africa__casablanca, africa__ceuta, africa__el_aaiun, africa__johannesburg, africa__juba, africa__khartoum, africa__lagos, africa__maputo, africa__monrovia, africa__nairobi, africa__ndjamena, africa__sao_tome, africa__tripoli, africa__tunis, africa__windhoek, america__adak, america__anchorage, america__araguaina, america__argentina__buenos_aires, america__argentina__catamarca, america__argentina__cordoba, america__argentina__jujuy, america__argentina__la_rioja, america__argentina__mendoza, america__argentina__rio_gallegos, america__argentina__salta, america__argentina__san_juan, america__argentina__san_luis, america__argentina__tucuman, america__argentina__ushuaia, america__asuncion, america__bahia, america__bahia_banderas, america__barbados, america__belem, america__belize, america__boa_vista, america__bogota, america__boise, america__cambridge_bay, america__campo_grande, america__cancun, america__caracas, america__cayenne, america__chicago, america__chihuahua, america__ciudad_juarez, america__costa_rica, america__cuiaba, america__danmarkshavn, america__dawson, america__dawson_creek, america__denver, america__detroit, america__edmonton, america__eirunepe, america__el_salvador, america__fort_nelson, america__fortaleza, america__glace_bay, america__goose_bay, america__grand_turk, america__guatemala, america__guayaquil, america__guyana, america__halifax, america__havana, america__hermosillo, america__indiana__indianapolis, america__indiana__knox, america__indiana__marengo, america__indiana__petersburg, america__indiana__tell_city, america__indiana__vevay, america__indiana__vincennes, america__indiana__winamac, america__inuvik, america__iqaluit, america__jamaica, america__juneau, america__kentucky__louisville, america__kentucky__monticello, america__la_paz, america__lima, america__los_angeles, america__maceio, america__managua, america__manaus, america__martinique, america__matamoros, america__mazatlan, america__menominee, america__merida, america__metlakatla, america__mexico_city, america__miquelon, america__moncton, america__monterrey, america__montevideo, america__new_york, america__nome, america__noronha, america__north_dakota__beulah, america__north_dakota__center, america__north_dakota__new_salem, america__nuuk, america__ojinaga, america__panama, america__paramaribo, america__phoenix, america__port_au_prince, america__porto_velho, america__puerto_rico, america__punta_arenas, america__rankin_inlet, america__recife, america__regina, america__resolute, america__rio_branco, america__santarem, america__santiago, america__santo_domingo, america__sao_paulo, america__scoresbysund, america__sitka, america__st_johns, america__swift_current, america__tegucigalpa, america__thule, america__tijuana, america__toronto, america__vancouver, america__whitehorse, america__winnipeg, america__yakutat, antarctica__casey, antarctica__davis, antarctica__macquarie, antarctica__mawson, antarctica__palmer, antarctica__rothera, antarctica__troll, antarctica__vostok, asia__almaty, asia__amman, asia__anadyr, asia__aqtau, asia__aqtobe, asia__ashgabat, asia__atyrau, asia__baghdad, asia__baku, asia__bangkok, asia__barnaul, asia__beirut, asia__bishkek, asia__chita, asia__colombo, asia__damascus, asia__dhaka, asia__dili, asia__dubai, asia__dushanbe, asia__famagusta, asia__gaza, asia__hebron, asia__ho_chi_minh, asia__hong_kong, asia__hovd, asia__irkutsk, asia__jakarta, asia__jayapura, asia__jerusalem, asia__kabul, asia__kamchatka, asia__karachi, asia__kathmandu, asia__khandyga, asia__kolkata, asia__krasnoyarsk, asia__kuching, asia__macau, asia__magadan, asia__makassar, asia__manila, asia__nicosia, asia__novokuznetsk, asia__novosibirsk, asia__omsk, asia__oral, asia__pontianak, asia__pyongyang, asia__qatar, asia__qostanay, asia__qyzylorda, asia__riyadh, asia__sakhalin, asia__samarkand, asia__seoul, asia__shanghai, asia__singapore, asia__srednekolymsk, asia__taipei, asia__tashkent, asia__tbilisi, asia__tehran, asia__thimphu, asia__tokyo, asia__tomsk, asia__ulaanbaatar, asia__urumqi, asia__ust_nera, asia__vladivostok, asia__yakutsk, asia__yangon, asia__yekaterinburg, asia__yerevan, atlantic__azores, atlantic__bermuda, atlantic__canary, atlantic__cape_verde, atlantic__faroe, atlantic__madeira, atlantic__south_georgia, atlantic__stanley, australia__adelaide, australia__brisbane, australia__broken_hill, australia__darwin, australia__eucla, australia__hobart, australia__lindeman, australia__lord_howe, australia__melbourne, australia__perth, australia__sydney, europe__andorra, europe__astrakhan, europe__athens, europe__belgrade, europe__berlin, europe__brussels, europe__bucharest, europe__budapest, europe__chisinau, europe__dublin, europe__gibraltar, europe__helsinki, europe__istanbul, europe__kaliningrad, europe__kirov, europe__kyiv, europe__lisbon, europe__london, europe__madrid, europe__malta, europe__minsk, europe__moscow, europe__paris, europe__prague, europe__riga, europe__rome, europe__samara, europe__saratov, europe__simferopol, europe__sofia, europe__tallinn, europe__tirane, europe__ulyanovsk, europe__vienna, europe__vilnius, europe__volgograd, europe__warsaw, europe__zurich, indian__chagos, indian__maldives, indian__mauritius, pacific__apia, pacific__auckland, pacific__bougainville, pacific__chatham, pacific__easter, pacific__efate, pacific__fakaofo, pacific__fiji, pacific__galapagos, pacific__gambier, pacific__guadalcanal, pacific__guam, pacific__honolulu, pacific__kanton, pacific__kiritimati, pacific__kosrae, pacific__kwajalein, pacific__marquesas, pacific__nauru, pacific__niue, pacific__norfolk, pacific__noumea, pacific__pago_pago, pacific__palau, pacific__pitcairn, pacific__port_moresby, pacific__rarotonga, pacific__tahiti, pacific__tarawa, pacific__tongatapu
     )
 
-{-| This library provides time zone data from the `2024a` release of the IANA
+{-| This library provides time zone data from the `2024b` release of the IANA
 Time Zone Database.
 
 @docs version
@@ -27,7 +27,7 @@ Each unevaluated zone is named after its zone name (e.g.
 by `_`, and the name is lowercased. For example, `America/Port-au-Prince`
 becomes `america__port_au_prince`.
 
-@docs africa__abidjan, africa__algiers, africa__bissau, africa__cairo, africa__casablanca, africa__ceuta, africa__el_aaiun, africa__johannesburg, africa__juba, africa__khartoum, africa__lagos, africa__maputo, africa__monrovia, africa__nairobi, africa__ndjamena, africa__sao_tome, africa__tripoli, africa__tunis, africa__windhoek, america__adak, america__anchorage, america__araguaina, america__argentina__buenos_aires, america__argentina__catamarca, america__argentina__cordoba, america__argentina__jujuy, america__argentina__la_rioja, america__argentina__mendoza, america__argentina__rio_gallegos, america__argentina__salta, america__argentina__san_juan, america__argentina__san_luis, america__argentina__tucuman, america__argentina__ushuaia, america__asuncion, america__bahia, america__bahia_banderas, america__barbados, america__belem, america__belize, america__boa_vista, america__bogota, america__boise, america__cambridge_bay, america__campo_grande, america__cancun, america__caracas, america__cayenne, america__chicago, america__chihuahua, america__ciudad_juarez, america__costa_rica, america__cuiaba, america__danmarkshavn, america__dawson, america__dawson_creek, america__denver, america__detroit, america__edmonton, america__eirunepe, america__el_salvador, america__fort_nelson, america__fortaleza, america__glace_bay, america__goose_bay, america__grand_turk, america__guatemala, america__guayaquil, america__guyana, america__halifax, america__havana, america__hermosillo, america__indiana__indianapolis, america__indiana__knox, america__indiana__marengo, america__indiana__petersburg, america__indiana__tell_city, america__indiana__vevay, america__indiana__vincennes, america__indiana__winamac, america__inuvik, america__iqaluit, america__jamaica, america__juneau, america__kentucky__louisville, america__kentucky__monticello, america__la_paz, america__lima, america__los_angeles, america__maceio, america__managua, america__manaus, america__martinique, america__matamoros, america__mazatlan, america__menominee, america__merida, america__metlakatla, america__mexico_city, america__miquelon, america__moncton, america__monterrey, america__montevideo, america__new_york, america__nome, america__noronha, america__north_dakota__beulah, america__north_dakota__center, america__north_dakota__new_salem, america__nuuk, america__ojinaga, america__panama, america__paramaribo, america__phoenix, america__port_au_prince, america__porto_velho, america__puerto_rico, america__punta_arenas, america__rankin_inlet, america__recife, america__regina, america__resolute, america__rio_branco, america__santarem, america__santiago, america__santo_domingo, america__sao_paulo, america__scoresbysund, america__sitka, america__st_johns, america__swift_current, america__tegucigalpa, america__thule, america__tijuana, america__toronto, america__vancouver, america__whitehorse, america__winnipeg, america__yakutat, antarctica__casey, antarctica__davis, antarctica__macquarie, antarctica__mawson, antarctica__palmer, antarctica__rothera, antarctica__troll, antarctica__vostok, asia__almaty, asia__amman, asia__anadyr, asia__aqtau, asia__aqtobe, asia__ashgabat, asia__atyrau, asia__baghdad, asia__baku, asia__bangkok, asia__barnaul, asia__beirut, asia__bishkek, asia__chita, asia__choibalsan, asia__colombo, asia__damascus, asia__dhaka, asia__dili, asia__dubai, asia__dushanbe, asia__famagusta, asia__gaza, asia__hebron, asia__ho_chi_minh, asia__hong_kong, asia__hovd, asia__irkutsk, asia__jakarta, asia__jayapura, asia__jerusalem, asia__kabul, asia__kamchatka, asia__karachi, asia__kathmandu, asia__khandyga, asia__kolkata, asia__krasnoyarsk, asia__kuching, asia__macau, asia__magadan, asia__makassar, asia__manila, asia__nicosia, asia__novokuznetsk, asia__novosibirsk, asia__omsk, asia__oral, asia__pontianak, asia__pyongyang, asia__qatar, asia__qostanay, asia__qyzylorda, asia__riyadh, asia__sakhalin, asia__samarkand, asia__seoul, asia__shanghai, asia__singapore, asia__srednekolymsk, asia__taipei, asia__tashkent, asia__tbilisi, asia__tehran, asia__thimphu, asia__tokyo, asia__tomsk, asia__ulaanbaatar, asia__urumqi, asia__ust_nera, asia__vladivostok, asia__yakutsk, asia__yangon, asia__yekaterinburg, asia__yerevan, atlantic__azores, atlantic__bermuda, atlantic__canary, atlantic__cape_verde, atlantic__faroe, atlantic__madeira, atlantic__south_georgia, atlantic__stanley, australia__adelaide, australia__brisbane, australia__broken_hill, australia__darwin, australia__eucla, australia__hobart, australia__lindeman, australia__lord_howe, australia__melbourne, australia__perth, australia__sydney, europe__andorra, europe__astrakhan, europe__athens, europe__belgrade, europe__berlin, europe__brussels, europe__bucharest, europe__budapest, europe__chisinau, europe__dublin, europe__gibraltar, europe__helsinki, europe__istanbul, europe__kaliningrad, europe__kirov, europe__kyiv, europe__lisbon, europe__london, europe__madrid, europe__malta, europe__minsk, europe__moscow, europe__paris, europe__prague, europe__riga, europe__rome, europe__samara, europe__saratov, europe__simferopol, europe__sofia, europe__tallinn, europe__tirane, europe__ulyanovsk, europe__vienna, europe__vilnius, europe__volgograd, europe__warsaw, europe__zurich, indian__chagos, indian__maldives, indian__mauritius, pacific__apia, pacific__auckland, pacific__bougainville, pacific__chatham, pacific__easter, pacific__efate, pacific__fakaofo, pacific__fiji, pacific__galapagos, pacific__gambier, pacific__guadalcanal, pacific__guam, pacific__honolulu, pacific__kanton, pacific__kiritimati, pacific__kosrae, pacific__kwajalein, pacific__marquesas, pacific__nauru, pacific__niue, pacific__norfolk, pacific__noumea, pacific__pago_pago, pacific__palau, pacific__pitcairn, pacific__port_moresby, pacific__rarotonga, pacific__tahiti, pacific__tarawa, pacific__tongatapu
+@docs africa__abidjan, africa__algiers, africa__bissau, africa__cairo, africa__casablanca, africa__ceuta, africa__el_aaiun, africa__johannesburg, africa__juba, africa__khartoum, africa__lagos, africa__maputo, africa__monrovia, africa__nairobi, africa__ndjamena, africa__sao_tome, africa__tripoli, africa__tunis, africa__windhoek, america__adak, america__anchorage, america__araguaina, america__argentina__buenos_aires, america__argentina__catamarca, america__argentina__cordoba, america__argentina__jujuy, america__argentina__la_rioja, america__argentina__mendoza, america__argentina__rio_gallegos, america__argentina__salta, america__argentina__san_juan, america__argentina__san_luis, america__argentina__tucuman, america__argentina__ushuaia, america__asuncion, america__bahia, america__bahia_banderas, america__barbados, america__belem, america__belize, america__boa_vista, america__bogota, america__boise, america__cambridge_bay, america__campo_grande, america__cancun, america__caracas, america__cayenne, america__chicago, america__chihuahua, america__ciudad_juarez, america__costa_rica, america__cuiaba, america__danmarkshavn, america__dawson, america__dawson_creek, america__denver, america__detroit, america__edmonton, america__eirunepe, america__el_salvador, america__fort_nelson, america__fortaleza, america__glace_bay, america__goose_bay, america__grand_turk, america__guatemala, america__guayaquil, america__guyana, america__halifax, america__havana, america__hermosillo, america__indiana__indianapolis, america__indiana__knox, america__indiana__marengo, america__indiana__petersburg, america__indiana__tell_city, america__indiana__vevay, america__indiana__vincennes, america__indiana__winamac, america__inuvik, america__iqaluit, america__jamaica, america__juneau, america__kentucky__louisville, america__kentucky__monticello, america__la_paz, america__lima, america__los_angeles, america__maceio, america__managua, america__manaus, america__martinique, america__matamoros, america__mazatlan, america__menominee, america__merida, america__metlakatla, america__mexico_city, america__miquelon, america__moncton, america__monterrey, america__montevideo, america__new_york, america__nome, america__noronha, america__north_dakota__beulah, america__north_dakota__center, america__north_dakota__new_salem, america__nuuk, america__ojinaga, america__panama, america__paramaribo, america__phoenix, america__port_au_prince, america__porto_velho, america__puerto_rico, america__punta_arenas, america__rankin_inlet, america__recife, america__regina, america__resolute, america__rio_branco, america__santarem, america__santiago, america__santo_domingo, america__sao_paulo, america__scoresbysund, america__sitka, america__st_johns, america__swift_current, america__tegucigalpa, america__thule, america__tijuana, america__toronto, america__vancouver, america__whitehorse, america__winnipeg, america__yakutat, antarctica__casey, antarctica__davis, antarctica__macquarie, antarctica__mawson, antarctica__palmer, antarctica__rothera, antarctica__troll, antarctica__vostok, asia__almaty, asia__amman, asia__anadyr, asia__aqtau, asia__aqtobe, asia__ashgabat, asia__atyrau, asia__baghdad, asia__baku, asia__bangkok, asia__barnaul, asia__beirut, asia__bishkek, asia__chita, asia__colombo, asia__damascus, asia__dhaka, asia__dili, asia__dubai, asia__dushanbe, asia__famagusta, asia__gaza, asia__hebron, asia__ho_chi_minh, asia__hong_kong, asia__hovd, asia__irkutsk, asia__jakarta, asia__jayapura, asia__jerusalem, asia__kabul, asia__kamchatka, asia__karachi, asia__kathmandu, asia__khandyga, asia__kolkata, asia__krasnoyarsk, asia__kuching, asia__macau, asia__magadan, asia__makassar, asia__manila, asia__nicosia, asia__novokuznetsk, asia__novosibirsk, asia__omsk, asia__oral, asia__pontianak, asia__pyongyang, asia__qatar, asia__qostanay, asia__qyzylorda, asia__riyadh, asia__sakhalin, asia__samarkand, asia__seoul, asia__shanghai, asia__singapore, asia__srednekolymsk, asia__taipei, asia__tashkent, asia__tbilisi, asia__tehran, asia__thimphu, asia__tokyo, asia__tomsk, asia__ulaanbaatar, asia__urumqi, asia__ust_nera, asia__vladivostok, asia__yakutsk, asia__yangon, asia__yekaterinburg, asia__yerevan, atlantic__azores, atlantic__bermuda, atlantic__canary, atlantic__cape_verde, atlantic__faroe, atlantic__madeira, atlantic__south_georgia, atlantic__stanley, australia__adelaide, australia__brisbane, australia__broken_hill, australia__darwin, australia__eucla, australia__hobart, australia__lindeman, australia__lord_howe, australia__melbourne, australia__perth, australia__sydney, europe__andorra, europe__astrakhan, europe__athens, europe__belgrade, europe__berlin, europe__brussels, europe__bucharest, europe__budapest, europe__chisinau, europe__dublin, europe__gibraltar, europe__helsinki, europe__istanbul, europe__kaliningrad, europe__kirov, europe__kyiv, europe__lisbon, europe__london, europe__madrid, europe__malta, europe__minsk, europe__moscow, europe__paris, europe__prague, europe__riga, europe__rome, europe__samara, europe__saratov, europe__simferopol, europe__sofia, europe__tallinn, europe__tirane, europe__ulyanovsk, europe__vienna, europe__vilnius, europe__volgograd, europe__warsaw, europe__zurich, indian__chagos, indian__maldives, indian__mauritius, pacific__apia, pacific__auckland, pacific__bougainville, pacific__chatham, pacific__easter, pacific__efate, pacific__fakaofo, pacific__fiji, pacific__galapagos, pacific__gambier, pacific__guadalcanal, pacific__guam, pacific__honolulu, pacific__kanton, pacific__kiritimati, pacific__kosrae, pacific__kwajalein, pacific__marquesas, pacific__nauru, pacific__niue, pacific__norfolk, pacific__noumea, pacific__pago_pago, pacific__palau, pacific__pitcairn, pacific__port_moresby, pacific__rarotonga, pacific__tahiti, pacific__tarawa, pacific__tongatapu
 
 -}
 
@@ -41,7 +41,7 @@ import TimeZone.Specification exposing (Clock(..), DateTime, DayOfMonth(..), Rul
 -}
 version : String
 version =
-    "2024a"
+    "2024b"
 
 
 minYear : Int
@@ -266,7 +266,6 @@ zones =
     , ( "Asia/Beirut", asia__beirut )
     , ( "Asia/Bishkek", asia__bishkek )
     , ( "Asia/Chita", asia__chita )
-    , ( "Asia/Choibalsan", asia__choibalsan )
     , ( "Asia/Colombo", asia__colombo )
     , ( "Asia/Damascus", asia__damascus )
     , ( "Asia/Dhaka", asia__dhaka )
@@ -1582,14 +1581,14 @@ rules_Phil =
 
 rules_Port : List Rule
 rules_Port =
-    [ Rule 1977 1977 Mar (Day 27) 0 Standard 60
-    , Rule 1977 1977 Sep (Day 25) 0 Standard 0
-    , Rule 1978 1979 Apr (Next Sun 1) 0 Standard 60
-    , Rule 1978 1978 Oct (Day 1) 0 Standard 0
-    , Rule 1979 1982 Sep (Last Sun) 60 Standard 0
-    , Rule 1980 1980 Mar (Last Sun) 0 Standard 60
-    , Rule 1981 1982 Mar (Last Sun) 60 Standard 60
-    , Rule 1983 1983 Mar (Last Sun) 120 Standard 60
+    [ Rule 1976 1976 Sep (Last Sun) 60 WallClock 0
+    , Rule 1977 1977 Mar (Last Sun) 0 Standard 60
+    , Rule 1977 1977 Sep (Last Sun) 0 Standard 0
+    , Rule 1978 1980 Apr (Next Sun 1) 60 Standard 60
+    , Rule 1978 1978 Oct (Day 1) 60 Standard 0
+    , Rule 1979 1980 Sep (Last Sun) 60 Standard 0
+    , Rule 1981 1986 Mar (Last Sun) 0 Standard 60
+    , Rule 1981 1985 Sep (Last Sun) 0 Standard 0
     ]
 
 
@@ -2461,7 +2460,7 @@ america__bahia_banderas : () -> Time.Zone
 america__bahia_banderas _ =
     fromSpecification <|
         Zone
-            [ ( ZoneState -480 (Save 0), DateTime 1970 Jan 1 0 WallClock )
+            [ ( ZoneState -420 (Save 0), DateTime 1970 Jan 1 0 WallClock )
             , ( ZoneState -420 (Rules rules_Mexico), DateTime 2010 Apr 4 120 WallClock )
             ]
             (ZoneState -360 (Rules rules_Mexico))
@@ -2563,7 +2562,9 @@ america__cancun : () -> Time.Zone
 america__cancun _ =
     fromSpecification <|
         Zone
-            [ ( ZoneState -360 (Save 0), DateTime 1981 Dec 23 0 WallClock )
+            [ ( ZoneState -360 (Save 0), DateTime 1981 Dec 26 120 WallClock )
+            , ( ZoneState -300 (Save 0), DateTime 1983 Jan 4 0 WallClock )
+            , ( ZoneState -360 (Rules rules_Mexico), DateTime 1997 Oct 26 120 WallClock )
             , ( ZoneState -300 (Rules rules_Mexico), DateTime 1998 Aug 2 120 WallClock )
             , ( ZoneState -360 (Rules rules_Mexico), DateTime 2015 Feb 1 120 WallClock )
             ]
@@ -2871,7 +2872,7 @@ america__hermosillo : () -> Time.Zone
 america__hermosillo _ =
     fromSpecification <|
         Zone
-            [ ( ZoneState -480 (Save 0), DateTime 1970 Jan 1 0 WallClock )
+            [ ( ZoneState -420 (Save 0), DateTime 1996 Jan 1 0 WallClock )
             , ( ZoneState -420 (Rules rules_Mexico), DateTime 1999 Jan 1 0 WallClock )
             ]
             (ZoneState -420 (Save 0))
@@ -3158,7 +3159,7 @@ america__mazatlan : () -> Time.Zone
 america__mazatlan _ =
     fromSpecification <|
         Zone
-            [ ( ZoneState -480 (Save 0), DateTime 1970 Jan 1 0 WallClock )
+            [ ( ZoneState -420 (Save 0), DateTime 1970 Jan 1 0 WallClock )
             ]
             (ZoneState -420 (Rules rules_Mexico))
 
@@ -3180,8 +3181,8 @@ america__merida : () -> Time.Zone
 america__merida _ =
     fromSpecification <|
         Zone
-            [ ( ZoneState -360 (Save 0), DateTime 1981 Dec 23 0 WallClock )
-            , ( ZoneState -300 (Save 0), DateTime 1982 Dec 2 0 WallClock )
+            [ ( ZoneState -360 (Save 0), DateTime 1981 Dec 26 120 WallClock )
+            , ( ZoneState -300 (Save 0), DateTime 1982 Nov 2 120 WallClock )
             ]
             (ZoneState -360 (Rules rules_Mexico))
 
@@ -3981,19 +3982,6 @@ asia__chita _ =
             (ZoneState 540 (Save 0))
 
 
-{-| `Asia/Choibalsan`
--}
-asia__choibalsan : () -> Time.Zone
-asia__choibalsan _ =
-    fromSpecification <|
-        Zone
-            [ ( ZoneState 420 (Save 0), DateTime 1978 Jan 1 0 WallClock )
-            , ( ZoneState 480 (Save 0), DateTime 1983 Apr 1 0 WallClock )
-            , ( ZoneState 540 (Rules rules_Mongol), DateTime 2008 Mar 31 0 WallClock )
-            ]
-            (ZoneState 480 (Rules rules_Mongol))
-
-
 {-| `Asia/Colombo`
 -}
 asia__colombo : () -> Time.Zone
@@ -4747,9 +4735,10 @@ atlantic__azores : () -> Time.Zone
 atlantic__azores _ =
     fromSpecification <|
         Zone
-            [ ( ZoneState -60 (Rules rules_Port), DateTime 1983 Sep 25 60 Standard )
-            , ( ZoneState -60 (Rules rules_W_Eur), DateTime 1992 Sep 27 60 Standard )
-            , ( ZoneState 0 (Rules rules_EU), DateTime 1993 Mar 28 60 Universal )
+            [ ( ZoneState -60 (Save 0), DateTime 1982 Mar 28 0 Standard )
+            , ( ZoneState -60 (Rules rules_Port), DateTime 1986 Jan 1 0 WallClock )
+            , ( ZoneState -60 (Rules rules_EU), DateTime 1992 Dec 27 60 Standard )
+            , ( ZoneState 0 (Rules rules_EU), DateTime 1993 Jun 17 60 Universal )
             ]
             (ZoneState -60 (Rules rules_EU))
 
@@ -4806,7 +4795,8 @@ atlantic__madeira : () -> Time.Zone
 atlantic__madeira _ =
     fromSpecification <|
         Zone
-            [ ( ZoneState 0 (Rules rules_Port), DateTime 1983 Sep 25 60 Standard )
+            [ ( ZoneState 0 (Save 0), DateTime 1982 Apr 4 0 WallClock )
+            , ( ZoneState 0 (Rules rules_Port), DateTime 1986 Jul 31 0 WallClock )
             ]
             (ZoneState 0 (Rules rules_EU))
 
@@ -5163,8 +5153,8 @@ europe__lisbon _ =
     fromSpecification <|
         Zone
             [ ( ZoneState 60 (Save 0), DateTime 1976 Sep 26 60 WallClock )
-            , ( ZoneState 0 (Rules rules_Port), DateTime 1983 Sep 25 60 Standard )
-            , ( ZoneState 0 (Rules rules_W_Eur), DateTime 1992 Sep 27 60 Standard )
+            , ( ZoneState 0 (Rules rules_Port), DateTime 1986 Jan 1 0 WallClock )
+            , ( ZoneState 0 (Rules rules_EU), DateTime 1992 Sep 27 60 Universal )
             , ( ZoneState 60 (Rules rules_EU), DateTime 1996 Mar 31 60 Universal )
             ]
             (ZoneState 0 (Rules rules_EU))
