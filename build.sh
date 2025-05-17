@@ -10,9 +10,10 @@ else
     git -C tz checkout main && git -C tz pull
 fi
 
-# tz: checkout latest version
+# tz: checkout version requested or latest by default
 
-version=$(git -C tz describe --tags --abbrev=0)
+latest=$(git -C tz describe --tags --abbrev=0)
+version=${1:-$latest}
 git -C tz -c advice.detachedHead=false checkout $version
 
 # build file
