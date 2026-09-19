@@ -245,29 +245,30 @@ def minutes_from_time(hhmmss):
 
 # TRANSFORM
 
-def transform(zonenames, ( rulesets, zones, links )):
+def transform(zonenames, triple):
     # update zones: remove zones without a current state, remove zones not in zonenames
-    zones = { name: zone for name, zone in zones.iteritems() if zone["current"] is not None and name in zonenames }
+    ( rulesets, zones, links ) = triple
+    zones = { name: zone for name, zone in zones.items() if zone["current"] is not None and name in zonenames }
 
     # update links: remove links to zones not in zonenames
-    links = { source: target for source, target in links.iteritems() if target in zonenames }
+    links = { source: target for source, target in links.items() if target in zonenames }
 
     # update rulesets: add missing rulesets, remove unused rulesets
     rulesetnames = set()
-    for zone in zones.itervalues():
+    for zone in zones.values():
         rulesetnames.update([ rulesetname_from_zonerules(state["zonerules"]) for state, _ in zone["history"] ])
         rulesetnames.add(rulesetname_from_zonerules(zone["current"]["zonerules"]))
 
     rulesets = { name: rulesets.get(name, []) for name in rulesetnames if name is not None }
 
     # optimization: remove empty rulesets, remove their references in zones
-    emptyrulesets = set([ name for name, rules in rulesets.iteritems() if not rules ])
-    for zone in zones.itervalues():
+    emptyrulesets = set([ name for name, rules in rulesets.items() if not rules ])
+    for zone in zones.values():
         for state, _ in zone["history"]:
             remove_referenced_rulsetnames(emptyrulesets, state)
         remove_referenced_rulsetnames(emptyrulesets, zone["current"])
 
-    rulesets = { name: rules for name, rules in rulesets.iteritems() if rules }
+    rulesets = { name: rules for name, rules in rulesets.items() if rules }
 
     return ( rulesets, zones, links )
 
@@ -284,7 +285,7 @@ def rulesetname_from_zonerules(zonerules):
 # PRINT
 
 def print_filecontent(version, rulesets, zones, links):
-    zonenameid_pairs = [ ( name, zoneid_from_name(name) ) for name in sorted(zones.keys() + links.keys()) ]
+    zonenameid_pairs = [ ( name, zoneid_from_name(name) ) for name in sorted(list(zones.keys()) + list(links.keys())) ]
 
     template = open("template.elm").read()
     keywords = re.compile(r"VERSION|MIN_YEAR|MAX_YEAR|ZONE_IDS|ZONE_NAME_ID_PAIRS")
@@ -312,7 +313,7 @@ def print_filecontent(version, rulesets, zones, links):
 
     # links
     output.append("-- Links")
-    for source, target in sorted(links.iteritems()):
+    for source, target in sorted(links.items()):
         output.append(print_link(source, target))
 
     return "\n".join(output)
@@ -336,7 +337,8 @@ def print_zone(zonename, zone):
     return template_zone.format(zonename=zonename, zoneid=zoneid, history=history, current=current)
 
 
-def print_zonestateuntil(( state, until )):
+def print_zonestateuntil(pair):
+    ( state, until ) = pair
     state_ = print_zonestate(**state)
     until_ = template_datetime.format(**until)
     return template_zonestateuntil.format(state=state_, until=until_)
@@ -425,7 +427,7 @@ def create_textfile(filepath, filecontent):
        os.makedirs(os.path.dirname(filepath))
 
     output = io.open(filepath, "w", encoding="utf-8")
-    output.write(unicode(filecontent, encoding="utf-8-sig"))
+    output.write(filecontent)
     output.close()
 
 
@@ -441,7 +443,7 @@ def main():
     sourcedir = os.path.abspath(args.sourcedir)
 
     if not os.path.exists(sourcedir):
-        print "error: sourcedir not found: " + sourcedir
+        print("error: sourcedir not found: " + sourcedir)
         sys.exit(1)
 
     # we only want zones listed in the zone table
@@ -460,7 +462,7 @@ def main():
 
     missingzones = zonenames - set(zones.keys())
     if missingzones:
-        print "error: zones not found: " + ", ".join(missingzones)
+        print("error: zones not found: " + ", ".join(missingzones))
         sys.exit(1)
 
     filecontent = print_filecontent(args.version, rulesets, zones, links)

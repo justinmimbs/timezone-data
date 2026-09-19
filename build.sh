@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -21,7 +21,7 @@ git -C tz -c advice.detachedHead=false checkout $version
 output="src/TimeZone.elm"
 
 echo "Creating file $output for version $version"
-python2 build.py tz $version $output
+python3 build.py tz $version $output
 elm-format --yes $output
 
 # tz: checkout main
