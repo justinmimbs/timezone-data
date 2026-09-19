@@ -5,7 +5,7 @@ module TimeZone exposing
     , africa__abidjan, africa__algiers, africa__bissau, africa__cairo, africa__casablanca, africa__ceuta, africa__el_aaiun, africa__johannesburg, africa__juba, africa__khartoum, africa__lagos, africa__maputo, africa__monrovia, africa__nairobi, africa__ndjamena, africa__sao_tome, africa__tripoli, africa__tunis, africa__windhoek, america__adak, america__anchorage, america__araguaina, america__argentina__buenos_aires, america__argentina__catamarca, america__argentina__cordoba, america__argentina__jujuy, america__argentina__la_rioja, america__argentina__mendoza, america__argentina__rio_gallegos, america__argentina__salta, america__argentina__san_juan, america__argentina__san_luis, america__argentina__tucuman, america__argentina__ushuaia, america__asuncion, america__bahia, america__bahia_banderas, america__barbados, america__belem, america__belize, america__boa_vista, america__bogota, america__boise, america__cambridge_bay, america__campo_grande, america__cancun, america__caracas, america__cayenne, america__chicago, america__chihuahua, america__ciudad_juarez, america__costa_rica, america__coyhaique, america__cuiaba, america__danmarkshavn, america__dawson, america__dawson_creek, america__denver, america__detroit, america__edmonton, america__eirunepe, america__el_salvador, america__fort_nelson, america__fortaleza, america__glace_bay, america__goose_bay, america__grand_turk, america__guatemala, america__guayaquil, america__guyana, america__halifax, america__havana, america__hermosillo, america__indiana__indianapolis, america__indiana__knox, america__indiana__marengo, america__indiana__petersburg, america__indiana__tell_city, america__indiana__vevay, america__indiana__vincennes, america__indiana__winamac, america__inuvik, america__iqaluit, america__jamaica, america__juneau, america__kentucky__louisville, america__kentucky__monticello, america__la_paz, america__lima, america__los_angeles, america__maceio, america__managua, america__manaus, america__martinique, america__matamoros, america__mazatlan, america__menominee, america__merida, america__metlakatla, america__mexico_city, america__miquelon, america__moncton, america__monterrey, america__montevideo, america__new_york, america__nome, america__noronha, america__north_dakota__beulah, america__north_dakota__center, america__north_dakota__new_salem, america__nuuk, america__ojinaga, america__panama, america__paramaribo, america__phoenix, america__port_au_prince, america__porto_velho, america__puerto_rico, america__punta_arenas, america__rankin_inlet, america__recife, america__regina, america__resolute, america__rio_branco, america__santarem, america__santiago, america__santo_domingo, america__sao_paulo, america__scoresbysund, america__sitka, america__st_johns, america__swift_current, america__tegucigalpa, america__thule, america__tijuana, america__toronto, america__vancouver, america__whitehorse, america__winnipeg, america__yakutat, antarctica__casey, antarctica__davis, antarctica__macquarie, antarctica__mawson, antarctica__palmer, antarctica__rothera, antarctica__troll, antarctica__vostok, asia__almaty, asia__amman, asia__anadyr, asia__aqtau, asia__aqtobe, asia__ashgabat, asia__atyrau, asia__baghdad, asia__baku, asia__bangkok, asia__barnaul, asia__beirut, asia__bishkek, asia__chita, asia__colombo, asia__damascus, asia__dhaka, asia__dili, asia__dubai, asia__dushanbe, asia__famagusta, asia__gaza, asia__hebron, asia__ho_chi_minh, asia__hong_kong, asia__hovd, asia__irkutsk, asia__jakarta, asia__jayapura, asia__jerusalem, asia__kabul, asia__kamchatka, asia__karachi, asia__kathmandu, asia__khandyga, asia__kolkata, asia__krasnoyarsk, asia__kuching, asia__macau, asia__magadan, asia__makassar, asia__manila, asia__nicosia, asia__novokuznetsk, asia__novosibirsk, asia__omsk, asia__oral, asia__pontianak, asia__pyongyang, asia__qatar, asia__qostanay, asia__qyzylorda, asia__riyadh, asia__sakhalin, asia__samarkand, asia__seoul, asia__shanghai, asia__singapore, asia__srednekolymsk, asia__taipei, asia__tashkent, asia__tbilisi, asia__tehran, asia__thimphu, asia__tokyo, asia__tomsk, asia__ulaanbaatar, asia__urumqi, asia__ust_nera, asia__vladivostok, asia__yakutsk, asia__yangon, asia__yekaterinburg, asia__yerevan, atlantic__azores, atlantic__bermuda, atlantic__canary, atlantic__cape_verde, atlantic__faroe, atlantic__madeira, atlantic__south_georgia, atlantic__stanley, australia__adelaide, australia__brisbane, australia__broken_hill, australia__darwin, australia__eucla, australia__hobart, australia__lindeman, australia__lord_howe, australia__melbourne, australia__perth, australia__sydney, europe__andorra, europe__astrakhan, europe__athens, europe__belgrade, europe__berlin, europe__brussels, europe__bucharest, europe__budapest, europe__chisinau, europe__dublin, europe__gibraltar, europe__helsinki, europe__istanbul, europe__kaliningrad, europe__kirov, europe__kyiv, europe__lisbon, europe__london, europe__madrid, europe__malta, europe__minsk, europe__moscow, europe__paris, europe__prague, europe__riga, europe__rome, europe__samara, europe__saratov, europe__simferopol, europe__sofia, europe__tallinn, europe__tirane, europe__ulyanovsk, europe__vienna, europe__vilnius, europe__volgograd, europe__warsaw, europe__zurich, indian__chagos, indian__maldives, indian__mauritius, pacific__apia, pacific__auckland, pacific__bougainville, pacific__chatham, pacific__easter, pacific__efate, pacific__fakaofo, pacific__fiji, pacific__galapagos, pacific__gambier, pacific__guadalcanal, pacific__guam, pacific__honolulu, pacific__kanton, pacific__kiritimati, pacific__kosrae, pacific__kwajalein, pacific__marquesas, pacific__nauru, pacific__niue, pacific__norfolk, pacific__noumea, pacific__pago_pago, pacific__palau, pacific__pitcairn, pacific__port_moresby, pacific__rarotonga, pacific__tahiti, pacific__tarawa, pacific__tongatapu
     )
 
-{-| This library provides time zone data from the `2025b` release of the IANA
+{-| This library provides time zone data from the `2026d` release of the IANA
 Time Zone Database.
 
 @docs version
@@ -41,7 +41,7 @@ import TimeZone.Specification exposing (Clock(..), DateTime, DayOfMonth(..), Rul
 -}
 version : String
 version =
-    "2025b"
+    "2026d"
 
 
 minYear : Int
@@ -696,7 +696,7 @@ rules_C_Eur =
 
 rules_CO : List Rule
 rules_CO =
-    [ Rule 1992 1992 May (Day 3) 0 WallClock 60
+    [ Rule 1992 1992 May (Day 2) 0 WallClock 60
     , Rule 1993 1993 Feb (Day 6) 1440 WallClock 0
     ]
 
@@ -1095,7 +1095,7 @@ rules_Iran =
     , Rule 1977 1977 Oct (Day 20) 1440 WallClock 0
     , Rule 1978 1978 Mar (Day 24) 1440 WallClock 60
     , Rule 1978 1978 Aug (Day 5) 60 WallClock 0
-    , Rule 1979 1979 May (Day 26) 1440 WallClock 60
+    , Rule 1979 1979 May (Day 26) 0 WallClock 60
     , Rule 1979 1979 Sep (Day 18) 1440 WallClock 0
     , Rule 1980 1980 Mar (Day 20) 1440 WallClock 60
     , Rule 1980 1980 Sep (Day 22) 1440 WallClock 0
@@ -1319,8 +1319,8 @@ rules_Mexico =
 
 rules_Moldova : List Rule
 rules_Moldova =
-    [ Rule 1997 maxYear Mar (Last Sun) 120 WallClock 60
-    , Rule 1997 maxYear Oct (Last Sun) 180 WallClock 0
+    [ Rule 1997 2021 Mar (Last Sun) 120 WallClock 60
+    , Rule 1997 2021 Oct (Last Sun) 180 WallClock 0
     ]
 
 
@@ -1398,30 +1398,6 @@ rules_Morocco =
     , Rule 2025 2025 Apr (Day 6) 120 WallClock 0
     , Rule 2026 2026 Feb (Day 15) 180 WallClock -60
     , Rule 2026 2026 Mar (Day 22) 120 WallClock 0
-    , Rule 2027 2027 Feb (Day 7) 180 WallClock -60
-    , Rule 2027 2027 Mar (Day 14) 120 WallClock 0
-    , Rule 2028 2028 Jan (Day 23) 180 WallClock -60
-    , Rule 2028 2028 Mar (Day 5) 120 WallClock 0
-    , Rule 2029 2029 Jan (Day 14) 180 WallClock -60
-    , Rule 2029 2029 Feb (Day 18) 120 WallClock 0
-    , Rule 2029 2029 Dec (Day 30) 180 WallClock -60
-    , Rule 2030 2030 Feb (Day 10) 120 WallClock 0
-    , Rule 2030 2030 Dec (Day 22) 180 WallClock -60
-    , Rule 2031 2031 Jan (Day 26) 120 WallClock 0
-    , Rule 2031 2031 Dec (Day 14) 180 WallClock -60
-    , Rule 2032 2032 Jan (Day 18) 120 WallClock 0
-    , Rule 2032 2032 Nov (Day 28) 180 WallClock -60
-    , Rule 2033 2033 Jan (Day 9) 120 WallClock 0
-    , Rule 2033 2033 Nov (Day 20) 180 WallClock -60
-    , Rule 2033 2033 Dec (Day 25) 120 WallClock 0
-    , Rule 2034 2034 Nov (Day 5) 180 WallClock -60
-    , Rule 2034 2034 Dec (Day 17) 120 WallClock 0
-    , Rule 2035 2035 Oct (Day 28) 180 WallClock -60
-    , Rule 2035 2035 Dec (Day 9) 120 WallClock 0
-    , Rule 2036 2036 Oct (Day 19) 180 WallClock -60
-    , Rule 2036 2036 Nov (Day 23) 120 WallClock 0
-    , Rule 2037 2037 Oct (Day 4) 180 WallClock -60
-    , Rule 2037 2037 Nov (Day 15) 120 WallClock 0
     ]
 
 
@@ -2031,8 +2007,9 @@ africa__casablanca _ =
             [ ( ZoneState 0 (Rules rules_Morocco), DateTime 1984 Mar 16 0 WallClock )
             , ( ZoneState 60 (Save 0), DateTime 1986 Jan 1 0 WallClock )
             , ( ZoneState 0 (Rules rules_Morocco), DateTime 2018 Oct 28 180 WallClock )
+            , ( ZoneState 60 (Rules rules_Morocco), DateTime 2026 Sep 20 120 WallClock )
             ]
-            (ZoneState 60 (Rules rules_Morocco))
+            (ZoneState 0 (Save 0))
 
 
 {-| `Africa/Ceuta`
@@ -2055,8 +2032,9 @@ africa__el_aaiun _ =
         Zone
             [ ( ZoneState -60 (Save 0), DateTime 1976 Apr 14 0 WallClock )
             , ( ZoneState 0 (Rules rules_Morocco), DateTime 2018 Oct 28 180 WallClock )
+            , ( ZoneState 60 (Rules rules_Morocco), DateTime 2026 Sep 20 120 WallClock )
             ]
-            (ZoneState 60 (Rules rules_Morocco))
+            (ZoneState 0 (Save 0))
 
 
 {-| `Africa/Johannesburg`
@@ -2119,7 +2097,7 @@ africa__monrovia : () -> Time.Zone
 africa__monrovia _ =
     fromSpecification <|
         Zone
-            [ ( ZoneState -45 (Save 0), DateTime 1972 Jan 7 0 WallClock )
+            [ ( ZoneState -44 (Save 0), DateTime 1972 Jan 7 0 WallClock )
             ]
             (ZoneState 0 (Save 0))
 
@@ -2736,8 +2714,10 @@ america__edmonton _ =
     fromSpecification <|
         Zone
             [ ( ZoneState -420 (Rules rules_Edm), DateTime 1987 Jan 1 0 WallClock )
+            , ( ZoneState -420 (Rules rules_Canada), DateTime 2026 Jun 18 0 WallClock )
+            , ( ZoneState -420 (Rules rules_Canada), DateTime 2026 Nov 1 120 WallClock )
             ]
-            (ZoneState -420 (Rules rules_Canada))
+            (ZoneState -360 (Save 0))
 
 
 {-| `America/Eirunepe`
@@ -3002,8 +2982,10 @@ america__inuvik _ =
         Zone
             [ ( ZoneState -480 (Rules rules_NT_YK), DateTime 1979 Apr 29 120 WallClock )
             , ( ZoneState -420 (Rules rules_NT_YK), DateTime 1980 Jan 1 0 WallClock )
+            , ( ZoneState -420 (Rules rules_Canada), DateTime 2026 Aug 21 0 WallClock )
+            , ( ZoneState -420 (Rules rules_Canada), DateTime 2026 Nov 1 120 WallClock )
             ]
-            (ZoneState -420 (Rules rules_Canada))
+            (ZoneState -360 (Save 0))
 
 
 {-| `America/Iqaluit`
@@ -3633,8 +3615,7 @@ america__tijuana : () -> Time.Zone
 america__tijuana _ =
     fromSpecification <|
         Zone
-            [ ( ZoneState -480 (Save 0), DateTime 1976 Jan 1 0 WallClock )
-            , ( ZoneState -480 (Rules rules_US), DateTime 1996 Jan 1 0 WallClock )
+            [ ( ZoneState -480 (Rules rules_US), DateTime 1996 Jan 1 0 WallClock )
             , ( ZoneState -480 (Rules rules_Mexico), DateTime 2001 Jan 1 0 WallClock )
             , ( ZoneState -480 (Rules rules_US), DateTime 2002 Feb 20 0 WallClock )
             , ( ZoneState -480 (Rules rules_Mexico), DateTime 2010 Jan 1 0 WallClock )
@@ -3660,8 +3641,10 @@ america__vancouver _ =
     fromSpecification <|
         Zone
             [ ( ZoneState -480 (Rules rules_Vanc), DateTime 1987 Jan 1 0 WallClock )
+            , ( ZoneState -480 (Rules rules_Canada), DateTime 2026 Mar 9 0 WallClock )
+            , ( ZoneState -480 (Rules rules_Canada), DateTime 2026 Nov 1 120 WallClock )
             ]
-            (ZoneState -480 (Rules rules_Canada))
+            (ZoneState -420 (Save 0))
 
 
 {-| `America/Whitehorse`
@@ -5064,8 +5047,9 @@ europe__chisinau _ =
             [ ( ZoneState 180 (Rules rules_Russia), DateTime 1990 May 6 120 WallClock )
             , ( ZoneState 120 (Rules rules_Russia), DateTime 1992 Jan 1 0 WallClock )
             , ( ZoneState 120 (Rules rules_E_Eur), DateTime 1997 Jan 1 0 WallClock )
+            , ( ZoneState 120 (Rules rules_Moldova), DateTime 2022 Jan 1 0 WallClock )
             ]
-            (ZoneState 120 (Rules rules_Moldova))
+            (ZoneState 120 (Rules rules_EU))
 
 
 {-| `Europe/Dublin`
